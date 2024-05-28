@@ -1,8 +1,8 @@
 <form>
   <fields name="params">
-    <fieldset name="bearstable_params" label="Bears Table Parameters">
-      <field name="bearstable" type="subform"
-             label="Bears Table"
+    <fieldset name="berversions_params" label="Bears Versions Parameters">
+      <field name="berversions" type="subform"
+             label="Bears Versions"
              description="Add your data here"
              multiple="true"
              layout="joomla.form.field.subform.repeatable-table">

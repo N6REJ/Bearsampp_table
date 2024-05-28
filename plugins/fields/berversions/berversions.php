@@ -6,7 +6,7 @@ use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Registry\Registry;
 
-class PlgFieldsBearstable extends CMSPlugin
+class PlgFieldsBertable extends CMSPlugin
 {
   protected $autoloadLanguage = true;
 
@@ -20,17 +20,17 @@ class PlgFieldsBearstable extends CMSPlugin
 
     // Add the extra fields to the form.
     JForm::addFormPath( __DIR__ . '/forms' );
-    $form->loadFile( 'bearstable', false );
+    $form->loadFile( 'berversions', false );
   }
 
   public function onContentBeforeDisplay($context, &$article, &$params, $limitstart = 0)
   {
     if ( isset( $article->jcfields ) ) {
       foreach ( $article->jcfields as $field ) {
-        if ( $field->name == 'bearstable' ) {
+        if ( $field->name == 'berversions' ) {
           $subformData   = new Registry( $field->value );
-          $rows          = $subformData->get( 'bearstable', [] );
-          $article->text .= $this->processBearstableData( $rows );
+          $rows          = $subformData->get( 'berversions', [] );
+          $article->text .= $this->processBertableData( $rows );
         }
       }
     }
@@ -40,7 +40,7 @@ class PlgFieldsBearstable extends CMSPlugin
   {
     if ( isset( $article->jcfields ) ) {
       foreach ( $article->jcfields as &$field ) {
-        if ( $field->name == 'bearstable' ) {
+        if ( $field->name == 'berversions' ) {
           $this->updateStars( $field->rawvalue );
         }
       }
@@ -69,7 +69,7 @@ class PlgFieldsBearstable extends CMSPlugin
     $fieldValue = json_encode( $data );
   }
 
-  private function processBearstableData($rows)
+  private function processBertableData($rows)
   {
     // Sort rows by version in descending order
     usort( $rows, function ($a, $b) {
