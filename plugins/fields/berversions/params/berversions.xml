@@ -7,7 +7,7 @@
              multiple="true"
              layout="joomla.form.field.subform.repeatable-table">
         <form>
-          <field name="url" type="url" label="URL" description="Enter the release URL" default="" size="60" />
+          <field name="url" type="url" label="Release URL" description="Enter the release URL" default="" size="60" />
           <field name="icon" type="radio" default="none" label="Icon">
             <option value="full">Full Star</option>
             <option value="half">Half Star</option>
