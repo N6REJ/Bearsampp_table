@@ -1,0 +1,10 @@
+<extension version="3.10" type="plugin" group="fields" method="upgrade">
+  <name>Fields - Bears Table</name>
+  <author>Bearsampp</author>
+  <version>1.0.0</version>
+  <description>Provides a repeatable custom field for URLs, icons, and security toggles.</description>
+  <files>
+    <filename>bearstable.php</filename>
+    <filename>index.html</filename>
+  </files>
+</extension>

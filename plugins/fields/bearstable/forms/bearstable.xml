@@ -1,0 +1,25 @@
+<form>
+  <fields name="params">
+    <fieldset name="bearstable_params" label="Bears Table Parameters">
+      <field name="bearstable" type="subform"
+             label="Bears Table"
+             description="Add your data here"
+             multiple="true"
+             layout="joomla.form.field.subform.repeatable-table">
+        <form>
+          <field name="url" type="url" label="URL" description="Enter the release URL" default="" size="60" />
+          <field name="icon" type="radio" default="none" label="Icon">
+            <option value="full">Full Star</option>
+            <option value="half">Half Star</option>
+            <option value="archive">Archive</option>
+            <option value="none">No Icon</option>
+          </field>
+          <field name="shield" type="radio" default="0" label="Security Release?" class="btn-group btn-group-yesno">
+            <option value="1">On</option>
+            <option value="0">Off</option>
+          </field>
+        </form>
+      </field>
+    </fieldset>
+  </fields>
+</form>
