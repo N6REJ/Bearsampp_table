@@ -11,7 +11,7 @@
   <files>
     <filename plugin="berversions">berversions.php</filename>
     <filename>index.html</filename>
-    <folder>forms</folder>
+    <folder>params</folder>
     <folder>language</folder>
   </files>
 </extension>

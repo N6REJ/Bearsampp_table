@@ -6,7 +6,7 @@ use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Registry\Registry;
 
-class PlgFieldsBertable extends CMSPlugin
+class PlgFieldsBerversions extends CMSPlugin
 {
   protected $autoloadLanguage = true;
 
@@ -19,7 +19,7 @@ class PlgFieldsBertable extends CMSPlugin
     FormHelper::loadFieldClass( 'subform' );
 
     // Add the extra fields to the form.
-    JForm::addFormPath( __DIR__ . '/forms' );
+    JForm::addFormPath( __DIR__ . '/params' );
     $form->loadFile( 'berversions', false );
   }
 
@@ -30,7 +30,7 @@ class PlgFieldsBertable extends CMSPlugin
         if ( $field->name == 'berversions' ) {
           $subformData   = new Registry( $field->value );
           $rows          = $subformData->get( 'berversions', [] );
-          $article->text .= $this->processBertableData( $rows );
+          $article->text .= $this->processBerversionsData( $rows );
         }
       }
     }
@@ -69,7 +69,7 @@ class PlgFieldsBertable extends CMSPlugin
     $fieldValue = json_encode( $data );
   }
 
-  private function processBertableData($rows)
+  private function processBerversionsData($rows)
   {
     // Sort rows by version in descending order
     usort( $rows, function ($a, $b) {
