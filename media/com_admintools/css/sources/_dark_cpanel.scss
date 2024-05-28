@@ -1,0 +1,32 @@
+/*!*
+ * @package   admintools
+ * @copyright Copyright (c)2010-2024 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
+ */
+
+// Control panel icons
+div.akeeba-cpanel-container > a.akeeba-cpanel-button {
+  & > span {
+    color: var(--light) !important;
+  }
+
+  &.btn-outline-warning:hover,
+  &.btn-outline-dark:hover {
+    & > span {
+      color: var(--dark) !important;
+    }
+  }
+
+  &.btn-outline-dark {
+    & > div.bg-dark {
+      color: var(--dark) !important;
+      background-color: var(--light) !important;
+    }
+
+    &:hover {
+      color: var(--dark) !important;
+      background-color: var(--light) !important;
+    }
+
+  }
+}

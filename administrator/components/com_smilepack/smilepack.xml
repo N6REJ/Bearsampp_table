@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="component" method="upgrade">
+    <name>COM_SMILEPACK</name>
+    <description>COM_SMILEPACK_DESC</description>
+    <version>1.1.0</version>
+    <creationDate>March 2024</creationDate>
+    <author>Tassos Marinos</author>
+    <authorEmail>info@tassos.gr</authorEmail>
+    <authorUrl>http://www.tassos.gr</authorUrl>
+    <copyright>Copyright © 2024 Tassos All Rights Reserved</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <scriptfile>script.install.php</scriptfile>
+    <updateservers>
+        <server type="extension" priority="1" name="Smile Pack">
+            https://www.tassos.gr/updates/smile-pack-free.xml
+        </server>
+    </updateservers>
+    <administration>
+        <menu link="option=com_smilepack">COM_SMILEPACK</menu>
+        <files>
+            <folder>SmilePack</folder>
+            <folder>language</folder>
+            <folder>layouts</folder>
+            <folder>views</folder>
+            <folder>forms</folder>
+            <filename>config.xml</filename>
+            <filename>access.xml</filename>
+            <filename>autoload.php</filename>
+            <filename>controller.php</filename>
+            <filename>smilepack.php</filename>
+            <filename>script.install.helper.php</filename>
+            <filename>version.php</filename>
+        </files>
+    </administration>
+    <media folder="media" destination="com_smilepack">
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+
+    <!-- Watchful -->
+    <variant>free</variant>
+</extension>

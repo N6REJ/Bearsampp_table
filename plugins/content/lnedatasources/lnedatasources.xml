@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_LNEDATASOURCES</name>
+	<author>Olivier Buisard</author>
+	<creationDate>08/05/2020</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>https://simplifyyourweb.com</authorUrl>
+	<version>7.0.0</version>
+	<description>PLG_CONTENT_LNEDATASOURCES_XML_DESCRIPTION</description>
+	<namespace path="src">SYW\Plugin\Content\LNEDatasources</namespace>
+	
+	<scriptfile>installer.php</scriptfile>
+
+	<media folder="media" destination="plg_content_lnedatasources">
+		<folder>images</folder>
+	</media>
+	
+	<files>
+		<folder plugin="lnedatasources">services</folder>
+		<folder>src</folder>
+		<filename>license.txt</filename>
+	</files>
+	
+	<languages>
+<!-- 		<language tag="cs-CZ">language/cs-CZ/cs-CZ.plg_content_lnedatasources.sys.ini</language> -->
+<!-- 		<language tag="da-DK">language/da-DK/da-DK.plg_content_lnedatasources.sys.ini</language> -->
+<!-- 		<language tag="de-DE">language/de-DE/de-DE.plg_content_lnedatasources.sys.ini</language> -->
+		<language tag="en-GB">language/en-GB/en-GB.plg_content_lnedatasources.sys.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.plg_content_lnedatasources.sys.ini</language>
+<!-- 		<language tag="fa-IR">language/fa-IR/fa-IR.plg_content_lnedatasources.sys.ini</language> -->
+<!-- 		<language tag="fi-FI">language/fi-FI/fi-FI.plg_content_lnedatasources.sys.ini</language> -->
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_content_lnedatasources.sys.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.plg_content_lnedatasources.sys.ini</language>
+<!-- 		<language tag="nl-NL">language/nl-NL/nl-NL.plg_content_lnedatasources.sys.ini</language> -->
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_content_lnedatasources.sys.ini</language>
+		<language tag="pt-PT">language/pt-PT/pt-PT.plg_content_lnedatasources.sys.ini</language>
+<!-- 		<language tag="ru-RU">language/ru-RU/ru-RU.plg_content_lnedatasources.sys.ini</language> -->
+		<language tag="sl-SI">language/sl-SI/sl-SI.plg_content_lnedatasources.sys.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.plg_content_lnedatasources.sys.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.plg_content_lnedatasources.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="SYW\Library\Field">				
+				<field type="extensionversion" extension="plg_content_lnedatasources" />
+				<field type="extensionauthor" />
+				<field type="extensionconnect" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+<!-- 	<field type="subtitle" title="COM_LATESTNEWSENHANCEDPRO_INFORMATION_LABEL" /> -->
+				
+	<field name="show_icons" type="radio" default="0" layout="joomla.form.field.radio.switcher" showon="info!:none"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_SHOWICONS_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_SHOWICONS_DESC">
+		<option value="0">JNO</option>	
+		<option value="1">JYES</option>
+	</field>
+	
+	<field name="icon" type="sywuniversaliconpicker" iconsets="syw" bcmode="true" default="" showon="show_icons:1[AND]info!:none" 
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_ICONFIELD_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_ICONFIELD_DESC" />	
+		
+	<field name="prepend" type="text" default="" showon="info!:none"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_PREPEND_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_PREPEND_DESC" />
+		
+	<field name="info" type="detailselect" default="none" option="com_k2"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_INFO_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_INFO_DESC">
+		<option value="none">JNONE</option>
+	</field>
+	
+	<field name="extra_classes" type="text" default="" showon="info!:none"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_EXTRACLASSES_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_EXTRACLASSES_DESC" />
+	
+	<field name="new_line" type="radio" default="0" layout="joomla.form.field.radio.switcher" showon="info!:none"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_NEWLINE_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_NEWLINE_DESC">
+		<option value="0">JNO</option>	
+		<option value="1">JYES</option>
+	</field>
+	
+	<field name="leading_only" type="radio" default="0" layout="joomla.form.field.radio.switcher" showon="info!:none"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_LEADINGONLYFIELD_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_LEADINGONLYFIELD_DESC">
+		<option value="0">JNO</option>	
+		<option value="1">JYES</option>
+	</field>
+	
+	<field name="access" type="accesslevel" default="1" showon="info!:none"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_ACCESSFIELD_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_ACCESSFIELD_DESC" />
+</form>

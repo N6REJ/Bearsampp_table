@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="conditions" label="NR_PUBLISHING_ASSIGNMENTS" addfieldpath="plugins/system/nrframework/fields">
+            <field name="rules" type="ConditionBuilder"
+                label="NR_PUBLISHING_ASSIGNMENTS"
+                hiddenLabel="true"
+            />
+        </fieldset>
+    </fields>
+</form>

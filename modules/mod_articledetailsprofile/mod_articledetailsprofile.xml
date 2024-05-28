@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>MOD_ARTICLEDETAILSPROFILE</name>
+	<author>Olivier Buisard</author>
+	<creationDate>01/30/2017</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>https://simplifyyourweb.com</authorUrl>
+	<version>6.3.2</version>
+	<description>MOD_ARTICLEDETAILSPROFILE_XML_DESCRIPTION</description>
+	<namespace path="src">SYW\Module\ArticleDetailsProfile</namespace>
+
+	<scriptfile>installer.php</scriptfile>
+
+	<media folder="media" destination="mod_articledetailsprofile">
+		<folder>images</folder>
+	</media>
+	
+	<files>
+		<folder module="mod_articledetailsprofile">services</folder>
+		<folder>forms</folder>
+		<filename>license.txt</filename>
+	</files>
+	
+	<languages>
+		<language tag="de-DE">language/de-DE/de-DE.mod_articledetailsprofile.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.mod_articledetailsprofile.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_articledetailsprofile.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_articledetailsprofile.sys.ini</language>
+		<language tag="fa-IR">language/fa-IR/fa-IR.mod_articledetailsprofile.ini</language>
+		<language tag="fa-IR">language/fa-IR/fa-IR.mod_articledetailsprofile.sys.ini</language>
+		<language tag="fi-FI">language/fi-FI/fi-FI.mod_articledetailsprofile.ini</language>
+		<language tag="fi-FI">language/fi-FI/fi-FI.mod_articledetailsprofile.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_articledetailsprofile.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_articledetailsprofile.sys.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_articledetailsprofile.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_articledetailsprofile.sys.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.mod_articledetailsprofile.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.mod_articledetailsprofile.sys.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.mod_articledetailsprofile.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.mod_articledetailsprofile.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.mod_articledetailsprofile.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.mod_articledetailsprofile.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.mod_articledetailsprofile.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.mod_articledetailsprofile.sys.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.mod_articledetailsprofile.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.mod_articledetailsprofile.sys.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.mod_articledetailsprofile.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.mod_articledetailsprofile.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params" addfieldprefix="SYW\Plugin\Content\ArticleDetailsProfiles\Field">
+			
+			<fieldset name="basic" label="MOD_ARTICLEDETAILSPROFILE_INFORMATION_FIELDSET_LABEL" addfieldprefix="SYW\Library\Field">
+							
+				<field type="extensionversion" extension="mod_articledetailsprofile" />
+				<field type="extensionauthor" />
+				<field type="extensionconnect" />
+				<field type="extensiontranslators" translators="MOD_ARTICLEDETAILSPROFILE_TRANSLATORS" />
+				
+				<field type="extensionlinks" 
+					translate="https://simplifyyourweb.com/translators"
+					onlinedoc="https://simplifyyourweb.com/documentation/article-details"
+					quickstart="https://simplifyyourweb.com/documentation/tutorials/831-setting-up-article-details-profiles"
+					forum="https://simplifyyourweb.com/forum/article-details-profiles"		
+					report="https://simplifyyourweb.com/support"	
+					support="https://simplifyyourweb.com/support"
+					demo="https://demo4.simplifyyourweb.com/article-details-profiles" 
+					review="https://extensions.joomla.org/extensions/extension/news-display/content-infos/article-details-profiles" />
+					  
+<!-- 	            <field type="sywlibtest" minversion="2.1.0" downloadlink="https://simplifyyourweb.com/downloads/syw-extension-library" /> -->
+	            
+	            <field type="plugintest" />
+	            
+	            <field type="overridestest" extension="com_articledetailsprofiles" />
+			</fieldset>
+			
+			<fieldset name="categorylayout" label="MOD_ARTICLEDETAILSPROFILE_CATEGORYLAYOUT_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_CATEGORYLAYOUT_FIELDSET_DESC">
+
+				<fieldset name="categorylayout_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/category-layout" />
+				</fieldset>
+				
+				<fieldset name="layout_categoryview" label="MOD_ARTICLEDETAILSPROFILE_CATEGORYLAYOUT_FIELDSET_LABEL">
+				
+					<field name="disable_in_list_views" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ENABLEINLISTVIEWS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ENABLEINLISTVIEWS_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+					
+<!-- 					<field name="layoutspacer1" type="spacer" hr="true" showon="disable_in_list_views:0" /> -->
+					
+					<field name="lists_head_type" type="headselect" default="none" showon="disable_in_list_views:0" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADTYPELISTS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADTYPELISTS_DESC">
+						<option value="none">JNONE</option>
+					</field>
+					
+					<field name="lists_head_w" type="sywverbosetext" default="64" filter="integer" size="4" unit="px" icon="SYWicon-swap-horiz" showon="disable_in_list_views:0" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_WIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_WIDTH_DESC" />
+						
+					<field name="lists_head_h" type="sywverbosetext" default="80" filter="integer" size="4" unit="px" icon="SYWicon-swap-vert" showon="disable_in_list_views:0" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_HEIGHT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_HEIGHT_DESC" />
+						
+					<field name="lists_head_position" type="list" default="default" showon="disable_in_list_views:0" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADPOSITION_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADPOSITION_DESC">
+						<option value="default">MOD_ARTICLEDETAILSPROFILE_VALUE_SIDEBYSIDE</option>
+						<option value="before">MOD_ARTICLEDETAILSPROFILE_VALUE_BEFORETITLE</option>	
+						<option value="after">MOD_ARTICLEDETAILSPROFILE_VALUE_AFTERTITLE</option>
+					</field>
+					
+					<field name="lists_vertical_align" type="list" default="top" showon="disable_in_list_views:0" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_VERTICALALIGN_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_VERTICALALIGN_DESC">
+						<option value="top">MOD_ARTICLEDETAILSPROFILE_VALUE_TOP</option>
+						<option value="center">MOD_ARTICLEDETAILSPROFILE_VALUE_CENTER</option>	
+						<option value="bottom">MOD_ARTICLEDETAILSPROFILE_VALUE_BOTTOM</option>
+					</field>
+					
+<!-- 					<field name="layoutspacer2" type="spacer" hr="true" showon="disable_in_list_views:0" /> -->
+					
+					<field name="lists_align_details" type="list" default="left" showon="disable_in_list_views:0" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ALIGNDETAILS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ALIGNDETAILS_DESC">
+						<option value="left">MOD_ARTICLEDETAILSPROFILE_VALUE_LEFT</option>
+						<option value="center">MOD_ARTICLEDETAILSPROFILE_VALUE_CENTER</option>	
+						<option value="right">MOD_ARTICLEDETAILSPROFILE_VALUE_RIGHT</option>
+					</field>
+				</fieldset>
+					
+				<fieldset name="layout_categoryview_mobile" label="MOD_ARTICLEDETAILSPROFILE_MOBILE_LABEL">
+					
+					<field name="lists_center_image" type="radio" default="0" layout="joomla.form.field.radio.switcher" showon="disable_in_list_views:0" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_CENTERINTROIMAGE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_CENTERINTROIMAGE_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+		   </fieldset>
+		   
+		   <fieldset name="articlelayout" label="MOD_ARTICLEDETAILSPROFILE_ARTICLELAYOUT_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_ARTICLELAYOUT_FIELDSET_DESC">
+						
+				<fieldset name="articlelayout_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/layout" />
+				</fieldset>
+						
+				<fieldset name="layout_articleviewheader" label="MOD_ARTICLEDETAILSPROFILE_HEADER_LABEL">
+				
+					<field name="head_type" type="headselect" default="none" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADTYPE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADTYPE_DESC">
+						<option value="none">JNONE</option>
+					</field>
+					
+					<field name="head_w" type="sywverbosetext" default="64" filter="integer" size="4" unit="px" icon="SYWicon-swap-horiz" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_WIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_WIDTH_DESC" />
+						
+					<field name="head_h" type="sywverbosetext" default="80" filter="integer" size="4" unit="px" icon="SYWicon-swap-vert" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_HEIGHT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_HEIGHT_DESC" />
+						
+					<field name="head_position" type="list" default="default" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADPOSITION_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADPOSITION_DESC">
+						<option value="default">MOD_ARTICLEDETAILSPROFILE_VALUE_SIDEBYSIDE</option>
+						<option value="before">MOD_ARTICLEDETAILSPROFILE_VALUE_BEFORETITLE</option>	
+						<option value="after">MOD_ARTICLEDETAILSPROFILE_VALUE_AFTERTITLE</option>
+					</field>
+					
+					<field name="vertical_align" type="list" default="top" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_VERTICALALIGN_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_VERTICALALIGN_DESC">
+						<option value="top">MOD_ARTICLEDETAILSPROFILE_VALUE_TOP</option>
+						<option value="center">MOD_ARTICLEDETAILSPROFILE_VALUE_CENTER</option>	
+						<option value="bottom">MOD_ARTICLEDETAILSPROFILE_VALUE_BOTTOM</option>
+					</field>
+									
+<!-- 					<field name="layoutspacer3" type="spacer" hr="true" /> -->
+									
+					<field name="align_details" type="list" default="left" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ALIGNDETAILS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ALIGNDETAILS_DESC">
+						<option value="left">MOD_ARTICLEDETAILSPROFILE_VALUE_LEFT</option>
+						<option value="center">MOD_ARTICLEDETAILSPROFILE_VALUE_CENTER</option>	
+						<option value="right">MOD_ARTICLEDETAILSPROFILE_VALUE_RIGHT</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="layout_articleviewfooter" label="MOD_ARTICLEDETAILSPROFILE_FOOTER_LABEL">
+				
+					<field name="footer_head_type" type="headselect" default="none" location="footer" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADTYPE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEADTYPE_DESC">
+						<option value="none">JNONE</option>
+					</field>
+					
+					<field name="footer_head_w" type="sywverbosetext" default="64" filter="integer" size="4" unit="px" icon="SYWicon-swap-horiz" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_WIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_WIDTH_DESC" />
+						
+					<field name="footer_head_h" type="sywverbosetext" default="80" filter="integer" size="4" unit="px" icon="SYWicon-swap-vert" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_HEIGHT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HEAD_HEIGHT_DESC" />
+						
+					<field name="footer_vertical_align" type="list" default="top" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_VERTICALALIGN_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_VERTICALALIGN_DESC">
+						<option value="top">MOD_ARTICLEDETAILSPROFILE_VALUE_TOP</option>
+						<option value="center">MOD_ARTICLEDETAILSPROFILE_VALUE_CENTER</option>	
+						<option value="bottom">MOD_ARTICLEDETAILSPROFILE_VALUE_BOTTOM</option>
+					</field>
+					
+<!-- 					<field name="layoutspacer4" type="spacer" hr="true" /> -->
+					
+					<field name="footer_align_details" type="list" default="left" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ALIGNDETAILS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ALIGNDETAILS_DESC">
+						<option value="left">MOD_ARTICLEDETAILSPROFILE_VALUE_LEFT</option>
+						<option value="center">MOD_ARTICLEDETAILSPROFILE_VALUE_CENTER</option>	
+						<option value="right">MOD_ARTICLEDETAILSPROFILE_VALUE_RIGHT</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="layout_articleviewfooter_mobile" label="MOD_ARTICLEDETAILSPROFILE_MOBILE_LABEL">
+					
+					<field name="center_image" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_CENTERFULLIMAGE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_CENTERFULLIMAGE_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+		   </fieldset>
+		   
+		   <fieldset name="image_header" label="MOD_ARTICLEDETAILSPROFILE_IMAGEHEADER_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_IMAGEHEADER_FIELDSET_DESC">					
+
+				<fieldset name="image_header_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/image" />
+				</fieldset>
+														
+				<fieldset name="image_header_all" label="MOD_ARTICLEDETAILSPROFILE_IMAGEHEADER_FIELDSET_LABEL">
+														
+					<field name="default_pic" type="media" default=""
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_PICTURE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICTURE_DESC" />
+					
+					<field type="imagelibrarytest" />
+					
+					<field name="thumb_mime_type" type="imagetypeselect" default="" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_THUMBNAILMIMETYPE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_THUMBNAILMIMETYPE_DESC">
+						<option value="">MOD_ARTICLEDETAILSPROFILE_VALUE_SAMEASORIGINAL</option>
+					</field>
+					
+					<field name="bgcolor_pic" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBGCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBGCOLOR_DESC" />
+				
+					<field name="border_w_pic" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-border-outer" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERWIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBORDERWIDTH_DESC" />					
+					
+					<field name="border_r_pic" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-rounded_corner" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERRADIUS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBORDERRADIUS_DESC" />	
+				
+					<field name="border_c_pic" type="sywcolorpicker" default="#FFFFFF" icon="outline" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBORDERCOLOR_DESC" />				
+								
+					<field name="sh_w_pic" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-layers" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHADOWWIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICSHADOWWIDTH_DESC" />
+				
+					<field name="filter" type="sywimagefilterpicker" default="none" cssfilters="true"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEFILTER_LABEL"
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEFILTER_DESC" />
+				
+					<field name="quality_jpg" type="sywverbosetext" default="75" filter="integer" size="8" maxlength="3" min="0" max="100" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYJPG_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYJPG_DESC" />
+					
+					<field name="quality_png" type="sywverbosetext" default="3" filter="integer" size="8" maxlength="1" min="0" max="9" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYPNG_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYPNG_DESC" />
+					
+					<field name="quality_webp" type="sywverbosetext" default="80" filter="integer" size="8" maxlength="3" min="0" max="100" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYWEBP_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYWEBP_DESC" />
+					
+					<field name="quality_avif" type="sywverbosetext" default="80" filter="integer" size="8" maxlength="3" min="0" max="100" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYAVIF_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYAVIF_DESC" />
+				</fieldset>
+				
+				<fieldset name="image_advanced" label="MOD_ARTICLEDETAILSPROFILE_IMAGEADVANCED_FIELDSET_LABEL">
+					
+					<field type="phpsettingtest" setting="allow_url_fopen" message="MOD_ARTICLEDETAILSPROFILE_WARNING_ALLOWURLFOPENTEST" />
+
+					<field name="allow_remote" type="radio" default="1" layout="joomla.form.field.radio.switcher"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ALLOWREMOTE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ALLOWREMOTE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+
+					<field name="create_highres" type="radio" default="0" layout="joomla.form.field.radio.switcher"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_CREATEHIGHRES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_CREATEHIGHRES_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+			</fieldset>
+
+			<fieldset name="image_footer" label="MOD_ARTICLEDETAILSPROFILE_IMAGEFOOTER_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_IMAGEFOOTER_FIELDSET_DESC">					
+
+				<fieldset name="image_footer_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/image" />
+				</fieldset>
+				
+				<fieldset name="image_footer_all" label="MOD_ARTICLEDETAILSPROFILE_IMAGEFOOTER_FIELDSET_LABEL">
+														
+					<field name="footer_default_pic" type="media" default=""
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_PICTURE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICTURE_DESC" />
+					
+					<field type="imagelibrarytest" />
+					
+					<field name="footer_thumb_mime_type" type="imagetypeselect" default="" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_THUMBNAILMIMETYPE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_THUMBNAILMIMETYPE_DESC">
+						<option value="">MOD_ARTICLEDETAILSPROFILE_VALUE_SAMEASORIGINAL</option>
+					</field>
+					
+					<field name="footer_bgcolor_pic" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBGCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBGCOLOR_DESC" />
+				
+					<field name="footer_border_w_pic" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-border-outer" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERWIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBORDERWIDTH_DESC" />
+					
+					<field name="footer_border_r_pic" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-rounded_corner" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERRADIUS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBORDERRADIUS_DESC" />
+				
+					<field name="footer_border_c_pic" type="sywcolorpicker" default="#FFFFFF" icon="outline" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICBORDERCOLOR_DESC" />
+								
+					<field name="footer_sh_w_pic" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-layers" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHADOWWIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PICSHADOWWIDTH_DESC" />
+				
+					<field name="footer_filter" type="sywimagefilterpicker" default="none" cssfilters="true"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEFILTER_LABEL"
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEFILTER_DESC" />
+				
+					<field name="footer_quality_jpg" type="sywverbosetext" default="75" filter="integer" size="8" maxlength="3" min="0" max="100" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYJPG_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYJPG_DESC" />
+					
+					<field name="footer_quality_png" type="sywverbosetext" default="3" filter="integer" size="8" maxlength="1" min="0" max="9" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYPNG_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYPNG_DESC" />
+					
+					<field name="footer_quality_webp" type="sywverbosetext" default="80" filter="integer" size="8" maxlength="3" min="0" max="100" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYWEBP_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYWEBP_DESC" />
+					
+					<field name="footer_quality_avif" type="sywverbosetext" default="80" filter="integer" size="8" maxlength="3" min="0" max="100" 
+						parentclass="span-3-inline"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYAVIF_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGEQUALITYAVIF_DESC" />
+				</fieldset>
+				
+				<fieldset name="image_footer_advanced" label="MOD_ARTICLEDETAILSPROFILE_IMAGEADVANCED_FIELDSET_LABEL">
+
+					<field type="phpsettingtest" setting="allow_url_fopen" message="MOD_ARTICLEDETAILSPROFILE_WARNING_ALLOWURLFOPENTEST" />
+
+					<field name="footer_allow_remote" type="radio" default="1" layout="joomla.form.field.radio.switcher"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ALLOWREMOTE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ALLOWREMOTE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+
+					<field name="footer_create_highres" type="radio" default="0" layout="joomla.form.field.radio.switcher"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_CREATEHIGHRES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_CREATEHIGHRES_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+			</fieldset>
+
+			<fieldset name="icon" label="MOD_ARTICLEDETAILSPROFILE_ICON_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_ICON_FIELDSET_DESC">					
+
+				<fieldset name="icon_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/icon" />
+					
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_WARNING_REQUIREMENTSFORICONHEAD" style="warning" />
+				</fieldset>
+				
+				<fieldset name="icon_all" label="MOD_ARTICLEDETAILSPROFILE_ICON_FIELDSET_LABEL">
+
+					<field name="default_icon" type="sywuniversaliconpicker" iconsets="syw" bcmode="true" default="" buttonrole="clear" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_DEFAULTICON_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_DEFAULTICON_DESC" />
+					
+					<field name="icon_bgcolor" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONBGCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONBGCOLOR_DESC" />
+					
+					<field name="icon_color" type="sywcolorpicker" default="#000000" icon="text" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONCOLOR_DESC" />
+				
+					<field name="border_w_icon" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-border-outer" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERWIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONBORDERWIDTH_DESC" />
+					
+					<field name="border_r_icon" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-rounded_corner" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERRADIUS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONBORDERRADIUS_DESC" />
+				
+					<field name="border_c_icon" type="sywcolorpicker" default="#FFFFFF" icon="outline" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONBORDERCOLOR_DESC" />
+				
+					<field name="sh_w_icon" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-layers" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHADOWWIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONPICSHADOWWIDTH_DESC" />
+					
+					<field name="sh_w_text_icon" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-layers" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONSHADOWWIDTHTEXT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONPICSHADOWWIDTHTEXT_DESC" />
+					
+					<field name="padding_icon" type="sywverbosetext" default="0" filter="integer" size="4" unit="px" icon="SYWicon-border-outer" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONPADDING_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONPADDING_DESC" />
+			
+					<field type="previewIcon" label="MOD_ARTICLEDETAILSPROFILE_PREVIEW_LABEL" />
+				</fieldset>
+			</fieldset>
+		   
+			<fieldset name="calendar" label="MOD_ARTICLEDETAILSPROFILE_CALENDAR_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_CALENDAR_FIELDSET_DESC">				
+
+				<fieldset name="calendar_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/calendar" />
+				</fieldset>
+					
+				<fieldset name="calendar_date" label="MOD_ARTICLEDETAILSPROFILE_CALENDAR_FIELDSET_LABEL">
+		            <field name="post_d" type="list" default="published" 
+			           	label="MOD_ARTICLEDETAILSPROFILE_FIELD_POSTDATE_LABEL" 
+			           	description="MOD_ARTICLEDETAILSPROFILE_FIELD_POSTDATE_DESC">
+						<option value="created">MOD_ARTICLEDETAILSPROFILE_VALUE_CREATED</option>
+						<option value="published">MOD_ARTICLEDETAILSPROFILE_VALUE_PUBLISHED</option>
+						<option value="modified">MOD_ARTICLEDETAILSPROFILE_VALUE_MODIFIED</option>
+						<option value="finished">MOD_ARTICLEDETAILSPROFILE_VALUE_FINISHED</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="calendar_content" label="MOD_ARTICLEDETAILSPROFILE_CONTENT_LABEL">
+				
+					<field name="pos_1" type="list" default="w" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION1_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION1_DESC">
+						<option value="none">JNONE</option>
+						<option value="e">MOD_ARTICLEDETAILSPROFILE_VALUE_EMPTY</option>
+						<option value="w">MOD_ARTICLEDETAILSPROFILE_VALUE_WEEKDAY</option>
+						<option value="d">MOD_ARTICLEDETAILSPROFILE_VALUE_DAY</option>
+						<option value="m">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTH</option>
+						<option value="y">MOD_ARTICLEDETAILSPROFILE_VALUE_YEAR</option>
+						<option value="t">MOD_ARTICLEDETAILSPROFILE_VALUE_TIME</option>
+					</field>
+					<field name="pos_2" type="list" default="d" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION2_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION2_DESC">
+						<option value="none">JNONE</option>
+						<option value="e">MOD_ARTICLEDETAILSPROFILE_VALUE_EMPTY</option>
+						<option value="w">MOD_ARTICLEDETAILSPROFILE_VALUE_WEEKDAY</option>
+						<option value="d">MOD_ARTICLEDETAILSPROFILE_VALUE_DAY</option>
+						<option value="m">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTH</option>
+						<option value="y">MOD_ARTICLEDETAILSPROFILE_VALUE_YEAR</option>
+						<option value="t">MOD_ARTICLEDETAILSPROFILE_VALUE_TIME</option>
+					</field>
+					<field name="pos_3" type="list" default="m" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION3_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION3_DESC">
+						<option value="none">JNONE</option>
+						<option value="e">MOD_ARTICLEDETAILSPROFILE_VALUE_EMPTY</option>
+						<option value="w">MOD_ARTICLEDETAILSPROFILE_VALUE_WEEKDAY</option>
+						<option value="d">MOD_ARTICLEDETAILSPROFILE_VALUE_DAY</option>
+						<option value="m">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTH</option>
+						<option value="y">MOD_ARTICLEDETAILSPROFILE_VALUE_YEAR</option>
+						<option value="t">MOD_ARTICLEDETAILSPROFILE_VALUE_TIME</option>
+					</field>
+					<field name="pos_4" type="list" default="y" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION4_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION4_DESC">
+						<option value="none">JNONE</option>
+						<option value="e">MOD_ARTICLEDETAILSPROFILE_VALUE_EMPTY</option>
+						<option value="w">MOD_ARTICLEDETAILSPROFILE_VALUE_WEEKDAY</option>
+						<option value="d">MOD_ARTICLEDETAILSPROFILE_VALUE_DAY</option>
+						<option value="m">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTH</option>
+						<option value="y">MOD_ARTICLEDETAILSPROFILE_VALUE_YEAR</option>
+						<option value="t">MOD_ARTICLEDETAILSPROFILE_VALUE_TIME</option>
+					</field>
+					<field name="pos_5" type="list" default="t" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION5_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_POSITION5_DESC">
+						<option value="none">JNONE</option>
+						<option value="e">MOD_ARTICLEDETAILSPROFILE_VALUE_EMPTY</option>
+						<option value="w">MOD_ARTICLEDETAILSPROFILE_VALUE_WEEKDAY</option>
+						<option value="d">MOD_ARTICLEDETAILSPROFILE_VALUE_DAY</option>
+						<option value="m">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTH</option>
+						<option value="y">MOD_ARTICLEDETAILSPROFILE_VALUE_YEAR</option>
+						<option value="t">MOD_ARTICLEDETAILSPROFILE_VALUE_TIME</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="calendar_format" label="MOD_ARTICLEDETAILSPROFILE_FORMAT_LABEL">
+				
+					<field name="fmt_w" type="list" default="D" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_WEEKDAYFORMAT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_WEEKDAYFORMAT_DESC">
+						<option value="l">MOD_ARTICLEDETAILSPROFILE_VALUE_WEEKDAYFORMAT_L</option>
+						<option value="D">MOD_ARTICLEDETAILSPROFILE_VALUE_WEEKDAYFORMAT_D</option>
+					</field>
+					<field name="fmt_m" type="list" default="M" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_MONTHFORMAT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_MONTHFORMAT_DESC">
+						<option value="F">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTHFORMAT_F</option>
+						<option value="M">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTHFORMAT_M</option>
+						<option value="m">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTHFORMAT_MM</option>
+						<option value="n">MOD_ARTICLEDETAILSPROFILE_VALUE_MONTHFORMAT_N</option>
+					</field>
+					<field name="fmt_d" type="list" default="d" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_DAYFORMAT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_DAYFORMAT_DESC">
+						<option value="d">MOD_ARTICLEDETAILSPROFILE_VALUE_DAYFORMAT_D</option>
+						<option value="j">MOD_ARTICLEDETAILSPROFILE_VALUE_DAYFORMAT_J</option>
+					</field>
+	
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_INFO_CALENDARTIMEFORMATINFO" style="info" />
+				</fieldset>
+				
+				<fieldset name="calendar_style" label="MOD_ARTICLEDETAILSPROFILE_STYLE_LABEL">
+				
+					<field name="cal_style" type="calendarselect" default="original" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_STYLE_LABEL"
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_STYLE_DESC" />
+						
+					<field type="imagelink" imagesrc="media/plg_content_articledetailsprofiles/images/calendars.svg" 
+						title="MOD_ARTICLEDETAILSPROFILE_CALENDARS_TITLE" text="MOD_ARTICLEDETAILSPROFILE_CALENDARS_LINK" 
+						link="https://simplifyyourweb.com/downloads/article-details-profiles/calendar-styles" />
+										
+					<field name="border_w" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-border-outer" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERWIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERWIDTH_DESC" />
+						
+					<field name="border_r" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-rounded_corner" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERRADIUS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERRADIUS_DESC" />	
+						
+					<field name="border_c" type="sywcolorpicker" default="#000000" icon="outline" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BORDERCOLOR_DESC" />
+					
+					<field name="sh_w" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-layers" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHADOWWIDTH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHADOWWIDTH_DESC" />	
+						
+					<field name="fontcalendar" type="sywfontpicker" webfonts="true" default=""
+	                    label="MOD_ARTICLEDETAILSPROFILE_FIELD_FONTCALENDAR_LABEL"
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_FONTCALENDAR_DESC" />
+						
+					<field name="f_r" type="sywverbosetext" default="14" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-format-size"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_FONTSIZEREFERENCE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_FONTSIZEREFERENCE_DESC" />
+				</fieldset>
+				
+				<fieldset name="calendar_style_top" label="MOD_ARTICLEDETAILSPROFILE_CALENDARTOPCOLORS_LABEL">
+				
+					<field name="c2" type="sywcolorpicker" default="#494949" icon="text" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_COLOR2_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_COLOR2_DESC" />	
+					<field name="bgc21" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR21_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR21_DESC" />	
+					<field name="bgc22" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR22_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR22_DESC" />
+				</fieldset>
+						
+				<fieldset name="calendar_style_overal" label="MOD_ARTICLEDETAILSPROFILE_CALENDARCOLORS_LABEL">
+					
+					<field name="c1" type="sywcolorpicker" default="#3D3D3D" icon="text" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_COLOR1_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_COLOR1_DESC" />
+					<field name="bgc11" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR11_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR11_DESC" />	
+					<field name="bgc12" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR12_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR12_DESC" />
+				</fieldset>
+						
+				<fieldset name="calendar_style_bottom" label="MOD_ARTICLEDETAILSPROFILE_CALENDARBOTTOMCOLORS_LABEL">
+				
+					<field name="c3" type="sywcolorpicker" default="#494949" icon="text" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_COLOR3_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_COLOR3_DESC" />	
+					<field name="bgc31" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR31_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR31_DESC" />	
+					<field name="bgc32" type="sywcolorpicker" default="" transparency="true" icon="fill" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR32_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BGCOLOR32_DESC" />
+				</fieldset>
+			</fieldset>	
+			
+			<fieldset name="header" label="MOD_ARTICLEDETAILSPROFILE_HEADERDETAILS_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_HEADER_FIELDSET_DESC">
+
+				<fieldset name="header_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/header" />
+				</fieldset>
+					
+				<fieldset name="header_publish" label="MOD_ARTICLEDETAILSPROFILE_HEADER_FIELDSET_LABEL">
+					<field name="show_pub_status" type="radio" default="1" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWPUBLICATIONSTATUS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWPUBLICATIONSTATUS_DESC">
+						<option value="0">JHIDE</option>
+						<option value="1">JSHOW</option>	
+					</field>
+				</fieldset>
+						
+				<fieldset name="header_title" label="MOD_ARTICLEDETAILSPROFILE_ARTICLETITLE_LABEL">
+					
+					<field name="t_tag" type="list" default="2" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_TITLETAG_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_TITLETAG_DESC">
+						<option value="1">h1</option>									
+						<option value="2">h2</option>				
+						<option value="3">h3</option>				
+						<option value="4">h4</option>				
+						<option value="5">h5</option>				
+						<option value="6">h6</option>
+					</field>
+				</fieldset>
+					
+				<fieldset name="header_before_title" label="MOD_ARTICLEDETAILSPROFILE_TITLE_BEFORETITLE">
+				
+					<field name="before_title_information_blocks" type="subform" formsource="modules/mod_articledetailsprofile/forms/fields/information_views.xml" multiple="true"
+						default="{'show_icons':'0','icon':'','prepend':'','append':'','info':'none','extra_classes':'','new_line':'0','showing_in':'','access':'1'}"
+		   				label="MOD_ARTICLEDETAILSPROFILE_INFORMATION_LABEL" 
+		   				description="MOD_ARTICLEDETAILSPROFILE_MOREINFORMATIONBLOCS_DESC" />
+		   		</fieldset>
+				
+				<fieldset name="header_after_title" label="MOD_ARTICLEDETAILSPROFILE_TITLE_AFTERTITLE">
+				
+					<field name="after_title_information_blocks" type="subform" formsource="modules/mod_articledetailsprofile/forms/fields/information_views.xml" multiple="true"
+						default="{'show_icons':'0','icon':'','prepend':'','append':'','info':'none','extra_classes':'','new_line':'0','showing_in':'','access':'1'}"
+		   				label="MOD_ARTICLEDETAILSPROFILE_INFORMATION_LABEL" 
+		   				description="MOD_ARTICLEDETAILSPROFILE_MOREINFORMATIONBLOCS_DESC" />
+		   				
+		   			<field type="imagelink" imagesrc="media/plg_content_articledetailsprofiles/images/information_types.svg" 
+						title="MOD_ARTICLEDETAILSPROFILE_INFORMATIONTYPES_TITLE" text="MOD_ARTICLEDETAILSPROFILE_INFORMATIONTYPES_LINK" 
+						link="https://simplifyyourweb.com/downloads/article-details-profiles/information-types" />
+				</fieldset>
+			</fieldset>
+			
+			<fieldset name="footer" label="MOD_ARTICLEDETAILSPROFILE_FOOTERDETAILS_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_FOOTER_FIELDSET_DESC">
+			
+				<fieldset name="footer_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/footer" />
+				</fieldset>
+				
+				<fieldset name="footer_information" label="MOD_ARTICLEDETAILSPROFILE_TITLE_AFTERARTICLE">
+
+					<field name="footer_information_blocks" type="subform" formsource="modules/mod_articledetailsprofile/forms/fields/information.xml" multiple="true"
+						default="{'show_icons':'0','icon':'','prepend':'','append':'','info':'none','extra_classes':'','new_line':'0','showing_in':'2','access':'1'}"
+		   				label="MOD_ARTICLEDETAILSPROFILE_INFORMATION_LABEL" 
+		   				description="MOD_ARTICLEDETAILSPROFILE_MOREINFORMATIONBLOCS_DESC" />
+		   				
+		   			<field type="imagelink" imagesrc="media/plg_content_articledetailsprofiles/images/information_types.svg" 
+						title="MOD_ARTICLEDETAILSPROFILE_INFORMATIONTYPES_TITLE" text="MOD_ARTICLEDETAILSPROFILE_INFORMATIONTYPES_LINK" 
+						link="https://simplifyyourweb.com/downloads/article-details-profiles/information-types" />
+				</fieldset>
+			</fieldset>
+			
+			<fieldset name="detail_settings" label="MOD_ARTICLEDETAILSPROFILE_DETAILSETTINGS_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_DETAILS_FIELDSET_DESC">
+			
+				<fieldset name="details_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/details" />
+				</fieldset>
+				
+				<fieldset name="details_all" label="MOD_ARTICLEDETAILSPROFILE_GENERAL_LABEL">
+				
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_WARNING_INFORMATIONCONDITIONSTOSHOW" style="warning" />
+				
+					<field name="force_show" type="radio" default="0" layout="joomla.form.field.radio.switcher"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_FORCEDETAILSTOSHOW_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_FORCEDETAILSTOSHOW_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="details_date" label="MOD_ARTICLEDETAILSPROFILE_DATETIME_LABEL">
+				
+					<field name="show_d" type="list" default="date" 
+			           	label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWDATE_LABEL" 
+			           	description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWDATE_DESC">
+						<option value="date">MOD_ARTICLEDETAILSPROFILE_VALUE_DATE</option>
+						<option value="ago">MOD_ARTICLEDETAILSPROFILE_VALUE_AGO</option>
+						<option value="agomhd">MOD_ARTICLEDETAILSPROFILE_VALUE_AGOMHD</option>
+						<option value="agohm">MOD_ARTICLEDETAILSPROFILE_VALUE_AGOHM</option>
+					</field>
+									
+					<field name="d_format" type="sywverbosetext" default="d F Y" filter="raw" translateHint="false" hint="d F Y" help="MOD_ARTICLEDETAILSPROFILE_INFO_FORMATINFO" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_DATEFORMAT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_DATEFORMAT_DESC" />
+
+					<field name="t_format" type="sywverbosetext" default="H:i" filter="raw" translateHint="false" hint="H:i" help="MOD_ARTICLEDETAILSPROFILE_INFO_FORMATINFO" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_TIMEFORMAT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_TIMEFORMAT_DESC" />
+				</fieldset>
+					
+				<fieldset name="details_rating" label="MOD_ARTICLEDETAILSPROFILE_RATINGVOTE_LABEL">
+				
+					<field name="show_rating" type="list" default="text" 
+			           	label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWRATING_LABEL" 
+			           	description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWRATING_DESC">
+						<option value="text">MOD_ARTICLEDETAILSPROFILE_VALUE_TEXT</option>
+						<option value="stars">MOD_ARTICLEDETAILSPROFILE_VALUE_STARS</option>
+					</field>
+					
+					<field name="star_color" type="sywcolorpicker" default="#000000" icon="text" showon="show_rating:stars" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_STARSCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_STARSCOLOR_DESC" />
+				</fieldset>
+					
+				<fieldset name="details_keywords" label="MOD_ARTICLEDETAILSPROFILE_SPECIFICS_KEYWORDS_LABEL">
+				
+					<field name="distinct_keywords" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_DISTINCTKEYWORDS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_DISTINCTKEYWORDS_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+					
+					<field name="show_icon_keywords" type="radio" default="0" layout="joomla.form.field.radio.switcher" showon="distinct_keywords:1" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWICONS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWICONS_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+					
+					<field name="icon_keywords" type="sywuniversaliconpicker" iconsets="syw" bcmode="true" default="" showon="distinct_keywords:1[AND]show_icon_keywords:1" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONFIELD_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONFIELD_DESC" />
+							
+					<field name="prepend_keywords" type="text" default="" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_PREPEND_LABEL" showon="distinct_keywords:1" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PREPEND_DESC" />
+				</fieldset>
+				
+				<fieldset name="details_tags" label="MOD_ARTICLEDETAILSPROFILE_SPECIFICS_TAGS_LABEL">
+				
+					<field name="order_tags" type="list" default="none" 
+			           	label="MOD_ARTICLEDETAILSPROFILE_FIELD_ORDERTAGS_LABEL" 
+			           	description="MOD_ARTICLEDETAILSPROFILE_FIELD_ORDERTAGS_DESC">
+			           	<option value="none">JNONE</option>
+						<option value="console">MOD_ARTICLEDETAILSPROFILE_VALUE_CONSOLE</option>
+						<option value="alpha">MOD_ARTICLEDETAILSPROFILE_VALUE_ALPHABETICAL</option>
+					</field>
+					
+					<field name="hide_tags" type="tags" contenttype="com_content.article" multiple="true" size="5" default="" layout="joomla.form.field.list-fancy-select"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_HIDETAGS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_HIDETAGS_DESC">
+					</field>
+					
+					<field name="distinct_tags" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_DISTINCTTAGS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_DISTINCTTAGS_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+					
+					<field name="show_icon_tags" type="radio" default="0" layout="joomla.form.field.radio.switcher" showon="distinct_tags:1" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWICONS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWICONS_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+					
+					<field name="icon_tags" type="sywuniversaliconpicker" iconsets="syw" bcmode="true" default="" showon="distinct_tags:1[AND]show_icon_tags:1" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONFIELD_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONFIELD_DESC" />
+							
+					<field name="prepend_tags" type="text" default="" showon="distinct_tags:1" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_PREPEND_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PREPEND_DESC" />
+					
+					<field name="bootstrap_tags" type="radio" default="0" layout="joomla.form.field.radio.switcher" showon="distinct_tags:1" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_USETAGCLASSES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_USETAGCLASSES_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="details_links" label="MOD_ARTICLEDETAILSPROFILE_SPECIFICS_LINKS_LABEL">
+				
+					<field name="show_icon_links" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWICONS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWICONS_DESC">
+						<option value="0">JNO</option>	
+						<option value="1">JYES</option>
+					</field>
+					
+					<field name="icon_links" type="sywuniversaliconpicker" iconsets="syw" bcmode="true" default="" showon="show_icon_links:1" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONFIELD_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONFIELD_DESC" />
+							
+					<field name="prepend_links" type="text" default="" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_PREPEND_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PREPEND_DESC" />
+					
+					<field name="protocol" type="radio" default="1" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_PROTOCOL_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_PROTOCOL_DESC">
+						<option value="0">JHIDE</option>
+						<option value="1">JSHOW</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="details_sharing" label="MOD_ARTICLEDETAILSPROFILE_SHARING_LABEL">
+				
+					<field name="share_color" type="list" default="none" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHARECOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHARECOLOR_DESC">
+						<option value="none">JNONE</option>
+						<option value="bg">MOD_ARTICLEDETAILSPROFILE_VALUE_BACKGROUNDCOLOR</option>
+						<option value="icon">MOD_ARTICLEDETAILSPROFILE_VALUE_ICON</option>
+					</field>
+					
+					<field name="share_r" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-rounded_corner" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHARERADIUS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHARERADIUS_DESC" />
+						
+					<field name="share_classes" type="text" default="" filter="string" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHARECLASSES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHARECLASSES_DESC" />
+					
+					<field name="social_networks" type="subform" formsource="modules/mod_articledetailsprofile/forms/fields/social_network.xml" multiple="true"
+						default="{'social_network':'none','other_network':'','network_color':''}"
+		   				label="MOD_ARTICLEDETAILSPROFILE_SOCIALNETWORK_LABEL" 
+		   				description="MOD_ARTICLEDETAILSPROFILE_MORESOCIALNETWORKS_DESC" />
+					
+					<field name="fixed_share" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_FIXEDFOOTER_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_FIXEDFOOTER_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+			</fieldset>
+			
+			<fieldset name="original_details" label="MOD_ARTICLEDETAILSPROFILE_ORIGINALDETAILS_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_ORIGINALDETAILS_FIELDSET_DESC">
+			
+				<fieldset name="original_details_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/original-details" />
+				</fieldset>
+	            	
+	            <fieldset name="original_elementsoverrides" label="MOD_ARTICLEDETAILSPROFILE_ELEMENTSOVERRIDES_LABEL">
+	            
+		            <field name="autohide_title" type="radio" default="1" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_AUTOHIDETITLE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_AUTOHIDETITLE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					
+		            <field name="title_element" type="text" default="" filter="raw" class="input-xxlarge" showon="autohide_title:0"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_TITLEOVERRIDES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_TITLEOVERRIDES_DESC" />
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_EXAMPLE_TITLEOVERRIDES" style="example" showon="autohide_title:0" />
+						
+					<field name="info_element" type="text" default=".article-info" filter="raw" class="input-xxlarge"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_INFOOVERRIDES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_INFOOVERRIDES_DESC" />
+					
+					<field name="links_element" type="text" default="" filter="raw" class="input-xxlarge"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_LINKSOVERRIDES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_LINKSOVERRIDES_DESC" />
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_EXAMPLE_LINKSOVERRIDES" style="example" />
+					
+					<field name="images_element" type="text" default="" filter="raw" class="input-xxlarge"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGESOVERRIDES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_IMAGESOVERRIDES_DESC" />	
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_EXAMPLE_IMAGESOVERRIDES" style="example" />
+					
+					<field name="autohide_tags" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_AUTOHIDETAGS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_AUTOHIDETAGS_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					
+		            <field name="tags_element" type="text" default="" filter="raw" class="input-xxlarge" showon="autohide_tags:0"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_TAGSOVERRIDES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_TAGSOVERRIDES_DESC" />	
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_EXAMPLE_TAGSOVERRIDES" style="example" showon="autohide_tags:0" />		
+					
+					<field name="icons_element" type="text" default="" filter="raw" class="input-xxlarge"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONSOVERRIDES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONSOVERRIDES_DESC" />	
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_EXAMPLE_ICONSOVERRIDES" style="example" />
+					
+					<field name="fields_element" type="text" default="" filter="raw" class="input-xxlarge"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_FIELDSOVERRIDES_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_FIELDSOVERRIDES_DESC" />	
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_EXAMPLE_FIELDSOVERRIDES" style="example" />
+					
+					<field name="autohide_vote" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_AUTOHIDEVOTE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_AUTOHIDEVOTE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>			
+			</fieldset>
+			
+			<fieldset name="styles" label="MOD_ARTICLEDETAILSPROFILE_STYLES_FIELDSET_LABEL" description="MOD_ARTICLEDETAILSPROFILE_STYLES_FIELDSET_DESC">
+			
+				<fieldset name="styles_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/styles" />
+				</fieldset>
+				
+				<fieldset name="details_styles"	label="MOD_ARTICLEDETAILSPROFILE_DETAILSSTYLES_FIELDSET_LABEL">
+	
+					<field name="fontdetails" type="sywfontpicker" webfonts="true" default=""
+	                    label="MOD_ARTICLEDETAILSPROFILE_FIELD_FONTDETAILS_LABEL"
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_FONTDETAILS_DESC" />
+											
+					<field name="d_fs" type="sywverbosetext" default="80" filter="integer" size="4" maxlength="3" unit="%" icon="SYWicon-format-size" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_DETAILSFONTSIZE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_DETAILSFONTSIZE_DESC" />
+						
+					<field name="details_line_spacing" type="sywverbosetextunits" default="" size="4" units="px,em" defaultunit="px" icon="SYWicon-format-line-spacing"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_DETAILSLINESPACING_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_DETAILSLINESPACING_DESC" />
+					
+					<field name="details_color" type="sywcolorpicker" default="#000000" icon="text" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_DETAILSSCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_DETAILSCOLOR_DESC" />
+					
+					<field name="separator" type="text" default="" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SEPARATOR_LABEL"
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SEPARATOR_DESC" />
+					
+					<field name="iconscolor" type="sywcolorpicker" default="#000000" icon="text" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONSCOLOR_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_ICONSCOLOR_DESC" />
+				</fieldset>
+				
+				<fieldset name="styles_overrides" label="MOD_ARTICLEDETAILSPROFILE_STYLEOVERRIDES_LABEL">
+				
+					<field name="style_overrides" type="editor" rows="10" default="" editor="codemirror|none" filter="raw" buttons="false" syntax="css"
+		            	label="MOD_ARTICLEDETAILSPROFILE_FIELD_STYLEOVERRIDES_LABEL" 
+		            	description="MOD_ARTICLEDETAILSPROFILE_FIELD_STYLEOVERRIDES_DESC" />
+		            <field type="message" text="MOD_ARTICLEDETAILSPROFILE_EXAMPLE_EXTRACSS" style="example" label="MOD_ARTICLEDETAILSPROFILE_EXAMPLE_EXTRACSS_LABEL" />
+		            
+		            <field name="print_overrides" type="editor" rows="10" default="" editor="codemirror|none" filter="raw" buttons="false" syntax="css"
+		            	label="MOD_ARTICLEDETAILSPROFILE_FIELD_PRINTOVERRIDES_LABEL" 
+		            	description="MOD_ARTICLEDETAILSPROFILE_FIELD_PRINTOVERRIDES_DESC" />
+		        </fieldset>			
+			</fieldset>
+			
+			<fieldset name="advanced" description="MOD_ARTICLEDETAILSPROFILE_ADVANCED_FIELDSET_DESC">
+			
+				<fieldset name="advanced_info" label="LIB_SYW_EXTENSIONLINK_DOC_LABEL">
+
+					<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/the-list-of-options/advanced" />
+				</fieldset>
+				
+				<fieldset name="advanced_general" label="MOD_ARTICLEDETAILSPROFILE_ADVANCED_FIELDSET_LABEL">
+				
+					<field name="layout_suffix" type="text" default="" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_LAYOUTSUFFIX_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_LAYOUTSUFFIX_DESC" />
+	
+					<field name="site_mode" type="listwrapperglobal" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SITEMODE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SITEMODE_DESC">
+						<option value="dev">MOD_ARTICLEDETAILSPROFILE_VALUE_TESTMODE</option>
+						<option value="prod">MOD_ARTICLEDETAILSPROFILE_VALUE_PRODUCTIONMODE</option>
+						<option value="adv">MOD_ARTICLEDETAILSPROFILE_VALUE_ADVANCEDMODE</option>
+					</field>				
+					
+					<field name="bootstrap_version" type="listwrapperglobal" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_COMPATIBILITYBOOTSTRAP_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_COMPATIBILITYBOOTSTRAP_DESC">
+						<option value="0">JNONE</option>
+						<option value="joomla">Joomla</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</field>			
+	
+					<field name="show_errors" type="listwrapperglobal" showon="site_mode:adv" 
+						class="form-select-color-state" validate="options"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWERRORS_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_SHOWERRORS_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					
+					<field name="load_icon_font" type="listwrapperglobal" 
+						class="form-select-color-state" validate="options"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_LOADICONFONT_LABEL"
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_LOADICONFONT_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					
+					<field name="load_fontawesome" type="listwrapperglobal" 
+						class="form-select-color-state" validate="options"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_LOADFONTAWESOME_LABEL"
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_LOADFONTAWESOME_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="advanced_pictures" label="MOD_ARTICLEDETAILSPROFILE_PICTURES_LABEL">
+									
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_INFO_CLEARCACHE" style="info" showon="site_mode:adv" />
+						
+					<field name="clear_cache" type="listwrapperglobal" showon="site_mode:adv" 
+						class="form-select-color-state" validate="options"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_CLEARCACHE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_CLEARCACHE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+									
+					<field name="thumb_path" type="listwrapperglobal" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_THUMBPATH_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_THUMBPATH_DESC">
+						<option value="default">MOD_ARTICLEDETAILSPROFILE_VALUE_TEMPFOLDER</option>
+						<option value="images">MOD_ARTICLEDETAILSPROFILE_VALUE_IMAGESDIRECTORY</option>
+						<option value="cache">MOD_ARTICLEDETAILSPROFILE_VALUE_CACHEDIRECTORY</option>
+					</field>
+				</fieldset>
+						
+				<fieldset name="advanced_headers" label="MOD_ARTICLEDETAILSPROFILE_HEADERFILES_LABEL">
+							
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_FIELD_LAZYLOADSTYLESHEETS_TXT" style="fieldneutral" badge="MOD_ARTICLEDETAILSPROFILE_FIELD_LAZYLOADSTYLESHEETS_BADGE" badgetype="light"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_LAZYLOADSTYLESHEETS_LABEL" />
+							
+					<field type="message" text="MOD_ARTICLEDETAILSPROFILE_INFO_CLEARHEADERFILESCACHE" style="info" showon="site_mode:adv" />
+					
+					<field name="clear_header_files_cache" type="listwrapperglobal" showon="site_mode:adv" 
+						class="form-select-color-state" validate="options"
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_CLEARHEADERFILESCACHE_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_CLEARHEADERFILESCACHE_DESC">
+	                    <option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
+				
+				<fieldset name="advanced_mobile" label="MOD_ARTICLEDETAILSPROFILE_MOBILE_LABEL">
+				
+					<field name="breakpoint" type="sywverbosetext" size="4" unit="px" icon="SYWicon-swap-horiz" 
+						label="MOD_ARTICLEDETAILSPROFILE_FIELD_BREAKPOINT_LABEL" 
+						description="MOD_ARTICLEDETAILSPROFILE_FIELD_BREAKPOINT_DESC" />
+				</fieldset>				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

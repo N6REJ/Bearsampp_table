@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" client="site" method="upgrade">
+	<name>J51_Rotate</name>
+	<author>Joomla51</author>
+	<creationDate>July 2020</creationDate>
+	<copyright>Copyright (C) 2020 Joomla51</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@joomla51.com</authorEmail>
+	<authorUrl>http://www.joomla51.com</authorUrl>
+	<version>1.0.2</version>
+	<description><![CDATA[<link href="../modules/mod_j51rotate/css/admin.css" rel="stylesheet" type="text/css" media="all" /><div class="moduleinfo">
+<p>
+	Rotate is a carousel Module from Joomla51
+</p>
+</div>
+  ]]></description>
+
+	<files>
+		<filename module="mod_j51rotate">mod_j51rotate.php</filename>
+		<filename>mod_j51rotate.xml</filename>
+		<filename>helper.php</filename>
+		<filename>License.txt</filename>		
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>field</folder>
+		<folder>language</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+	</files>
+	
+	<media folder="media" destination="mod_j51rotate">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_j51rotate.ini</language>
+	</languages>
+
+	<config>	
+		<fields name="params">
+			<fieldset name="MOD_GENERALSETTINGS">
+				<field name="j51_columns" type="list" default="25%" label="MOD_COLUMNS">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</field>
+
+				<field name="j51_axis" type="list" default="horizontal" label="MOD_AXIS">
+					<option value="horizontal">Horizontal</option>
+					<option value="vertical">Vertical</option>
+				</field>
+
+				<field name="j51_slideby" type="list" default="25%" label="MOD_SLIDEBY">
+					<option value="page">Page</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10 </option>
+				</field>
+				
+				<field name="j51_trans_speed" type="textms" default="1000" label="MOD_TRAN_SPEED" />
+				<field
+					name="j51_autoplay"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="false"
+					label="MOD_AUTOPLAY"
+				>
+						<option value="false">JNO</option>
+						<option value="true">JYES</option>
+				</field> 
+				<field name="j51_autoplay_delay" type="textms" default="3000" label="MOD_AUTOPLAY_DELAY" showon="j51_autoplay:true" />
+				<field name="j51_gutter_size" type="textpx" default="20" label="MOD_GUTTER_SIZE" />
+				<field
+					name="j51_random"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="false"
+					label="Randomise Order"
+				>
+						<option value="false">JNO</option>
+						<option value="true">JYES</option>
+				</field> 
+			</fieldset>
+
+			<fieldset name="ITEMS">
+				<field name="rotate_items" type="subform" formsource="modules/mod_j51rotate/field/item.xml" class="advancedSelect" min="1" max="250" multiple="true" layout="joomla.form.field.subform.repeatable" groupByFieldset="true" label="Item(s)" />
+			</fieldset>
+
+			<fieldset name="RESPONSIVE">
+				<field name="j51_columns_tabl" type="list" default="3" label="MOD_COLUMNS_TABL" description="MOD_COLUMNS_TABL_DESC">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</field>
+				<field name="j51_columns_tabp" type="list" default="3" label="MOD_COLUMNS_TABP" description="MOD_COLUMNS_TABP_DESC">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</field>
+				<field name="j51_columns_mobl" type="list" default="2" label="MOD_COLUMNS_MOBL" description="MOD_COLUMNS_MOBL_DESC">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</field>
+				<field name="j51_columns_mobp" type="list" default="1" label="MOD_COLUMNS_MOBP" description="MOD_COLUMNS_MOBP_DESC">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="owncache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					default="1"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					default="900"
+					filter="integer"
+				/>
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

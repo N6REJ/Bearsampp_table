@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams">
+		<fieldset name="fieldparams">
+			<field name="address_details_info" type="checkboxes"
+				label="ACF_ADDRESS_DETAILS_INFO"
+				description="ACF_ADDRESS_DETAILS_INFO_DESC"
+				class="nrf-checkboxes-field-columns"
+				default="address,country,city,postal_code"
+				>
+				<option value="address">NR_ADDRESS</option>
+				<option value="country">NR_COUNTRY</option>
+				<option value="city">NR_CITY</option>
+				<option value="postal_code">NR_POSTAL_CODE</option>
+				<option value="latitude">NR_LATITUDE</option>
+				<option value="longitude">NR_LONGITUDE</option>
+				<option value="country_code">NR_COUNTRY_CODE</option>
+				<option value="county">NR_COUNTY</option>
+				<option value="state">NR_STATE</option>
+				<option value="municipality">NR_MUNICIPALITY</option>
+				<option value="town">NR_TOWN</option>
+				<option value="road">NR_ROAD</option>
+			</field>
+			<field name="autocomplete" type="radio"
+				label="ACF_ADDRESS_AUTOCOMPLETE"
+				description="ACF_ADDRESS_AUTOCOMPLETE_DESC"
+				class="btn-group btn-group-yesno"
+				default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+			<field name="layout_type" type="radio"
+				label="ACF_ADDRESS_DETAILS_LAYOUT"
+				description="ACF_ADDRESS_DETAILS_LAYOUT_DESC"
+				class="btn-group btn-group-yesno"
+				default="default">
+					<option value="default">JDEFAULT</option>
+					<option value="custom">NR_CUSTOM</option>
+			</field>
+			<field name="map_location" type="radio"
+				label="ACF_ADDRESS_MAP_LOCATION"
+				description="ACF_ADDRESS_MAP_LOCATION_DESC"
+				class="btn-group btn-group-yesno"
+				showon="show_map!:0[AND]layout_type:default"
+				default="below">
+					<option value="above">ACF_ADDRESS_ABOVE</option>
+					<option value="below">ACF_ADDRESS_BELOW</option>
+			</field>
+			<field name="custom_layout" type="editor"
+				label="ACF_ADDRESS_DETAILS_CUSTOM"
+				description="ACF_ADDRESS_DETAILS_CUSTOM_DESC"
+				showon="layout_type:custom"
+				editor="codemirror"
+				filter="raw"
+				default="{address.address.label}: {address.address}"
+			/>
+            <field type="spacer" name="label"
+				label="NR_MAP"
+				class="acf"
+			/>
+			<field name="show_map" type="radio"
+				label="ACF_ADDRESS_SHOW_MAP"
+				description="ACF_ADDRESS_SHOW_MAP_DESC"
+				class="btn-group btn-group-yesno"
+				default="0">
+					<option value="0">JNO</option>
+					<option value="backend">NR_BACKEND</option>
+					<option value="frontend">NR_FRONTEND</option>
+					<option value="both">NR_BOTH</option>
+			</field>
+			<field name="width" type="text"
+				label="ACF_ADDRESS_WIDTH"
+				description="ACF_ADDRESS_WIDTH_DESC"
+				default="400px"
+				showon="show_map!:0"
+			/>
+			<field name="height" type="text"
+				label="ACF_ADDRESS_HEIGHT"
+				description="ACF_ADDRESS_HEIGHT_DESC"
+				default="350px"
+				showon="show_map!:0"
+			/>
+			<field name="zoom" type="nrnumber"
+				label="ACF_ADDRESS_ZOOM"
+				description="ACF_ADDRESS_ZOOM_DESC"
+				default="4"
+				min="0"
+				showon="show_map!:0"
+			/>
+			<field name="marker_image" type="media"
+				directory="acfosm"
+				default="media/plg_fields_acfaddress/img/marker.png"
+				preview_width="32"
+				label="ACF_ADDRESS_MARKER_IMAGE"
+				description="ACF_ADDRESS_MARKER_IMAGE_DESC"
+				showon="show_map!:0"
+			/>
+		</fieldset>
+	</fields>
+</form>
+

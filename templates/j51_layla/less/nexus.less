@@ -1,0 +1,327 @@
+/**
+* @template  J51 - Layla
+* @author    Joomla51 http://www.joomla51.com
+* @copyright Copyright (C) 2009 - 2021 Joomla51
+
+TABLE OF CONTENTS
+
+	1. 	General
+	2. 	Default Module Styling
+	3. 	Header
+	4.	Logo
+	5. 	Top Menu
+	6.	Top Menu - Hornav
+	7. 	Top Menu - Mobile
+	8. 	Slideshow
+	9. 	Top-1 Modules 
+	10. Top-2 Modules
+	11. Top-3 Modules
+	12.	Article / Component
+	13.	Bottom Modules
+	14.	Base Modules
+	15.	Copyright / Footer Menu
+	16.	Spacers
+	18.	Social Media
+	19.	Header-1 / Header-2 
+	20.	Breadcrumbs
+	21.	Buttons / Fields
+	22.	Font Awesome
+	23.	Backgrounds
+	24. Utility Classes
+  24.	Miscellaneous
+
+* 218/178
+*/
+
+@import "mixins.less";
+@import "variables.less";
+@import "bootstrap.less";
+@import "blocks/_typo.less";
+@import "blocks/_jstuff.less";
+@import "blocks/_general.less";
+@import "blocks/_header.less";
+@import "blocks/_menus.less";
+@import "blocks/_modules.less";
+@import "blocks/_component.less";
+@import "blocks/_footer.less";
+@import "blocks/_social-icons.less";
+@import "blocks/_breadcrumbs.less";
+@import "blocks/_alerts.less";
+@import "blocks/_buttons.less";
+@import "blocks/_forms.less";
+@import "blocks/_icons.less";
+@import "blocks/_utility-classes.less";
+@import "blocks/_template-layouts.less";
+
+:root {
+  --j51-grid-row-gap: @j51-grid-row-gap;
+  --j51-grid-column-gap: @j51-grid-column-gap;
+
+  //  Bonsia CSS
+  --button-shadow: none;
+  --border-radius: 0;
+  --border: rgba(100, 100, 100, 0.175);
+  --tag-bg: var(--button-color);
+
+  --mm-spn-item-height: 50px;
+  --mm-spn-item-indent: 20px;
+  --mm-spn-line-height: 24px;
+
+  @media only screen and (max-width: 767px) {
+    --j51-grid-row-gap: 30px;
+    --j51-grid-column-gap: 20px;
+  }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Module Extensions */
+/*-----------------------------------------------------------------------------------*/
+
+// J51 - Layerslideshow
+div.layerslideshow {
+  overflow: visible;
+
+  .info {
+    padding-left: var(--j51-grid-column-gap);
+    padding-right: var(--j51-grid-column-gap);
+    max-width: 100%;
+  }
+
+  .j51-nav-dots {
+    right: 25px;
+  }
+
+  .layerslideshow-controls {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .layerslideshow-prev,
+  .layerslideshow-next {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 5px 14px;
+    background: white;
+    opacity: 1;
+
+    &:hover {
+      opacity: .7;
+    }
+
+    svg path {
+      fill: rgb(100, 100, 100);
+      fill: var(--primary);
+    }
+  }
+
+  .layerslideshow-prev {
+    left: 0;
+  }
+
+  .layerslideshow-next {
+    right: 0;
+  }
+
+}
+
+// J51-ImageHover
+[class*=" imghvr-"],
+[class^="imghvr-"] {
+  margin-bottom: -9px !important;
+
+  figcaption * {
+    opacity: 0;
+    transition: ease 0.2;
+    transition-delay: 0.3s;
+  }
+
+  &:hover {
+    figcaption * {
+      opacity: 1;
+    }
+  }
+}
+
+// J51 - ThumbsGallery
+#baguetteBox-overlay.visible {
+  opacity: 1 !important;
+}
+
+// J51 - News
+.j51news {
+  overflow: hidden;
+
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px 10px;
+  }
+
+
+  .j51news-title {
+    font-size: 1.3rem
+  }
+
+  .link-icon {
+    height: auto;
+    width: auto;
+    font-size: 2rem;
+  }
+
+  &.j51_news_layout_overlay {
+    figcaption {
+      top: auto;
+      left: 15px;
+      bottom: 18px;
+      right: 15px;
+      border-radius: 3px;
+      padding: 20px 20px 4px;
+
+      .newstitle,
+      .newstext,
+      .j51news-meta {
+        color: inherit;
+      }
+    }
+  }
+
+  .j51news-image {
+    position: relative;
+
+    > a {
+      display: flex;
+    }
+  }
+
+  .j51news-nav svg {
+    fill: rgba(100, 100, 100, 0.5);
+    fill: var(--primary);
+    padding: 0;
+    margin: 5px;
+  }
+
+  .tns-carousel {
+    padding-bottom: 8px;
+  }
+}
+
+// J51 - Icons
+.j51_icons {
+  figcaption > * {
+    margin-bottom: 0.25rem;
+  }
+
+  figure > i {
+    position: relative;
+    border-radius: @j51-border-radius;
+  }
+
+  .j51_icon_layout_row-i-t i {
+    margin-right: 2rem;
+  }
+
+  .j51_icon_layout_row-t-i i {
+    margin-left: 2rem;
+  }
+}
+
+// J51 - Testimonials
+.j51-testimonials {
+  .item {
+    .j51-text-box {
+      position: relative;
+      padding: 2.5rem;
+      box-shadow: @j51-box-shadow;
+    }
+
+    .j51-quote-icon {
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      fill: white;
+      z-index: 1;
+      max-width: 20px;
+      opacity: 0.25;
+    }
+  }
+
+  .j51-nav-dot {
+    border-radius: 0 !important;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  .j51-testimonials .j51-quote-icon {
+    max-height: 2em;
+  }
+}
+
+// Call to action
+.j51-calltoaction.j51-calltoaction-col-t-b .j51-text {
+  margin-bottom: 20px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Miscellaneous */
+/*-----------------------------------------------------------------------------------*/
+.visible {
+  opacity: 1 !important;
+}
+
+.animatebox {
+  background: #1a1a1a;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  box-shadow: @j51-box-shadow;
+  color: #fff;
+  font-size: 22px;
+  margin: 30px auto 60px;
+  padding: 80px 0;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+// SP PB Fix
+.sppb-row-container {
+  width: 100% !important;
+}
+
+@supports not (-ms-high-contrast: none) {
+  .animate {
+    visibility: hidden;
+  }
+
+  .animated {
+    visibility: visible;
+  }
+}
+
+.unsupported {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 4rem;
+  z-index: 10000;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+
+  p {
+    max-width: 1000px;
+    margin: auto;
+  }
+}
+
+@supports (display: grid) {
+  .unsupported {
+    display: none;
+    visibility: hidden;
+  }
+}

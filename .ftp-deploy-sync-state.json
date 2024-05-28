@@ -1,0 +1,109 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1656904002905,
+    "data": [
+        {
+            "type": "folder",
+            "name": "css"
+        },
+        {
+            "type": "file",
+            "name": "favicon.ico",
+            "size": 15406,
+            "hash": "8442f76d6dce163f478420770f617f9d7c61a94c07b93691b0ea77a55a0858d0"
+        },
+        {
+            "type": "folder",
+            "name": "img"
+        },
+        {
+            "type": "file",
+            "name": "index.html",
+            "size": 1395,
+            "hash": "a2326fca9bb31cea276700918532eddfe5134a6ef90557bbaa654917c3a6fc3e"
+        },
+        {
+            "type": "file",
+            "name": "css/style.css",
+            "size": 1399,
+            "hash": "0c9b4b1d866812bf279c82b7f423f1794be1cde0e02e4b449abd74566e6aa109"
+        },
+        {
+            "type": "file",
+            "name": "img/Bearsamp-icon-32x32.png",
+            "size": 1783,
+            "hash": "aa61ed1f0cef330f7b7e5006a3edef5ac48dd5bfdc33257cc9c0e7b497761cbf"
+        },
+        {
+            "type": "file",
+            "name": "img/Bearsampp-icon-16x16.png",
+            "size": 3803,
+            "hash": "50856052f1126987c92fef4dc34bea64b460b3d448b0de4e996b46c2bd2deaed"
+        },
+        {
+            "type": "file",
+            "name": "img/Bearsampp-logo-500x-500x-transparent.png",
+            "size": 18362,
+            "hash": "e833a69cbf133f9448b714752262f219e93acd245b2d25ff90de89675dd710a4"
+        },
+        {
+            "type": "file",
+            "name": "img/Bearsampp-logo-500x-500x-white.png",
+            "size": 13020,
+            "hash": "3bcc41798065750f84aec2438adcb01480d471598d2499614f1169a0b0dca68e"
+        },
+        {
+            "type": "file",
+            "name": "img/Bearsampp-logo-64x64-transparent.png",
+            "size": 4121,
+            "hash": "7197d93895d025683be7d56bcc48cc5b1856450bc9d2a1831844afaf98e93c2a"
+        },
+        {
+            "type": "file",
+            "name": "img/Bearsampp-logo.png",
+            "size": 11223,
+            "hash": "3148108ed9605c624410ba75eb3a48abeb5115c349ec8c7da2e2c8e45abce1f0"
+        },
+        {
+            "type": "file",
+            "name": "img/github-logo.png",
+            "size": 11507,
+            "hash": "a28c20273e8c59813dc28dec149a9d39e69f054e947a638b0dd014203e55c777"
+        },
+        {
+            "type": "file",
+            "name": "img/lamp.jpg",
+            "size": 1044079,
+            "hash": "cc145979ecaec8845a98b2244720a222de680b2f42750f3292035b429de27710"
+        },
+        {
+            "type": "file",
+            "name": "img/prerequisites.png",
+            "size": 45901,
+            "hash": "92fd541a1aebb65936a7d7721912c72e91eed39a46c10fdc206e36e6c13d4cf7"
+        },
+        {
+            "type": "folder",
+            "name": "img/screenshots"
+        },
+        {
+            "type": "file",
+            "name": "img/screenshots/menu1.png",
+            "size": 6272,
+            "hash": "a93f234d8aafac4b503f94115c01e8fc70ab4ccb7fd33d1e5627b61b2012799c"
+        },
+        {
+            "type": "file",
+            "name": "img/screenshots/menu2.png",
+            "size": 6295,
+            "hash": "3f6d87a3d242f86be3096eaeeea11822b534c0c60b802b349790d9fffb38a571"
+        },
+        {
+            "type": "file",
+            "name": "img/screenshots/menu3.png",
+            "size": 4222,
+            "hash": "25522b9885ec847c0fb5fc83c3493e0ed800eb4d00129bca5f210e25c324a623"
+        }
+    ]
+}

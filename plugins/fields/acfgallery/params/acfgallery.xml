@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams">
+		<fieldset name="fieldparams">
+			<field type="spacer" name="label"
+				label="NR_UPLOAD_SETTINGS"
+				class="acf"
+			/>
+			<field name="upload_folder_type" type="radio"
+				label="ACF_GALLERY_FOLDER_TYPE"
+				description="ACF_GALLERY_FOLDER_TYPE_DESC"
+		        class="btn-group btn-group-yesno"
+				default="auto">
+					<option value="auto">NR_AUTO</option>
+					<option value="custom">NR_CUSTOM</option>
+			</field>
+			<field name="upload_folder" type="text"
+				label="ACF_GALLERY_UPLOAD_FOLDER"
+				description="ACF_GALLERY_UPLOAD_FOLDER_DESC"
+				hint="media/acfgallery"
+				default="media/acfgallery"
+				showon="upload_folder_type:custom"
+			/>
+			<field name="limit_files" type="number"
+				label="ACF_GALLERY_LIMIT_FILES"
+				description="ACF_GALLERY_LIMIT_FILES_DESC"
+				class="input-small"
+				default="0"
+				hint="0"
+				min="0"
+			/>
+			<field name="max_file_size" type="nrnumber"
+				label="ACF_GALLERY_MAX_FILE_SIZE"
+				description="ACF_GALLERY_MAX_FILE_SIZE_DESC"
+				class="input-small"
+				addon="MB"
+				min="0"
+				default="0"
+				hint="0"
+			/>
+			<field type="spacer" name="label2"
+				label="NR_THEME"
+				class="acf"
+			/>
+			<field name="style" type="NRImagesSelector"
+				images="/media/plg_fields_acfgallery/img"
+				class="acf-gallery-slideshow-preset-selector"
+				width="600px"
+				columns="4"
+				key_type="filename"
+				label="ACF_GALLERY_STYLE"
+				description="ACF_GALLERY_STYLE_DESC"
+				default="grid"
+			/>
+			<field name="devices_columns" type="NRResponsiveControl"
+				label="ACF_GALLERY_COLUMNS"
+				description="ACF_GALLERY_COLUMNS_DESC"
+				showon="style:grid,masonry">
+                <subform>
+                    <field name="columns" type="number"
+						class="input-small"
+						default="3"
+						hint="3"
+						min="1"
+						max="6" />
+                </subform>
+			</field>
+			<field name="devices_gap" type="NRResponsiveControl"
+				label="ACF_GALLERY_GAP"
+				description="ACF_GALLERY_GAP_DESC"
+				showon="style!:slideshow">
+                <subform>
+                    <field name="gap" type="nrnumber"
+						class="input-small"
+						default="10"
+						hint="10"
+						addon="px" />
+                </subform>
+			</field>
+			<field name="justified_item_height" type="nrnumber"
+				label="ACF_GALLERY_ROW_TARGET_HEIGHT"
+				description="ACF_GALLERY_JUSTIFIED_ITEM_HEIGHT_DESC"
+				addon="px"
+				min="1"
+				hint="200"
+				class="input-small"
+				showon="style:zjustified"
+			/>
+			<field name="ordering" type="list"
+		        label="ACF_GALLERY_ORDERING"
+				description="ACF_GALLERY_ORDERING_DESC"
+		        default="default">
+		            <option value="default">ACF_GALLERY_DEFAULT</option>
+		            <option value="alphabetical">ACF_GALLERY_ALPHABETICAL</option>
+		            <option value="reverse_alphabetical">ACF_GALLERY_REVERSE_ALPHABETICAL</option>
+		            <option value="random">ACF_GALLERY_RANDOM</option>
+		    </field>
+			<field type="spacer" name="label3"
+				label="ACF_GALLERY_SLIDESHOW"
+				class="acf"
+				showon="style:slideshow"
+			/>
+			<field name="slides_per_view" type="NRResponsiveControl"
+				class="is-one-line"
+				label="ACF_GALLERY_SLIDES_PER_VIEW"
+				description="ACF_GALLERY_SLIDES_PER_VIEW_DESC"
+				default='{"desktop":{"value":"1"}}'
+				subtype="NRNumber"
+				subtype_min="1"
+				subtype_hint="1"
+				showon="style:slideshow"
+			/>
+			<field name="space_between_slides" type="NRResponsiveControl"
+				class="is-one-line"
+				label="ACF_GALLERY_SPACE_BETWEEN_SLIDES"
+				description="ACF_GALLERY_SPACE_BETWEEN_SLIDES_DESC"
+				default='{"desktop":{"value":"0"}}'
+				subtype="TFUnitControl"
+				subtype_min="0"
+				subtype_max="999"
+				subtype_hint="10"
+				subtype_units="px,em,rem,%"
+				showon="style:slideshow[AND]slides_per_view{breakpoint}!:1"
+			/>
+			<field name="nav_controls" type="list"
+				label="ACF_GALLERY_NAV_CONTROLS"
+				description="ACF_GALLERY_NAV_CONTROLS_DESC"
+				class="btn-group btn-group-yesno"
+				showon="style:slideshow"
+				default="arrows">
+					<option value="none">JDISABLED</option>
+					<option value="arrows">ACF_GALLERY_ARROWS</option>
+					<option value="dots">ACF_GALLERY_DOTS</option>
+					<option value="arrows_dots">ACF_GALLERY_ARROWS_DOTS</option>
+			</field>
+			<field name="transition_effect" type="list"
+				label="ACF_GALLERY_TRANSITION_EFFECT"
+				description="ACF_GALLERY_TRANSITION_EFFECT_DESC"
+				class="btn-group btn-group-yesno"
+				showon="style:slideshow"
+				default="slide">
+					<option value="slide">ACF_GALLERY_SLIDE</option>
+					<option value="fade">ACF_GALLERY_FADE</option>
+					<option value="cube">ACF_GALLERY_CUBE</option>
+					<option value="coverflow">ACF_GALLERY_COVERFLOW</option>
+					<option value="flip">ACF_GALLERY_FLIP</option>
+			</field>
+			<field name="theme_color" type="color"
+				label="ACF_GALLERY_SLIDESHOW_THEME_COLOR"
+				description="ACF_GALLERY_SLIDESHOW_THEME_COLOR_DESC"
+				default="#fff"
+				showon="style:slideshow"
+			/>
+			<field name="autoplay" type="NRToggle"
+				label="ACF_GALLERY_AUTOPLAY"
+				description="ACF_GALLERY_AUTOPLAY_DESC"
+				showon="style:slideshow"
+			/>
+			<field name="autoplay_delay" type="nrnumber"
+				label="ACF_GALLERY_AUTOPLAY_DELAY"
+				description="ACF_GALLERY_AUTOPLAY_DELAY_DESC"
+				min="0"
+				default="3000"
+				hint="3000"
+				addon="ms"
+				class="input-small"
+				showon="style:slideshow[AND]autoplay:1"
+			/>
+			<field name="autoplay_progress" type="NRToggle"
+				label="ACF_GALLERY_AUTOPLAY_PROGRESS"
+				description="ACF_GALLERY_AUTOPLAY_PROGRESS_DESC"
+				showon="style:slideshow[AND]autoplay:1"
+			/>
+			<field name="infinite_loop" type="NRToggle"
+				label="ACF_GALLERY_INFINITE_LOOP"
+				description="ACF_GALLERY_INFINITE_LOOP_DESC"
+				showon="style:slideshow"
+			/>
+			<field name="keyboard_control" type="NRToggle"
+				label="ACF_GALLERY_KEYBOARD_CONTROL"
+				description="ACF_GALLERY_KEYBOARD_CONTROL_DESC"
+				showon="style:slideshow"
+			/>
+
+			<field type="spacer" name="label_orginial_image"
+				label="ACF_GALLERY_ORIGINAL_IMAGE"
+				class="acf"
+			/>
+			<field name="original_image_resize" type="NRToggle"
+		        label="JENABLED"
+				description="ACF_GALLERY_ORIGINAL_IMAGE_RESIZE_DESC"
+		        class="btn-group btn-group-yesno"
+		        default="0"
+				showon="style!:slideshow"
+			/>
+			<field name="original_image_resize_width" type="nrnumber"
+				label="ACF_GALLERY_ORIGINAL_IMAGE_WIDTH"
+				description="ACF_GALLERY_ORIGINAL_IMAGE_WIDTH_DESC"
+				required="true"
+				addon="px"
+				hint="1920"
+				default="1920"
+				class="input-small"
+				showon="original_image_resize:1[OR]style:slideshow"
+			/>
+			<field name="original_image_resize_height" type="nrnumber"
+				label="ACF_GALLERY_ORIGINAL_IMAGE_HEIGHT"
+				description="ACF_GALLERY_ORIGINAL_IMAGE_HEIGHT_DESC"
+				addon="px"
+				hint="1080"
+				class="input-small"
+				showon="style:slideshow"
+			/>
+
+			<field type="spacer" name="label_thumbnails"
+				label="ACF_GALLERY_THUMBNAILS"
+				class="acf"
+				showon="style:grid,masonry,slideshow"
+			/>
+			<field name="show_thumbnails" type="NRToggle"
+				label="JENABLED"
+				description="ACF_GALLERY_SHOW_THUMBNAILS_DESC"
+				showon="style:slideshow"
+			/>
+			<field name="show_thumbnails_arrows" type="NRToggle"
+				label="ACF_GALLERY_THUMBNAILS_ARROWS"
+				description="ACF_GALLERY_THUMBNAILS_ARROWS_DESC"
+				showon="style:slideshow[AND]show_thumbnails:1"
+			/>
+			<field name="thumb_width" type="nrnumber"
+				label="ACF_GALLERY_ITEM_WIDTH"
+				description="ACF_GALLERY_THUMB_WIDTH_DESC"
+				addon="px"
+				min="1"
+				hint="300"
+				default="300"
+				class="input-small"
+				showon="style:grid,masonry"
+			/>
+			<field name="thumb_height" type="nrnumber"
+				label="ACF_GALLERY_ITEM_HEIGHT"
+				description="ACF_GALLERY_THUMB_HEIGHT_DESC"
+				addon="px"
+				min="1"
+				hint="300"
+				default="300"
+				class="input-small"
+				showon="style:grid"
+			/>
+			<field name="slideshow_thumb_width" type="nrnumber"
+				label="ACF_GALLERY_ITEM_WIDTH"
+				description="ACF_GALLERY_THUMB_WIDTH_DESC"
+				addon="px"
+				min="1"
+				hint="300"
+				default="300"
+				class="input-small"
+				showon="style:slideshow[AND]show_thumbnails:1"
+			/>
+			<field name="slideshow_thumb_height" type="nrnumber"
+				label="ACF_GALLERY_ITEM_HEIGHT"
+				description="ACF_GALLERY_SLIDESHOW_THUMB_HEIGHT_DESC"
+				addon="px"
+				min="1"
+				hint="300"
+				default=""
+				class="input-small"
+				showon="style:slideshow[AND]show_thumbnails:1"
+			/>
+			<field name="resize_method" type="radio"
+		        label="ACF_GALLERY_IMAGE_RESIZE"
+				description="ACF_GALLERY_IMAGE_RESIZE_DESC"
+		        class="btn-group btn-group-yesno"
+				showon="style:grid"
+		        default="crop">
+		            <option value="crop">ACF_GALLERY_CROP</option>
+		            <option value="stretch">ACF_GALLERY_STRETCH</option>
+		            <option value="fit">ACF_GALLERY_FIT</option>
+		    </field>
+			<field name="slideshow_resize_method" type="radio"
+		        label="ACF_GALLERY_IMAGE_RESIZE"
+				description="ACF_GALLERY_IMAGE_RESIZE_DESC"
+		        class="btn-group btn-group-yesno"
+				showon="style:slideshow[AND]show_thumbnails:1"
+		        default="crop">
+		            <option value="crop">ACF_GALLERY_CROP</option>
+		            <option value="stretch">ACF_GALLERY_STRETCH</option>
+		            <option value="fit">ACF_GALLERY_FIT</option>
+		    </field>
+
+			<field type="spacer" name="label4"
+				label="ACF_GALLERY_LIGHTBOX"
+				class="acf"
+			/>
+			<field name="lightbox" type="NRToggle"
+				label="JENABLED"
+				description="ACF_GALLERY_LIGHTBOX_DESC"
+				checked="true"
+				showon="style!:slideshow"
+			/>
+			<field name="slideshow_lightbox" type="NRToggle"
+				label="JENABLED"
+				description="ACF_GALLERY_LIGHTBOX_DESC"
+				showon="style:slideshow"
+			/>
+			<field name="module" type="NRModules"
+				label="ACF_GALLERY_MODULE"
+				description="ACF_GALLERY_MODULE_DESC"
+				showon="style!:slideshow[AND]lightbox:1"
+				default="">
+			</field>
+			<field name="slideshow_module" type="NRModules"
+				label="ACF_GALLERY_MODULE"
+				description="ACF_GALLERY_MODULE_DESC"
+				showon="style:slideshow[AND]slideshow_lightbox:1"
+				default="">
+			</field>
+
+			<field type="spacer" name="watermark_label"
+				label="ACF_GALLERY_WATERMARK_IMAGES"
+				class="acf"
+			/>
+			<fields name="watermark">
+				<field name="type" type="radio"
+					label="NR_TYPE"
+					description="ACF_GALLERY_WATERMARK_TYPE_DESC"
+					class="btn-group btn-group-yesno"
+					default="disabled">
+						<option value="disabled">JDISABLED</option>
+						<option value="text">NR_TEXT</option>
+						<option value="image">NR_IMAGE</option>
+				</field>
+				<field name="text_preset" type="list"
+					label="ACF_GALLERY_WATERMARK_TEXT_PRESET"
+					description="ACF_GALLERY_WATERMARK_TEXT_PRESET_DESC"
+					showon="type:text"
+					default="site_name">
+						<option value="site_name">ACF_GALLERY_SITE_NAME</option>
+						<option value="site_url">ACF_GALLERY_SITE_URL</option>
+						<option value="custom">NR_CUSTOM</option>
+				</field>
+				<field name="text" type="text"
+					label="NR_TEXT"
+					description="ACF_GALLERY_WATERMARK_TEXT_DESC"
+					showon="type:text[AND]text_preset:custom"
+				/>
+				<field name="color" type="color"
+					label="NR_COLOR"
+					description="ACF_WATERMARK_TEXT_COLOR_DESC"
+					position="bottom"
+					default="#fff"
+					showon="type:text"
+				/>
+				<field name="size" type="nrrangeslider"
+					class="tf-mw-500"
+					label="NR_FONT_SIZE"
+					description="ACF_WATERMARK_FONT_SIZE_DESC"
+					min="1"
+					max="120"
+					default="30"
+					showon="type:text"
+				/>
+				<field name="image" type="media"
+					label="NR_IMAGE"
+					description="ACF_WATERMARK_IMAGE_DESC"
+					showon="type:image"
+				/>
+				<field name="position" type="list"
+					label="ACF_GALLERY_WATERMARK_POSITION"
+					description="ACF_GALLERY_WATERMARK_POSITION_DESC"
+					showon="type!:disabled"
+					default="bottom-right">
+						<option value="top-left">NR_TOP_LEFT</option>
+						<option value="top-center">NR_TOP_CENTER</option>
+						<option value="top-right">NR_TOP_RIGHT</option>
+						<option value="center-left">NR_MIDDLE_LEFT</option>
+						<option value="center-center">NR_CENTER</option>
+						<option value="center-right">NR_MIDDLE_RIGHT</option>
+						<option value="bottom-left">NR_BOTTOM_LEFT</option>
+						<option value="bottom-center">NR_BOTTOM_CENTER</option>
+						<option value="bottom-right">NR_BOTTOM_RIGHT</option>
+				</field>
+				<field name="opacity" type="nrrangeslider"
+					class="tf-mw-500"
+					label="ACF_WATERMARK_OPACITY"
+					description="ACF_WATERMARK_OPACITY_DESC"
+					min="0"
+					max="100"
+					default="50"
+					showon="type!:disabled"
+				/>
+				<field name="angle" type="nrrangeslider"
+					class="tf-mw-500"
+					label="ACF_WATERMARK_ROTATION"
+					description="ACF_WATERMARK_ROTATION_DESC"
+					min="-360"
+					max="360"
+					default="0"
+					showon="type!:disabled"
+				/>
+				<field name="apply_on_thumbnails" type="NRToggle"
+					label="ACF_GALLERY_WATERMARK_APPLY_ON_THUMBNAILS"
+					description="ACF_GALLERY_WATERMARK_APPLY_ON_THUMBNAILS_DESC"
+					showon="type!:disabled"
+				/>
+			</fields>
+
+			<field type="spacer" name="tags_label"
+				label="ACF_GALLERY_FILTERING_TAGS"
+				class="acf"
+			/>
+			<fields name="tags">
+				<field name="position" type="list"
+					label="ACF_GALLERY_FILTERING_TAGS"
+					description="ACF_GALLERY_TAGS_POSITION_DESC"
+					default="disabled">
+						<option value="above">ACF_GALLERY_ABOVE_GALLERY_ITEMS</option>
+						<option value="below">ACF_GALLERY_BELOW_GALLERY_ITEMS</option>
+						<option value="disabled">JDISABLED</option>
+				</field>
+				<field name="ordering" type="list"
+					label="ACF_GALLERY_TAGS_SORT"
+					description="ACF_GALLERY_TAGS_SORT_DESC"
+					default="default"
+					showon="position!:disabled">
+						<option value="default">ACF_GALLERY_DEFAULT</option>
+						<option value="alphabetical">ACF_GALLERY_ALPHABETICAL</option>
+						<option value="reverse_alphabetical">ACF_GALLERY_REVERSE_ALPHABETICAL</option>
+						<option value="random">ACF_GALLERY_RANDOM</option>
+				</field>
+				<field name="all_tags_item_label" type="text"
+					label="ACF_GALLERY_ALL_TAGS_ITEM_LABEL"
+					description="ACF_GALLERY_ALL_TAGS_ITEM_LABEL_DESC"
+					default="All"
+					showon="position!:disabled"
+				/>
+				<field name="mobile" type="list"
+					label="ACF_GALLERY_TAGS_MOBILE"
+					description="ACF_GALLERY_TAGS_MOBILE_DESC"
+					default="show"
+					showon="position!:disabled"
+				>
+					<option value="show">ACF_GALLERY_SHOW</option>
+					<option value="dropdown">ACF_GALLERY_SHOW_AS_DROPDOWN</option>
+					<option value="disabled">JDISABLED</option>
+				</field>
+				<field name="text_color" type="color"
+					label="ACF_GALLERY_TAGS_TEXT_COLOR"
+					description="ACF_GALLERY_TAGS_TEXT_COLOR_DESC"
+					default="#555"
+					showon="position!:disabled"
+				/>
+				<field name="text_color_hover" type="color"
+					label="ACF_GALLERY_TAGS_TEXT_COLOR_HOVER"
+					description="ACF_GALLERY_TAGS_TEXT_COLOR_HOVER_DESC"
+					default="#fff"
+					showon="position!:disabled"
+				/>
+				<field name="bg_color_hover" type="color"
+					label="ACF_GALLERY_TAGS_BG_COLOR_HOVER"
+					description="ACF_GALLERY_TAGS_BG_COLOR_HOVER_DESC"
+					default="#1E3148"
+					showon="position!:disabled"
+				/>
+			</fields>
+		</fieldset>
+	</fields>
+</form>
+

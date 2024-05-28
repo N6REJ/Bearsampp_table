@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams" addfieldpath="plugins/fields/acfarticles/fields">
+		<fieldset name="fieldparams">
+			
+			
+			<field name="articles_type" type="list"
+				label="ACF_ARTICLES_TYPE"
+				description="ACF_ARTICLES_TYPE_DESC"
+				default="default">
+				<option value="default">ACF_ARTICLES_MANUAL</option>
+				<option value="linked">ACF_ARTICLES_AUTO</option>
+			</field>
+			
+            <field type="spacer" name="auto_discovery_label"
+				label="ACF_ARTICLES_AUTO"
+				class="acf"
+				showon="articles_type:linked"
+			/>
+			<field name="articles_fields" type="ACFArticlesFields"
+				label="ACF_ARTICLES_ARTICLES_FIELD"
+				description="ACF_ARTICLES_ARTICLES_FIELD_DESC"
+				multiple="true"
+				showon="articles_type:linked"
+			/>
+			
+            <field type="number" name="limit"
+				label="ACF_ARTICLES_LIMIT_ARTICLES"
+				description="ACF_ARTICLES_LIMIT_ARTICLES_DESC"
+				min="0"
+				default="0"
+				showon="articles_type:linked"
+			/>
+			
+			
+			<field name="order" type="list"
+				label="ACF_ARTICLES_ORDER"
+				description="ACF_ARTICLES_ORDER_DESC"
+				multiple="true"
+				layout="joomla.form.field.list-fancy-select"
+				default="id_desc">
+				<option value="id_asc">ACF_ARTICLES_ID_ASC</option>
+				<option value="id_desc">ACF_ARTICLES_ID_DESC</option>
+				<option value="ordering_asc">ACF_ARTICLES_ORDERING_ASC</option>
+				<option value="ordering_desc">ACF_ARTICLES_ORDERING_DESC</option>
+				<option value="title_asc">ACF_ARTICLES_TITLE_ASC</option>
+				<option value="title_desc">ACF_ARTICLES_TITLE_DESC</option>
+				<option value="alias_asc">ACF_ARTICLES_ALIAS_ASC</option>
+				<option value="alias_desc">ACF_ARTICLES_ALIAS_DESC</option>
+				<option value="hits_asc">ACF_ARTICLES_HITS_ASC</option>
+				<option value="hits_desc">ACF_ARTICLES_HITS_DESC</option>
+				<option value="created_asc">ACF_ARTICLES_CREATED_ASC</option>
+				<option value="created_desc">ACF_ARTICLES_CREATED_DESC</option>
+				<option value="modified_asc">ACF_ARTICLES_MODIFIED_ASC</option>
+				<option value="modified_desc">ACF_ARTICLES_MODIFIED_DESC</option>
+				<option value="publish_up_asc">ACF_ARTICLES_PUBLISH_UP_ASC</option>
+				<option value="publish_up_desc">ACF_ARTICLES_PUBLISH_UP_DESC</option>
+				<option value="featured_asc">ACF_ARTICLES_FEATURED_ASC</option>
+				<option value="featured_desc">ACF_ARTICLES_FEATURED_DESC</option>
+				<option value="category_lft_asc">ACF_ARTICLES_CATEGORY_LFT_ASC</option>
+				<option value="category_lft_desc">ACF_ARTICLES_CATEGORY_LFT_DESC</option>
+				<option value="category_title_asc">ACF_ARTICLES_CATEGORY_TITLE_ASC</option>
+				<option value="category_title_desc">ACF_ARTICLES_CATEGORY_TITLE_DESC</option>
+			</field>
+            <field type="spacer" name="input_options_label"
+				label="ACF_ARTICLES_INPUT_OPTIONS"
+				class="acf"
+				showon="articles_type:default"
+			/>
+			
+			<field name="min_articles" type="number"
+				label="ACF_ARTICLES_MIN_ARTICLES"
+				description="ACF_ARTICLES_MIN_ARTICLES_DESC"
+				min="0"
+				default="0"
+				showon="articles_type:default"
+			/>
+			<field name="max_articles" type="number"
+				label="ACF_ARTICLES_MAX_ARTICLES"
+				description="ACF_ARTICLES_MAX_ARTICLES_DESC"
+				min="0"
+				default="0"
+				showon="articles_type:default"
+			/>
+			
+			
+            <field type="spacer" name="filters_label"
+				label="ACF_ARTICLES_INPUT_FILTERS"
+				description="ACF_ARTICLES_INPUT_FILTERS_DESC"
+				class="acf"
+				showon="articles_type:default"
+			/>
+            <field type="spacer" name="linked_filters_label"
+				label="ACF_ARTICLES_OUTPUT_FILTERS"
+				description="ACF_ARTICLES_OUTPUT_FILTERS_DESC"
+				class="acf"
+				showon="articles_type:linked"
+			/>
+			<field name="filters_category_enabled" type="nrtoggle"
+				label="ACF_ARTICLES_FILTER_BY_CATEGORY"
+				description="ACF_ARTICLES_FILTER_CATEGORY_DESC"
+			/>
+			<field name="filters_category_value" type="nr_content"
+				label="NR_CATEGORIES"
+				description="ACF_ARTICLES_FILTER_CATEGORY_SELECTION_DESC"
+				group="categories"
+				multiple="true"
+				showon="fieldparams.filters_category_enabled:1"
+			/>
+			<field name="filters_category_inc_children" type="radio"
+				default="0"
+				label="NR_ALSO_ON_CHILD_ITEMS"
+				description="NR_ALSO_ON_CHILD_ITEMS_DESC"
+				class="btn-group btn-group-yesno"
+				showon="fieldparams.filters_category_enabled:1">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+				<option value="2">NR_ONLY</option>
+			</field>
+			
+			<field name="filters_tag_enabled" type="nrtoggle"
+				label="ACF_ARTICLES_FILTER_BY_TAG"
+				description="ACF_ARTICLES_FILTER_TAG_DESC"
+			/>
+			<field name="filters_tag_value" type="componentitems"
+				label="NR_TAG"
+				description="ACF_ARTICLES_FILTER_TAG_SELECTION_DESC"
+				multiple="true"
+				table="tags"
+				column_title="title"
+				column_state="published"
+				where="published = 1 AND level > 0"
+				showon="fieldparams.filters_tag_enabled:1"
+			/>
+			<field name="filters_author_enabled" type="nrtoggle"
+				label="ACF_ARTICLES_FILTER_BY_AUTHOR"
+				description="ACF_ARTICLES_FILTER_AUTHOR_DESC"
+			/>
+			<field name="filters_author_value" type="componentitems"
+				label="NR_AUTHOR"
+				description="ACF_ARTICLES_FILTER_AUTHOR_SELECTION_DESC"
+				multiple="true"
+				table="users"
+				join="#__content as c ON c.created_by = i.id"
+				column_title="i.name"
+				column_state="i.block"
+				group="i.id"
+				showon="fieldparams.filters_author_enabled:1"
+			/>
+			<field name="filters_status_value" type="list"
+				label="ACF_ARTICLES_FILTER_BY_STATUS"
+				description="ACF_ARTICLES_FILTER_STATUS_SELECTION_DESC"
+				multiple="true"
+				layout="joomla.form.field.list-fancy-select"
+				default="1">
+				<option value="1">JPUBLISHED</option>
+				<option value="0">JUNPUBLISHED</option>
+				<option value="2">JARCHIVED</option>
+				<option value="-2">JTRASHED</option>
+			</field>
+			
+			
+            <field type="spacer" name="layout_label"
+				label="NR_LAYOUT"
+				class="acf"
+			/>
+			
+			
+			<field name="layout" type="NRImagesSelector"
+				columns="4"
+				width="600px"
+				images="/media/plg_fields_acfarticles/img"
+				label="NR_LAYOUT"
+				description="ACF_ARTICLES_LAYOUT_DESC"
+				default="media/plg_fields_acfarticles/img/alist.svg"
+			/>
+			<field name="devices_columns" type="NRResponsiveControl"
+				showon="layout:media/plg_fields_acfarticles/img/astylea.svg[OR]layout:media/plg_fields_acfarticles/img/astyleb.svg"
+				label="ACF_ARTICLES_COLUMNS"
+				description="ACF_ARTICLES_COLUMNS_DESC">
+                <subform>
+                    <field name="columns" type="number"
+						class="input-small"
+						default="2"
+						hint="3"
+						min="1"
+						max="6" />
+                </subform>
+			</field>
+			<field name="devices_gap" type="NRResponsiveControl"
+				showon="layout:media/plg_fields_acfarticles/img/astylea.svg[OR]layout:media/plg_fields_acfarticles/img/astyleb.svg"
+				label="ACF_ARTICLES_GAP"
+				description="ACF_ARTICLES_GAP_DESC">
+                <subform>
+                    <field name="gap" type="nrnumber"
+						class="input-small"
+						default="10"
+						hint="10"
+						addon="px" />
+                </subform>
+			</field>
+            <field name="custom_layout" type="editor"
+				label="ACF_ARTICLES_LAYOUT_CUSTOM"
+				description="ACF_ARTICLES_LAYOUT_CUSTOM_DESC"
+				showon="layout:media/plg_fields_acfarticles/img/custom.svg"
+				editor="codemirror"
+				filter="raw"
+			/>
+			
+		</fieldset>
+	</fields>
+</form>
+

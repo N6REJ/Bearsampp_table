@@ -1,0 +1,45 @@
+.copyrightblock {
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 0!important;
+}
+
+.copyright {
+	font-size: 0.8em;
+	color: #aaa;
+}
+
+.copyright img {
+	display: block;
+	background-color: #fff;
+	border-radius: 3px;
+	padding: 5px;
+	margin: 10px auto;
+}
+
+.card .list-group, .card .table {
+    padding: 0;
+    margin-bottom: unset;
+}
+
+h2.card-header {
+    margin-bottom: 0;
+	font-size: 1rem;
+}
+
+.quick-icons .nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(190px, 1fr));
+    grid-gap: 1rem;
+}
+
+.quickicon-single {
+	position: relative;
+}
+
+.quickicon a[target="_blank"]::before {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}

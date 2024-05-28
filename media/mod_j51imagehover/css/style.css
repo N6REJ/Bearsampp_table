@@ -1,0 +1,51 @@
+.j51imagehover {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+[class*=" imghvr-"] a,
+[class^="imghvr-"] a {
+  z-index: 111;
+}
+
+.j51imagehover [class^="imghvr-"], 
+.j51imagehover [class*=" imghvr-"] {
+	background-color: #555;
+	background-color: var(--j51-overlay-color);
+	background-image: linear-gradient(45deg, rgba(255,255,255,.25), rgba(255,255,255,.15));
+}
+.j51imagehover [class^="imghvr-"]::before,
+.j51imagehover [class*=" imghvr-"]::before,
+.j51imagehover [class^="imghvr-"]::after,
+.j51imagehover [class*=" imghvr-"]::after,
+.j51imagehover [class^="imghvr-"] figcaption,
+.j51imagehover [class*=" imghvr-"] figcaption {
+	background: #555;
+	background: var(--j51-overlay-color);
+}
+
+.j51imagehover svg {
+	fill: var(--j51-title-color);
+	height: 38px;
+    width: 38px;
+}
+
+.j51imagehover .j51imagehover_title {
+	color: #fff;
+	color: var(--j51-title-color);
+	margin-bottom: .2em;
+}
+
+.j51imagehover .j51imagehover_caption {
+	color: #fff;
+	color: var(--j51-text-color);
+	margin-bottom: 0;
+}
+
+.imghvr-none figcaption {
+	display: none !important;
+}
+
+.baguetteBox-button {
+	background-image: none;
+}

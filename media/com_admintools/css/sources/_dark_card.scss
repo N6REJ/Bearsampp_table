@@ -1,0 +1,12 @@
+/*!*
+ * @package   admintools
+ * @copyright Copyright (c)2010-2024 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
+ */
+
+.card {
+  .card-header.bg-light {
+    background-color: var(--secondary) !important;
+    color: var(--light) !important;
+  }
+}

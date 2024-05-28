@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="selection" label="MOD_LATESTNEWSENHANCEDEXTENDED_SELECTION_FIELDSET_LABEL" description="MOD_LATESTNEWSENHANCEDEXTENDED_SELECTION_FIELDSET_DESC" addfieldprefix="SYW\Library\Field">			
+			
+<!-- 			<field name="newsfeeds_title" type="title" title="PLG_LATESTNEWSENHANCED_NEWSFEEDS_TITLE" showon="datasource:newsfeeds" /> -->
+			
+<!-- 			<field name="selection_help" type="sywonlinehelp" url="https://simplifyyourweb.com/documentation/latest-news/data-sources/plugin-newsfeeds" class="alert alert-info" -->
+<!-- 				description="MOD_LATESTNEWSENHANCEDEXTENDED_SELECTION_FIELDSET_DESC" /> -->
+
+			<fieldset name="selection_categories">
+
+				<field name="newsfeeds_url" type="textarea" cols="50" rows="6" default="" filter="raw" class="input-xxlarge" 
+					label="PLG_LATESTNEWSENHANCED_NEWSFEEDS_FIELD_FEEDS_LABEL"
+					description="PLG_LATESTNEWSENHANCED_NEWSFEEDS_FIELD_FEEDS_DESC" />	
+				
+				<field type="message" text="https://www.joomla.org/announcements.feed?format=feed&amp;type=rss" style="example" />
+			</fieldset>
+			
+			<fieldset name="selection_dates">
+				
+				<field name="use_range" type="list" default="0" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_USERANGE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_USERANGE_DESC">
+					<option value="0">JNONE</option>
+					<option value="1">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_RELATIVEDATE</option>
+					<option value="2">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DATERANGE</option>
+				</field>
+
+				<field name="start_date_range" type="calendar" format="%Y-%m-%d %H:%M:%S" size="22" filter="user_utc" showon="use_range:2"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STARTDATE_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STARTDATE_DESC" />
+
+				<field name="end_date_range" type="calendar" format="%Y-%m-%d %H:%M:%S" size="22" filter="user_utc" showon="use_range:2"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ENDDATE_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ENDDATE_DESC" />
+	
+				<field name="range_to" type="list" default="week" showon="use_range:1" 
+	    	       	label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_RANGEFROM_LABEL" 
+	        	   	description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_RANGEFROM_DESC">
+					<option value="now">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NOWRANGE</option>
+					<option value="day">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAYRANGE</option>
+					<option value="week">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKRANGE</option>
+					<option value="month">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTHRANGE</option>
+					<option value="year">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_YEARRANGE</option>
+				</field>	
+				
+				<field name="spread_to" type="sywverbosetext" default="1" filter="integer" size="4" showon="use_range:1[AND]range_to:day,week,month,year" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SPREADFROM_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SPREADFROM_DESC" />
+				
+				<field name="range_from" type="list" default="now" showon="use_range:1" 
+		           	label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_RANGETO_LABEL" 
+	    	       	description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_RANGETO_DESC">
+					<option value="now">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NOWRANGE</option>
+					<option value="day">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAYRANGE</option>
+					<option value="week">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKRANGE</option>
+					<option value="month">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTHRANGE</option>
+					<option value="year">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_YEARRANGE</option>
+				</field>	
+				
+				<field name="spread_from" type="sywverbosetext" default="1" filter="integer" size="4" showon="use_range:1[AND]range_from:day,week,month,year" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SPREADTO_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SPREADTO_DESC" />
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_EXAMPLE_RELATIVEDATEEXAMPLE1" style="example" showon="use_range:1" />
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_EXAMPLE_RELATIVEDATEEXAMPLE2" style="example" showon="use_range:1" />
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_EXAMPLE_RELATIVEDATEEXAMPLE3" style="example" showon="use_range:1" />
+			</fieldset>		
+			
+			<fieldset name="selection_order">
+			
+				<field name="newsfeeds_order" type="list" default="date_dsc_mix" 
+					label="PLG_LATESTNEWSENHANCED_NEWSFEEDS_FIELD_ORDERING_LABEL" 
+					description="PLG_LATESTNEWSENHANCED_NEWSFEEDS_FIELD_ORDERING_DESC">
+					<option value="date_dsc_mix">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_DATEDESCMIXED</option>
+					<option value="date_asc_mix">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_DATEASCMIXED</option>
+					<option value="date_dsc">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_DATEDESCPERFEED</option>
+					<option value="date_asc">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_DATEASCPERFEED</option>
+					<option value="title_dsc_mix">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_TITLEDESCMIXED</option>
+					<option value="title_asc_mix">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_TITLEASCMIXED</option>
+					<option value="title_dsc">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_TITLEDESCPERFEED</option>
+					<option value="title_asc">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_TITLEASCPERFEED</option>
+					<option value="random_mix">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_RANDOMMIXED</option>
+					<option value="random">PLG_LATESTNEWSENHANCED_NEWSFEEDS_VALUE_RANDOMPERFEED</option>
+		  		</field>
+			</fieldset>
+		  	
+		  	<fieldset name="selection_count">
+		  	
+			  	<field name="count" type="sywverbosetext" default="" filter="string" size="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COUNT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COUNT_DESC" />	
+		  	
+			  	<field name="newsfeeds_count_for_feed" type="radio" default="0" layout="joomla.form.field.radio.switcher" 
+					label="PLG_LATESTNEWSENHANCED_NEWSFEEDS_FIELD_COUNTFORFIELD_LABEL"
+					description="PLG_LATESTNEWSENHANCED_NEWSFEEDS_FIELD_COUNTFORFIELD_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+					
+				<field name="startat" type="sywverbosetext" default="1" filter="integer" size="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STARTAT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STARTAT_DESC" />
+			</fieldset>
+		</fieldset>
+	</fields>
+</form>

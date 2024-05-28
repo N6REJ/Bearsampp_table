@@ -1,0 +1,61 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "16d139f238798d4fd8972db853306f0e",
+    "content-hash": "ed8ee11ce75dcb44f15566c95e6394cc",
+    "packages": [
+        {
+            "name": "ciar4n/j51_framework",
+            "version": "dev-unstable",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ciar4n/j51_framework.git",
+                "reference": "75efc7c3bfa02f3026c3ba4c72f9cd283c7d56dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ciar4n/j51_framework/zipball/75efc7c3bfa02f3026c3ba4c72f9cd283c7d56dc",
+                "reference": "75efc7c3bfa02f3026c3ba4c72f9cd283c7d56dc",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "J51\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Joomla 51 framework",
+            "homepage": "https://github.com/ciar4n/j51_framework",
+            "keywords": [
+                "cms",
+                "framework",
+                "library",
+                "template"
+            ],
+            "support": {
+                "source": "https://github.com/ciar4n/j51_framework/tree/unstable",
+                "issues": "https://github.com/ciar4n/j51_framework/issues"
+            },
+            "time": "2018-04-14 16:14:59"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "ciar4n/j51_framework": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.5.9"
+    }
+}

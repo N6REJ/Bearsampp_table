@@ -1,0 +1,96 @@
+@import "../../regularlabs/scss/_variables";
+@import "_mixins-solid";
+
+$color-tab-background:              rl-color(gray, 100);
+$color-tab-background-active:       $rl-white;
+$color-tab-background-hover:        rl-color(gray, 200);
+$color-accordion-background:        $rl-white;
+$color-accordion-background-active: rl-color(gray, 100);
+$color-accordion-background-hover:  rl-color(gray, 200);
+$color-panel-background:            $rl-white;
+$color-border:                      rl-color(gray, 300);
+$color-border-active:               rl-color(gray, 300);
+
+&[data-rlta-type="tabs"] > [data-rlta-element="button-list"],
+&[data-rlta-type="accordions"] {
+    > [data-rlta-element="button"] {
+        background-color: $color-tab-background;
+        border:           1px solid $color-border;
+        border-radius:    5px;
+        padding:          .75rem 1.25rem;
+
+        &:hover {
+            background-color: $color-tab-background-hover;
+        }
+
+        &:not([data-rlta-state="closed"]),
+        &:not([data-rlta-state="closed"]):hover {
+            background-color: $color-tab-background-active;
+            border-color:     $color-border-active;
+        }
+    }
+}
+
+&[data-rlta-type="accordions"],
+&[data-rlta-type="tabs"] > [data-rlta-element="panels"] {
+    > [data-rlta-element="panel"] {
+        background:    $color-panel-background;
+        border:        1px solid $color-border-active;
+        border-radius: 5px;
+
+        > [data-rlta-element="panel-content"] {
+            padding: 1.25em;
+        }
+    }
+}
+
+&[data-rlta-type="accordions"] {
+    > [data-rlta-element="button"] {
+        background-color: $color-accordion-background;
+        transition:       background-color 200ms, border 200ms;
+
+        &:hover,
+        &:focus {
+            background-color: $color-accordion-background-hover;
+        }
+
+        &[data-rlta-state="open"],
+        &[data-rlta-state="opening"] {
+            background-color: $color-accordion-background-active;
+            border-radius:    5px 5px 0 0;
+
+            &:hover,
+            &:focus {
+                background-color: $color-accordion-background-active;
+            }
+        }
+    }
+}
+
+&[data-rlta-type="tabs"] {
+    > [data-rlta-element="button-list"] {
+
+        > [data-rlta-element="button"] {
+            box-shadow: inset 0px -5px 5px -3px rgba(0, 0, 0, .05);
+
+            &:not([data-rlta-state="closed"]) {
+                box-shadow:    none;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &[data-rlta-centered="ready"] {
+        > [data-rlta-element="button-list"] {
+            > [data-rlta-element="button"] {
+                transition: background-color 200ms, border 200ms;
+            }
+        }
+    }
+
+    > [data-rlta-element="panel"] {
+        border-radius: 5px;
+    }
+}
+
+@include solid_positionStyles($color-accordion-background-active);

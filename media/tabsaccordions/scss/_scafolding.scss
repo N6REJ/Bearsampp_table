@@ -1,0 +1,110 @@
+& {
+    opacity:        1;
+    position:       relative;
+    display:        flex;
+    flex-direction: column;
+    margin-bottom:  1em;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+&[data-rlta-type="accordions"] {
+    &[data-rlta-alignment="left"] {
+        > [data-rlta-element="button"] {
+            text-align: left;
+        }
+    }
+
+    &[data-rlta-alignment="right"] {
+        > [data-rlta-element="button"] {
+            text-align: right;
+        }
+    }
+
+    &[data-rlta-alignment="center"] {
+        > [data-rlta-element="button"] {
+            text-align: center;
+        }
+    }
+}
+
+&[data-rlta-type="tabs"] {
+    &[data-rlta-orientation="horizontal"] {
+        &[data-rlta-positioning="bottom"] {
+            flex-direction: column-reverse;
+        }
+
+        &[data-rlta-alignment="left"] {
+            > [data-rlta-element="button-list"] {
+                justify-content: start;
+            }
+
+            &[data-rlta-wrap-buttons="true"] {
+                > [data-rlta-element="button-list"] {
+                    justify-content: flex-start;
+
+                    > [data-rlta-element="button"] {
+                        flex: 0;
+                    }
+                }
+            }
+        }
+
+        &[data-rlta-alignment="right"] {
+            > [data-rlta-element="button-list"] {
+                justify-content: end;
+            }
+
+            &[data-rlta-wrap-buttons="true"] {
+                > [data-rlta-element="button-list"] {
+                    justify-content: flex-end;
+
+                    > [data-rlta-element="button"] {
+                        flex: 0;
+                    }
+                }
+            }
+        }
+
+        &[data-rlta-alignment="center"] {
+            > [data-rlta-element="button-list"] {
+                justify-content: center;
+            }
+
+            &[data-rlta-wrap-buttons="true"] {
+                > [data-rlta-element="button-list"] {
+                    > [data-rlta-element="button"] {
+                        flex: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &[data-rlta-orientation="vertical"] {
+        &[data-rlta-positioning="left"] {
+            flex-direction: row;
+        }
+
+        &[data-rlta-positioning="right"] {
+            flex-direction: row-reverse;
+        }
+
+        > [data-rlta-element="button-list"] {
+            display:        flex;
+            flex-direction: column;
+            flex-basis:     min-content;
+        }
+
+        > [data-rlta-element="panels"] {
+            width:      100%;
+            min-height: 100%;
+        }
+    }
+}
+
+@import "_scafolding-buttons";
+@import "_scafolding-button-scroller";
+@import "_scafolding-panels";

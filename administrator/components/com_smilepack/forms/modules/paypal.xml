@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="general">
+		<field name="paypal_keys" type="note" label="COM_SMILEPACK_PAYPAL" />
+		<field name="paypal_live" type="note" label="COM_SMILEPACK_LIVE" />
+        <field name="live_paypal_client_id" type="nrtext"
+            label="COM_SMILEPACK_PAYPAL_CLIENT_ID"
+            description="COM_SMILEPACK_PAYPAL_CLIENT_ID_DESC"
+            urltext="COM_SMILEPACK_PAYPAL_CLIENT_ID_GET"
+            url="https://www.tassos.gr/joomla-extensions/smile-pack/docs/paypal-module#setup_paypal_api_keys"
+        />
+        
+		<field name="paypal_sandbox" type="note" label="COM_SMILEPACK_SANDBOX" />
+        <field name="sandbox_paypal_client_id" type="nrtext"
+            label="COM_SMILEPACK_PAYPAL_CLIENT_ID"
+            description="COM_SMILEPACK_PAYPAL_CLIENT_ID_DESC"
+            urltext="COM_SMILEPACK_PAYPAL_CLIENT_ID_GET"
+            url="https://www.tassos.gr/joomla-extensions/smile-pack/docs/paypal-module#setup_paypal_api_keys"
+        />
+        
+    </fieldset>
+</form>

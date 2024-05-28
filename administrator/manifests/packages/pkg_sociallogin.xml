@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~
+  ~  @package   AkeebaSocialLogin
+  ~  @copyright Copyright (c)2016-2024 Nicholas K. Dionysopoulos / Akeeba Ltd
+  ~  @license   GNU General Public License version 3, or later
+  -->
+
+<extension type="package" method="upgrade">
+    <name>pkg_sociallogin</name>
+    <version>4.8.0</version>
+    <creationDate>2024-04-29</creationDate>
+    <author>Akeeba Ltd</author>
+    <authorEmail>no-reply@akeeba.com</authorEmail>
+    <authorUrl>https://www.akeeba.com</authorUrl>
+    <packagename>sociallogin</packagename>
+    <url>https://www.akeeba.com</url>
+    <packager>Akeeba Ltd</packager>
+    <packagerurl>https://www.akeeba.com</packagerurl>
+    <copyright>Copyright (c)2016-2024 Nicholas K. Dionysopoulos / Akeeba Ltd</copyright>
+    <license>GNU GPL v3 or later</license>
+    <description>PKG_SOCIALLOGIN_XML_DESCRIPTION</description>
+    <blockChildUninstall>true</blockChildUninstall>
+
+    <files>
+        <file type="plugin" group="system" id="sociallogin">plg_system_sociallogin.zip</file>
+
+        <file type="plugin" group="sociallogin" id="amazon">plg_sociallogin_amazon.zip</file>
+        <file type="plugin" group="sociallogin" id="apple">plg_sociallogin_apple.zip</file>
+        <file type="plugin" group="sociallogin" id="discord">plg_sociallogin_discord.zip</file>
+        <file type="plugin" group="sociallogin" id="facebook">plg_sociallogin_facebook.zip</file>
+        <file type="plugin" group="sociallogin" id="github">plg_sociallogin_github.zip</file>
+        <file type="plugin" group="sociallogin" id="google">plg_sociallogin_google.zip</file>
+        <file type="plugin" group="sociallogin" id="linkedin">plg_sociallogin_linkedin.zip</file>
+        <file type="plugin" group="sociallogin" id="microsoft">plg_sociallogin_microsoft.zip</file>
+        <file type="plugin" group="sociallogin" id="paypal">plg_sociallogin_paypal.zip</file>
+        <file type="plugin" group="sociallogin" id="spotify">plg_sociallogin_spotify.zip</file>
+        <file type="plugin" group="sociallogin" id="synology">plg_sociallogin_synology.zip</file>
+        <file type="plugin" group="sociallogin" id="twitch">plg_sociallogin_twitch.zip</file>
+        <file type="plugin" group="sociallogin" id="yahoo">plg_sociallogin_yahoo.zip</file>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/pkg_sociallogin.sys.ini</language>
+    </languages>
+
+    <scriptfile>script.sociallogin.php</scriptfile>
+
+    <updateservers>
+        <server type="extension" priority="1" name="Akeeba Social Login Updates">https://cdn.akeeba.com/updates/pkgsociallogin.xml</server>
+    </updateservers>
+</extension>

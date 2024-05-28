@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams">
+		<fieldset name="fieldparams">
+			<field name="data_source" type="radio"
+				label="ACF_CHAINEDFIELDS_DATA_SOURCE"
+				description="ACF_CHAINEDFIELDS_DATA_SOURCE_DESC"
+		        class="btn-group btn-group-yesno"
+		        default="custom">
+				<option value="custom">NR_CUSTOM</option>
+				<option value="csv_file">ACF_CHAINEDFIELDS_FROM_CSV_FILE</option>
+			</field>
+			<field name="data_source_custom" type="editor"
+		        label="ACF_CHAINEDFIELDS_DATA_SOURCE_CUSTOM"
+				description="ACF_CHAINEDFIELDS_DATA_SOURCE_CUSTOM_DESC"
+				showon="data_source:custom"
+				editor="codemirror|none"
+				filter="raw"
+				rows="10"
+			/>
+			<field name="data_source_csv" type="NRInlineFileUpload"
+				label="ACF_CHAINEDFIELDS_CSV"
+				description="ACF_CHAINEDFIELDS_CSV_DESC"
+				accept=".csv"
+				upload_folder="media/acfchainedfields"
+				showon="data_source:csv_file"
+			/>
+			<field name="separator" type="text"
+				label="ACF_CHAINEDFIELDS_CSV_SEPARATOR"
+				description="ACF_CHAINEDFIELDS_CSV_SEPARATOR_DESC"
+				default=","
+				showon="data_source:csv_file"
+			/>
+			<field name="layout" type="radio"
+				label="ACF_CHAINEDFIELDS_LAYOUT"
+				description="ACF_CHAINEDFIELDS_LAYOUT_DESC"
+		        class="btn-group btn-group-yesno"
+		        default="default">
+				<option value="default">JDEFAULT</option>
+				<option value="custom">NR_CUSTOM</option>
+			</field>
+			<field name="custom_layout" type="editor"
+		        label="ACF_CHAINEDFIELDS_CUSTOM_LAYOUT"
+				description="ACF_CHAINEDFIELDS_CUSTOM_LAYOUT_DESC"
+				showon="layout:custom"
+				editor="codemirror|none"
+				filter="raw"
+				rows="5"
+				default="{field.1.label}: {field.1.value}, {field.2.label}: {field.2.value}"
+			/>
+		</fieldset>
+	</fields>
+</form>
+

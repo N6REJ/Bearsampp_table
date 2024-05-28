@@ -1,0 +1,105 @@
+.j51-testimonials .j51-text-box {
+	padding: 25px;
+	margin: 20px 0;
+	background: white;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
+	border-radius: 4px;
+}
+.j51-testimonials p {
+	margin-bottom: 0;
+}
+.j51-testimonials .j51-quote-icon {
+	max-width: 25px;
+	opacity: .15;
+}
+.j51-testimonials .j51-profile {
+	display: flex;
+	padding: 0 20px;
+	margin: 20px 0;
+}
+.j51-testimonials .j51-profile-image {
+	width: 64px;
+	height: 64px;
+	margin-right: 10px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.j51-testimonials .j51-profile-image img {
+	object-fit: cover;
+	height: 64px;
+}
+.j51-testimonials .j51-profile-name,
+.j51-testimonials .j51-profile-title {
+	margin-bottom: 0;
+	line-height: 1.2em;
+}
+.j51-testimonials .j51-nav-dots {
+ 	display: flex;
+ 	justify-content: center;
+	margin: 10px 0;
+}
+.j51-testimonials .j51-nav-dot {
+ 	height: 8px;
+ 	width: 25px;
+ 	background: #333;
+ 	border-radius: 4px;
+ 	opacity: .25;
+ 	margin: 3px;
+  transition: all .3s ease;
+}
+.j51-testimonials .j51-nav-dot:hover {
+  cursor: pointer;
+}
+.j51-testimonials .j51-nav-dot.tns-nav-active {
+	opacity: 1;
+	width: 8px;
+	background-color: var(--primary);
+}
+.j51-testimonials .j51-nav-dot:focus {
+	border: 0;
+	outline: 0;
+}
+
+.j51-testimonials .star-rating {
+  height: 14px;
+  position: relative;
+  width: 70px;
+  margin: 5px 0;
+}
+.j51-testimonials .star-rating:before {
+  background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22929%22%20height%3D%22886%22%20viewBox%3D%220%200%20929%20886%22%3E%3Cstyle%3Epath%20%7B%20fill%3A%20%23333%20!important%20%7D%3C%2Fstyle%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M929%20343c0%208-5%2017-15%2027L711%20567l48%20279c1%203%201%207%201%2012%200%2015-8%2027-22%2027-7%201-15-1-23-6L464%20747%20214%20879c-9%205-16%207-23%207-14%200-23-15-23-28%200-3%200-7%201-12l48-279L14%20370c-9-10-14-19-14-27%200-14%2010-23%2031-26l280-40L437%2023c7-15%2016-23%2027-23s20%208%2028%2023l125%20254%20280%2040c21%203%2032%2012%2032%2026z%22%2F%3E%3C%2Fsvg%3E) !important;
+  background-repeat: repeat-x;
+  background-size: 14px;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 14px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70px;
+  opacity: .25;
+}
+.j51-testimonials .star-rating > span {
+  display: block;
+  text-indent: -10000px;
+  width: 70px;
+  height: 14px;
+  position: absolute;
+  overflow: hidden;
+}
+.j51-testimonials .star-rating > span:before {
+  background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22929%22%20height%3D%22886%22%20viewBox%3D%220%200%20929%20886%22%3E%3Cstyle%3Epath%20%7B%20fill%3A%20%23f2ac00%20!important%20%7D%3C%2Fstyle%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M929%20343c0%208-5%2017-15%2027L711%20567l48%20279c1%203%201%207%201%2012%200%2015-8%2027-22%2027-7%201-15-1-23-6L464%20747%20214%20879c-9%205-16%207-23%207-14%200-23-15-23-28%200-3%200-7%201-12l48-279L14%20370c-9-10-14-19-14-27%200-14%2010-23%2031-26l280-40L437%2023c7-15%2016-23%2027-23s20%208%2028%2023l125%20254%20280%2040c21%203%2032%2012%2032%2026z%22%2F%3E%3C%2Fsvg%3E) !important;
+  background-repeat: repeat-x;
+  background-size: 14px;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-indent: 10000px;
+  top: 0;
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="installer" method="upgrade">
+	<name>PLG_INSTALLER_LNEPINSTALLER</name>
+	<author>Olivier Buisard</author>
+	<creationDate>08/06/2018</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>https://simplifyyourweb.com</authorUrl>
+	<version>7.0.0</version>
+	<description>PLG_INSTALLER_LNEPINSTALLER_XML_DESCRIPTION</description>
+	
+	<scriptfile>installer.php</scriptfile>
+
+	<media folder="media" destination="plg_installer_lnepinstaller">
+		<folder>images</folder>
+	</media>
+
+	<files>
+		<filename plugin="lnepinstaller">lnepinstaller.php</filename>
+		<filename>license.txt</filename>
+	</files>
+
+	<languages>
+		<language tag="da-DK">language/da-DK/da-DK.plg_installer_lnepinstaller.ini</language>
+		<language tag="da-DK">language/da-DK/da-DK.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_installer_lnepinstaller.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_installer_lnepinstaller.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_installer_lnepinstaller.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.plg_installer_lnepinstaller.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="ja-JP">language/ja-JP/ja-JP.plg_installer_lnepinstaller.ini</language>
+		<language tag="ja-JP">language/ja-JP/ja-JP.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.plg_installer_lnepinstaller.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_installer_lnepinstaller.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="pt-PT">language/pt-PT/pt-PT.plg_installer_lnepinstaller.ini</language>
+		<language tag="pt-PT">language/pt-PT/pt-PT.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.plg_installer_lnepinstaller.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.plg_installer_lnepinstaller.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.plg_installer_lnepinstaller.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.plg_installer_lnepinstaller.sys.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.plg_installer_lnepinstaller.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.plg_installer_lnepinstaller.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="SYW\Library\Field">
+				<field type="extensionversion" extension="plg_installer_lnepinstaller" />
+				<field type="extensionauthor" />
+				<field type="extensionconnect" />
+				
+				<field type="message" text="PLG_INSTALLER_LNEPINSTALLER_MESSAGE_USEUPDATESERVERINSTEAD" style="warning" />
+				
+				<field name="download_id" type="text" filter="string" size="30" default="" class="input-xxlarge" 
+					label="PLG_INSTALLER_LNEPINSTALLER_FIELD_DOWNLOADID_LABEL" 
+					description="PLG_INSTALLER_LNEPINSTALLER_FIELD_DOWNLOADID_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset>
+		<field name="question" type="textarea"
+			label="ACF_FAQ_QUESTION"
+			hint="ACF_FAQ_QUESTION_HINT"
+			class="span12 full-width w-100"
+			rows="7"
+			filter="raw"
+		/>
+		<field name="answer" type="textarea"
+			label="ACF_FAQ_ANSWER"
+			hint="ACF_FAQ_ANSWER_HINT"
+			class="span12 full-width w-100"
+			rows="7"
+			filter="raw"
+		/>
+	</fieldset>
+</form>

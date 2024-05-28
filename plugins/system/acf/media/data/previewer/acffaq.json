@@ -1,0 +1,57 @@
+<html><head><style>
+        body {
+            border: 0 !important;
+            background: #fff !important;
+            padding: 0 !important;
+			margin: 0 !important;
+			overflow-x: hidden !important;
+			font-family: Arial;
+			font-size: 16px;
+        }
+        
+			body {
+				background: #EBEBEB !important;
+				padding: 20px !important;
+			}
+		</style><style>.tf-faq-widget.faq0 {
+                --item-background-color: #ffffff;
+--separator-color: #dedede;
+
+            }
+        .tf-faq-widget.faq0 { --item-padding: 20px; --item-gap: 14px; --column-gap: 20px; --question-font-size: 16px; --answer-font-size: 16px; }@media screen and (max-width: 991px) { .tf-faq-widget.faq0 { --item-padding: 20px; } }@media screen and (max-width: 575px) { .tf-faq-widget.faq0 { --item-padding: 20px; } }</style><link href="https://joomla-cms.test/media/plg_system_nrframework/css/widgets/faq.css" rel="stylesheet" /><script src="https://joomla-cms.test/media/system/js/core.js"></script><script src="https://joomla-cms.test/media/plg_system_nrframework/js/widgets/faq.js"></script></head><body><div class="nrf-widget tf-faq-widget template_4 faq0 has-icons position-icon-right has-item-bg-color first-open keep-one-question-open">
+				<div class="tf-faq-widget--item"data-open="true">
+								<div class="tf-faq-widget--item--question">
+										<div class="tf-faq-widget--item--question--content">Who should use EngageBox?</div>
+					<div class="tf-faq-widget--item--question--actions"><svg width="20" height="20" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9L2.5 1.13436L3.58162 0L10 6.75274L16.4184 0.0213906L17.5 1.15575L10 9Z" fill="currentColor"/></svg></div>				</div>
+												<div class="tf-faq-widget--item--answer">
+					EngageBox is the most powerful popup engine in the Joomla! market used by marketing agencies, bloggers, eCommerce websites, and all small businesses. If you want to grow your email list, improve your website conversions, and reduce cart abandonment, then you need EngageBox.				</div>
+							</div>
+						<div class="tf-faq-widget--item">
+								<div class="tf-faq-widget--item--question">
+										<div class="tf-faq-widget--item--question--content">What's required to use EngageBox?</div>
+					<div class="tf-faq-widget--item--question--actions"><svg width="20" height="20" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9L2.5 1.13436L3.58162 0L10 6.75274L16.4184 0.0213906L17.5 1.15575L10 9Z" fill="currentColor"/></svg></div>				</div>
+												<div class="tf-faq-widget--item--answer"style="height: 0px;">
+					EngageBox can be used in both Joomla 3 and Joomla 4. In detail, you will need an up-to-date version of Joomla 3.8.0 or higher, PHP 7.0.0 or higher, and MySQL 5 or higher.				</div>
+							</div>
+						<div class="tf-faq-widget--item">
+								<div class="tf-faq-widget--item--question">
+										<div class="tf-faq-widget--item--question--content">Do I need coding skills to use EngageBox?</div>
+					<div class="tf-faq-widget--item--question--actions"><svg width="20" height="20" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9L2.5 1.13436L3.58162 0L10 6.75274L16.4184 0.0213906L17.5 1.15575L10 9Z" fill="currentColor"/></svg></div>				</div>
+												<div class="tf-faq-widget--item--answer"style="height: 0px;">
+					Absolutely not! You can create and customize beautiful popups without any coding knowledge. We made it extremely user-friendly, so you can build a high-converting popup without hiring a developer.				</div>
+							</div>
+						<div class="tf-faq-widget--item">
+								<div class="tf-faq-widget--item--question">
+										<div class="tf-faq-widget--item--question--content">What type of conversions can I expect?</div>
+					<div class="tf-faq-widget--item--question--actions"><svg width="20" height="20" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9L2.5 1.13436L3.58162 0L10 6.75274L16.4184 0.0213906L17.5 1.15575L10 9Z" fill="currentColor"/></svg></div>				</div>
+												<div class="tf-faq-widget--item--answer"style="height: 0px;">
+					It will make a significant difference. Game-changing! Our average user sees over 500% increase in sales, customers base and growth in general.				</div>
+							</div>
+						<div class="tf-faq-widget--item">
+								<div class="tf-faq-widget--item--question">
+										<div class="tf-faq-widget--item--question--content">What if a visitor has a pop-up adblocker enabled?</div>
+					<div class="tf-faq-widget--item--question--actions"><svg width="20" height="20" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9L2.5 1.13436L3.58162 0L10 6.75274L16.4184 0.0213906L17.5 1.15575L10 9Z" fill="currentColor"/></svg></div>				</div>
+												<div class="tf-faq-widget--item--answer"style="height: 0px;">
+					Will still work! EngageBox produces popups in a way which can't be blocked by the browser’s pop-up blocking feature or 3rd party extensions such as AdBlock or uBlock.				</div>
+							</div>
+			</div></body></html>

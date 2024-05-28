@@ -1,0 +1,76 @@
+@import "../../regularlabs/scss/_variables";
+@import "_mixins-lines";
+
+$color-tab-background:              $rl-white;
+$color-tab-background-active:       $rl-white;
+$color-tab-background-hover:        $rl-white;
+$color-accordion-background:        $rl-white;
+$color-accordion-background-active: rl-color(gray, 100);
+$color-accordion-background-hover:  rl-color(gray, 200);
+$color-panel-background:            transparent;
+$color-link:                        $rl-blue;
+$color-link-active:                 rl-color(blue, 800);
+$color-border:                      rl-color(gray, 300);
+
+&[data-rlta-type="tabs"] > [data-rlta-element="button-list"],
+&[data-rlta-type="accordions"] {
+    > [data-rlta-element="button"] {
+        border:        1px solid transparent;
+        border-radius: 5px;
+        padding:       .75rem 1.25rem;
+
+        > [data-rlta-element="heading"] {
+            color: $color-link;
+        }
+
+        &:not([data-rlta-state="closed"]) {
+            border-color: $color-border;
+
+            > [data-rlta-element="heading"] {
+                color: $color-link-active;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            > [data-rlta-element="heading"] {
+                color: $color-link-active;
+            }
+        }
+    }
+}
+
+&[data-rlta-type="accordions"] {
+    > [data-rlta-element="button"] {
+        border:     1px solid $color-border;
+        transition: border 200ms;
+
+        &:hover,
+        &:focus {
+            background-color: $color-accordion-background-hover;
+        }
+
+        &[data-rlta-state="open"],
+        &[data-rlta-state="opening"] {
+            background-color: $color-accordion-background-active;
+
+            &:hover,
+            &:focus {
+                background-color: $color-accordion-background-active;
+            }
+        }
+    }
+}
+
+&[data-rlta-type="accordions"],
+&[data-rlta-type="tabs"] > [data-rlta-element="panels"] {
+    > [data-rlta-element="panel"] {
+        background: $color-panel-background;
+
+        > [data-rlta-element="panel-content"] {
+            padding: 1.25em 0;
+        }
+    }
+}
+
+@include lines_positionStyles($color-border, $color-tab-background-active);

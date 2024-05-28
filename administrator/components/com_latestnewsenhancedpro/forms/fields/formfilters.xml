@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<field name="formfilter" type="formfilterselect" default="c" 
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_FORMFILTER_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_FORMFILTER_DESC">
+<!-- 		<option value="none">JNONE</option> -->
+		<option value="c">COM_LATESTNEWSENHANCEDPRO_VALUE_CATEGORIES</option>
+		<option value="t">COM_LATESTNEWSENHANCEDPRO_VALUE_TAGS</option>
+		<option value="a">COM_LATESTNEWSENHANCEDPRO_VALUE_AUTHORS</option>
+		<option value="i">COM_LATESTNEWSENHANCEDPRO_VALUE_ALIASES</option>
+		<option value="p">COM_LATESTNEWSENHANCEDPRO_VALUE_PERIODS</option>
+	</field>
+	
+	<field name="ff_style" type="radio" default="selection" layout="joomla.form.field.radio.switcher"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_FORMFILTERSTYLE_LABEL"
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_FORMFILTERSTYLE_DESC">
+		<option value="list">COM_LATESTNEWSENHANCEDPRO_VALUE_LIST</option>
+		<option value="selection">COM_LATESTNEWSENHANCEDPRO_VALUE_SELECTIONBOX</option>
+	</field>
+	
+	<field name="ff_label" type="sywverbosetext" default="" 
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_FORMFILTERLABEL_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_FORMFILTERLABEL_DESC" />
+		
+	<field name="ff_classes" type="sywverbosetext" default="" showon="ff_style:list"
+		label="COM_LATESTNEWSENHANCEDPRO_FIELD_FORMFILTERCLASSES_LABEL" 
+		description="COM_LATESTNEWSENHANCEDPRO_FIELD_FORMFILTERCLASSES_DESC" />
+</form>

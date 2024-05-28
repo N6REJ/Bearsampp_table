@@ -1,0 +1,40 @@
+.j51rotate,
+.j51rotate * {
+	box-sizing: border-box;
+}
+
+.j51rotate-item {
+	position: relative;
+}
+
+.j51rotate-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+}
+
+.j51rotate-nav {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+.j51rotate-nav a {
+  display: flex;
+}
+.j51rotate-nav svg {
+  fill: currentColor;
+  display: inline-block;
+  height: 1.3em;
+  max-width: 2em;
+  padding: 0px 6px;
+  opacity: .65;
+}
+.j51rotate-nav svg:hover {
+  opacity: 1;
+  cursor: pointer;
+}

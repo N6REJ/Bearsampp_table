@@ -1,0 +1,14 @@
+// Frontend Editing
+
+.btn.jmodedit {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  left: auto;
+  z-index: 10;
+  color: white;
+  background-color: var(--button-color);
+  border: 0;
+  border-radius: .25rem;
+  padding: 3px 10px;
+}

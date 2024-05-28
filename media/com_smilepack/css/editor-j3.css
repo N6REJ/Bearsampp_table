@@ -1,0 +1,2 @@
+form#module-form ul.nav.nav-tabs li:has(a[href="#attrib-markers"]){display:none}
+

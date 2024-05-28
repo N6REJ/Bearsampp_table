@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" client="site" method="upgrade">
+	<name>J51_ThumbsGallery</name>
+	<author>Joomla51.com</author>
+	<creationDate>fade_opacity 2021</creationDate>
+	<copyright>Copyright (C) 2012 Joomla51.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@joomla51.com</authorEmail>
+	<authorUrl>www.Joomla51.com</authorUrl>
+	<version>1.2</version>
+	<description>Joomla51 Thumbs Gallery Module</description>
+	<files>
+		<filename module="mod_j51thumbsgallery">mod_j51thumbsgallery.php</filename>
+		<filename>helper.php</filename>
+		<filename>resize.image.class.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>js</folder>
+		<folder>elements</folder>
+		<folder>css</folder>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_j51thumbsgallery/elements">
+			<fieldset name="basic">
+				<field name="path" type="foldertree" default="" directory="images" filter="" label="Image directory" description="Select an image directory" recursive ="true"/>
+				<field name="thumbwidth" type="text" default="98" label="Thumbnail Width (in px)" description="Width of Thumbnail without px" />
+				<field name="thumbheight" type="text" default="98" label="Thumbnail Height (in px)" description="Height of Thumbnail without px" />
+				<field name="margin" type="text" default="4" label="Thumbnail Margin (in px)" description="Thumbnail Margin" />
+				<field name="alignment" type="list" default="center" label="Alignment" description="Set the alignment of your gallery thumbs">
+					<option value="left">Left</option>
+					<option value="center">Center</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="bordersize" type="text" default="3" label="Border Size" description="Border Size" />
+				<field name="bordercolor" type="color" default="#e0e0e0" label="Border color" description="Select your border color" />
+				<field name="outlinecolor" type="color" default="#f0f0f0" label="Outline color" description="Select your outline color" />
+				<field name="fade_opacity" type="text" default="0.3" label="Fade Opacity" description="Fade Opacity" />
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="owncache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					default="1"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					default="900"
+					filter="integer"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="general">
+		<field name="map_keys" type="note" label="COM_SMILEPACK_MAP" />
+		<field name="googlemap_key" type="nrtext"
+			label="COM_SMILEPACK_GOOGLEMAP_APIKEY"
+			description="COM_SMILEPACK_GOOGLEMAP_APIKEY_DESC"
+			urltext="COM_SMILEPACK_GOOGLEMAP_APIKEY_GET"
+			url="https://www.tassos.gr/joomla-extensions/smile-pack/docs/map-module#get_googlemap_key"
+			class="span5"
+		/>
+		<field name="bingmap_key" type="nrtext"
+			label="COM_SMILEPACK_BINGMAP_APIKEY"
+			description="COM_SMILEPACK_BINGMAP_APIKEY_DESC"
+			urltext="COM_SMILEPACK_BINGMAP_APIKEY_GET"
+			url="https://www.tassos.gr/joomla-extensions/smile-pack/docs/map-module#get_bingmap_key"
+			class="span5"
+		/>
+		<field name="openstreetmap_key" type="nrtext"
+			label="COM_SMILEPACK_OPENSTREETMAP_APIKEY"
+			description="COM_SMILEPACK_OPENSTREETMAP_APIKEY_DESC"
+			urltext="COM_SMILEPACK_OPENSTREETMAP_APIKEY_GET"
+			url="https://www.tassos.gr/joomla-extensions/smile-pack/docs/map-module#get_osm_arcgis_key"
+			class="span5"
+		/>
+    </fieldset>
+</form>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="subform_modal" class="number-subform">
+		<field name="j51_number_title" type="text" default="" label="MOD_J51_NUMBERTITLE" description="MOD_J51_NUMBERTITLE_DESC" />
+		<field name="j51_number_caption" type="textarea" rows="4" cols="42" default="" label="MOD_J51_NUMBERCAPTION" description="MOD_J51_NUMBERCAPTION_DESC" />
+		<field name="j51_number" type="text" default="" label="MOD_J51_NUMBER" description="MOD_J51_NUMBER_DESC" />
+		<field name="j51_number_prefix" type="text" default="" label="MOD_J51_NUMBER_PREFIX" description="MOD_J51_NUMBER_PREFIX_DESC" />
+		<field name="j51_number_suffix" type="text" default="" label="MOD_J51_NUMBER_SUFFIX" description="MOD_J51_NUMBER_SUFFIX_DESC" />
+		<field name="j51_number_decimal" type="list" default="0" label="MOD_J51_NUMBERS_DECIMAL" description="MOD_J51_NUMBERS_DECIMAL_DESC">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+		</field>
+		<field
+				name="j51_group"
+				type="radio"
+				layout="joomla.form.field.radio.switcher"
+				default="1"
+				label="Use Grouping"
+			>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="j51_group_sep" type="text" default="," label="Group Separator" />
+			<field name="j51_decimal_sep" type="text" default="." label="Decimal Separator" />
+	</fieldset>
+</form>

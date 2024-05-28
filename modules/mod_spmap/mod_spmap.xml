@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+	<name>MOD_SPMAP</name>
+	<description>SPMAP_XML_DESCRIPTION</description>
+	<version>1.0.0</version>
+	<creationDate>March 2024</creationDate>
+	<author>Tassos Marinos</author>
+	<authorEmail>info@tassos.gr</authorEmail>
+	<authorUrl>http://www.tassos.gr</authorUrl>
+	<copyright>Copyright © 2024 Tassos Marinos All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <scriptfile>script.install.php</scriptfile>
+	<files>
+		<filename module="mod_spmap">mod_spmap.php</filename>
+		<folder>fields</folder>
+        <folder>language</folder>
+		<folder>tmpl</folder>
+        <filename>script.install.helper.php</filename>
+		<filename>mod_spmap.xml</filename>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nrframework/fields">
+			<fieldset name="basic">
+				<field name="provider" type="NRImagesSelector"
+                    images='[{"key": "OpenStreetMap", "label": "NR_OPENSTREETMAP", "url": "https://www.tassos.gr/images/apps/openstreetmap.png"}, {"key": "GoogleMap", "label": "NR_GOOGLEMAPS", "url": "https://www.tassos.gr/images/apps/google-maps.png"}, {"key": "BingMap", "label": "NR_BINGMAPS", "url": "https://www.tassos.gr/images/apps/bing-maps.png"}]'
+                    columns="3"
+                    default="OpenStreetMap"
+                    label="SPMAP_MAP_PROVIDER"
+                    description="SPMAP_MAP_PROVIDER_DESC"
+                    mode="links"
+                    image_width="100px"
+                    width="500px"
+                />
+                
+                
+                <field name="@map_maptype" type="nr_pro"
+                    label="SPMAP_MAP_TYPE"
+                    description="SPMAP_MAP_TYPE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                <field name="@scale" type="nr_pro"
+                    label="SPMAP_MAP_SCALE"
+                    description="SPMAP_MAP_SCALE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+                <field name="width" type="NRResponsiveControl"
+                    label="NR_WIDTH"
+                    description="SPMAP_MAP_WIDTH_DESC"
+                    default='{"desktop":{"value":"100","unit":"%"}}'
+                    subtype="TFUnitControl"
+                    subtype_hint="100"
+                    class="is-one-line"
+                />
+                <field name="height" type="NRResponsiveControl"
+                    label="NR_HEIGHT"
+                    description="SPMAP_MAP_HEIGHT_DESC"
+                    default='{"desktop":{"value":"400", "unit":"px"}}'
+                    subtype="TFUnitControl"
+                    subtype_hint="400"
+                    class="is-one-line"
+                />
+                <field name="zoom_level" type="radio"
+                    label="SPMAP_MAP_MAP_CENTER"
+                    description="SPMAP_MAP_MAP_CENTER_DESC"
+                    default="fitbounds"
+                    class="btn-group btn-group-yesno">
+                        <option value="fitbounds">SPMAP_MAP_FIT_BOUNDS</option>
+                        <option value="preset">NR_CUSTOM</option>
+                </field>
+                <field name="map_center" type="TFAddressLookup"
+                    label="SPMAP_MAP_SET_MAP_CENTER"
+                    description="SPMAP_MAP_SET_MAP_CENTER_DESC"
+                    showon="zoom_level:preset"
+                />
+                <field name="zoom" type="nrnumber"
+                    label="SPMAP_MAP_ZOOM_LEVEL"
+                    description="SPMAP_MAP_ZOOM_LEVEL_DESC"
+                    default="4"
+                    min="0"
+                    showon="zoom_level:preset"
+                />
+                <field type="spacer" name="label2"
+                    label="COM_MODULES_MAP_FIELDSET_LABEL"
+                    class="smilepack-fields-separator"
+                    showon="source:custom"
+                />
+                <field name="show_sidebar" type="nrtoggle"
+                    label="SPMAP_MAP_SHOW_SIDEBAR"
+                    description="SPMAP_MAP_SHOW_SIDEBAR_DESC"
+                    checked="true"
+                    showon="source:custom"
+                />
+            </fieldset>
+            <fieldset name="map" addfieldpath="/modules/mod_spmap/fields" class="sp-fieldset-reset">
+                <field name="value" type="SPMapEditor" showon="source:custom" hiddenLabel="true"/>
+                <field name="acf_label" type="note" showon="source:acf" label="SPMAP_MAP_HIDDEN" />
+            </fieldset>
+            <fieldset name="markers" label="SPMAP_MARKERS">
+                <fieldset name="add_markers" label="SPMAP_MAP_SOURCE">
+                    
+                    <field name="source" type="list"
+                        label="SPMAP_MAP_SOURCE"
+                        description="SPMAP_MAP_SOURCE_DESC"
+                        default="custom">
+                        <option value="custom">SPMAP_MANUAL_SELECTION</option>
+                        <option disabled="disabled">SPMAP_AUTOMATIC_DISCOVERY</option>
+                    </field>
+                    
+                    
+                </fieldset>
+                <fieldset name="markers_behavior" label="SPMAP_BEHAVIOR">
+                    
+                    
+                    <field name="@unlimited_map_markers" type="nr_pro"
+                        label="SPMAP_MAP_MAXIMUM_MARKERS"
+                        description="SPMAP_MAP_MAXIMUM_MARKERS_DESC"
+                        url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    />
+                    <field name="@markerImage" type="nr_pro"
+                        label="SPMAP_MAP_MARKER_ICON"
+                        description="SPMAP_MAP_MARKER_ICON_DESC"
+                        url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    />
+                    
+                </fieldset>
+            </fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,27 @@
+.j51_inlineicon {
+	display: inline-block;
+	padding: 0 ;
+}
+.j51_inlineicon:focus {
+	outline: 0 !important;
+}
+.j51_inlineicon i:before {
+	padding-right: 0;
+	color: inherit !important;
+}
+.j51_inlineicon [data-balloon]:after {
+	background-color: #5b5b5b;
+	background-color: var(--primary);
+}
+.j51_inlineicons .j51_inlineicon:hover i:before {
+    color: #5b5b5b !important;
+    color: var(--primary) !important;
+}
+.j51_inlineicons [data-balloon]:after {
+    background-color: #5b5b5b !important;
+    background-color: var(--primary) !important;
+}
+.j51_inlineicons [data-balloon]:before {
+  border-color: #5b5b5b transparent transparent transparent;
+  border-color: var(--primary) transparent transparent transparent;
+}

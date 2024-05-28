@@ -1,0 +1,23 @@
+@function getOppositePosition($position) {
+    @if ($position == top) {
+        @return bottom;
+    }
+    @if ($position == bottom) {
+        @return top;
+    }
+    @if ($position == left) {
+        @return right;
+    }
+    @if ($position == right) {
+        @return left;
+    }
+    @return $position;
+}
+
+@function getColor($color_name, $value) {
+    @if (type-of($value) == "number") {
+        @return rl-color($color_name, $value);
+    }
+
+    @return $value;
+}

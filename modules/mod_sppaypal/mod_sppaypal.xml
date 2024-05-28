@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+	<name>MOD_SPPAYPAL</name>
+	<description>SPPAYPAL_XML_DESCRIPTION</description>
+	<version>1.0.0</version>
+	<creationDate>April 2024</creationDate>
+	<author>Tassos Marinos</author>
+	<authorEmail>info@tassos.gr</authorEmail>
+	<authorUrl>http://www.tassos.gr</authorUrl>
+	<copyright>Copyright © 2024 Tassos Marinos All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <scriptfile>script.install.php</scriptfile>
+	<files>
+		<filename module="mod_sppaypal">mod_sppaypal.php</filename>
+		<folder>fields</folder>
+        <folder>language</folder>
+		<folder>tmpl</folder>
+        <filename>script.install.helper.php</filename>
+		<filename>mod_sppaypal.xml</filename>
+	</files>
+    <media folder="media" destination="mod_sppaypal">
+        <folder>img</folder>
+    </media>
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nrframework/fields">
+			<fieldset name="basic">
+                <field name="testmode_label" type="note"
+                    class="alert alert-warning w-100"
+                    label="SPPAYPAL_TESTMODE_WARNING"
+                    showon="testmode:1"
+                />
+                <field name="color" type="NRImagesSelector"
+                    images='[
+                        {
+                            "key": "gold",
+                            "label": "SPPAYPAL_GOLD",
+                            "url": "{{SITE_URL}}media/mod_sppaypal/img/gold.png"
+                        },
+                        {
+                            "key": "blue",
+                            "label": "SPPAYPAL_BLUE",
+                            "url": "{{SITE_URL}}media/mod_sppaypal/img/blue.png"
+                        },
+                        {
+                            "key": "silver",
+                            "label": "SPPAYPAL_SILVER",
+                            "url": "{{SITE_URL}}media/mod_sppaypal/img/silver.png"
+                        },
+                        {
+                            "key": "white",
+                            "label": "SPPAYPAL_WHITE",
+                            "url": "{{SITE_URL}}media/mod_sppaypal/img/white.png"
+                        },
+                        {
+                            "key": "black",
+                            "label": "SPPAYPAL_BLACK",
+                            "url": "{{SITE_URL}}media/mod_sppaypal/img/black.png"
+                        }
+                    ]'
+                    columns="5"
+                    item_gap="8px"
+                    key_type="filename"
+                    label="SPPAYPAL_COLOR"
+                    description="SPPAYPAL_COLOR_DESC"
+                    default="gold"
+                    mode="links"
+                    width="1000px"
+                    image_width="170px"
+                />
+                <field name="button_layout" type="NRImagesSelector"
+                    images='[
+                        {
+                            "key": "vertical",
+                            "label": "SPPAYPAL_VERTICAL",
+                            "url": "{{SITE_URL}}media/mod_sppaypal/img/vertical.svg"
+                        },
+                        {
+                            "key": "horizontal",
+                            "label": "SPPAYPAL_HORIZONTAL",
+                            "url": "{{SITE_URL}}media/mod_sppaypal/img/horizontal.svg"
+                        }
+                    ]'
+                    columns="2"
+                    item_gap="8px"
+                    key_type="filename"
+                    label="SPPAYPAL_BUTTON_LAYOUT"
+                    description="SPPAYPAL_BUTTON_LAYOUT_DESC"
+                    default="vertical"
+                    mode="links"
+                    width="255px"
+                />
+                <field name="corner_style" type="radio"
+                    label="SPPAYPAL_ROUNDNED_CORNERS"
+                    description="SPPAYPAL_ROUNDNED_CORNERS_DESC"
+                    default="rect"
+                    class="btn-group btn-group-yesno">
+                    <option value="sharp">NR_NONE</option>
+                    <option value="rect">JDEFAULT</option>
+                    <option value="pill">NR_LARGE</option>
+                </field>
+                <field name="max_width" type="NRResponsiveControl"
+                    label="SPPAYPAL_MAX_WIDTH"
+                    description="SPPAYPAL_MAX_WIDTH_DESC"
+                    subtype="TFUnitControl"
+                    default="100%"
+                    class="is-one-line"
+                />
+                <field name="tagline" type="NRToggle"
+                    label="SPPAYPAL_TAGLINE"
+                    description="SPPAYPAL_TAGLINE_DESC"
+                    checked="true"
+                    showon="button_layout:horizontal"
+                />
+                <field type="spacer" name="label_billing_details"
+                    label="SPPAYPAL_BILLING_DETAILS"
+                    class="smilepack-fields-separator"
+                />
+                <field name="item_name" type="text"
+                    label="SPPAYPAL_ITEM_NAME"
+                    description="SPPAYPAL_ITEM_NAME_DESC"
+                    required="true"
+                />
+                <field name="billing_amount" type="text" 
+                    label="SPPAYPAL_BILLING_AMOUNT"
+                    description="SPPAYPAL_BILLING_AMOUNT_DESC"
+                    required="true"
+                />
+                <field name="currency" type="NR_Currencies"
+                    label="SPPAYPAL_CURRENCY"
+                    description="SPPAYPAL_CURRENCY_DESC"
+                    default="USD"
+                    layout="joomla.form.field.list-fancy-select"
+                />
+                
+                
+                <field name="@recurring_interval" type="nr_pro"
+                    label="SPPAYPAL_RECURRING_INTERVAL"
+                    description="SPPAYPAL_BILLING_CYCLE_DESC_FREE"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+                <field type="spacer" name="additional_charges"
+                    label="Additional Charges"
+                    class="smilepack-fields-separator"
+                />
+                
+                
+                <field name="@shipping_amount" type="nr_pro"
+                    label="SPPAYPAL_SHIPPING_COST"
+                    description="SPPAYPAL_SHIPPING_COST_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                <field name="@tax_rate" type="nr_pro"
+                    label="SPPAYPAL_TAX_RATE"
+                    description="SPPAYPAL_TAX_RATE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+                <field type="spacer" name="label_actions"
+                    label="SPPAYPAL_ACTIONS"
+                    class="smilepack-fields-separator"
+                />
+                <field name="action" type="radio"
+                    label="SPPAYPAL_SUCCESSFUL_PAYMENT_ACTION"
+                    description="SPPAYPAL_SUCCESSFUL_PAYMENT_ACTION_DESC"
+                    default="message"
+                    class="btn-group btn-group-yesno">
+                        <option value="message">SPPAYPAL_SHOW_MESSAGE</option>
+                        <option value="redirect">SPPAYPAL_REDIRECT_TO_URL</option>
+                </field>
+                <field name="success_message" type="editor"
+                    label="SPPAYPAL_SUCCESS_MESSAGE"
+                    description="SPPAYPAL_SUCCESS_MESSAGE_DESC"
+                    default="Thank you for your purchase. Your payment has been successfully processed."
+                    filter="raw"
+                    rows="2"
+                    showon="action:message"
+                />
+                
+                
+                <field name="@success_url" type="nr_pro"
+                    label="SPPAYPAL_SUCCESS_URL"
+                    description="SPPAYPAL_SUCCESS_URL_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="action:redirect"
+                />
+                
+                <field type="nr_freetext" name="smartttags"
+                    label=" "
+                    text="Transaction Smart Tags (Pro-only)"
+                    description="SPPAYPAL_SMART_TAGS"
+                />
+                <field type="nr_freetext" name="smartttags_global"
+                    label=" "
+                    text="Global Smart Tags"
+                    description="SPPAYPAL_SMART_TAGS_GLOBAL"
+                />
+                <field name="success_hide_payment_buttons" type="nrtoggle"
+                    label="SPPAYPAL_SUCCESS_HIDE_PAYMENT_BUTTONS"
+                    description="SPPAYPAL_SUCCESS_HIDE_PAYMENT_BUTTONS_DESC"
+                    checked="true"
+                    showon="action:message"
+                />
+                <field type="spacer" name="label_other_settings"
+                    label="SPPAYPAL_OTHER_SETTINGS"
+                    class="smilepack-fields-separator"
+                />
+                
+                <field name="show_shipping_address" type="nrtoggle"
+                    label="SPPAYPAL_SHOW_SHIPPING_ADDRESS"
+                    description="SPPAYPAL_SHOW_SHIPPING_ADDRESS_DESC"
+                    checked="true"
+                />
+                <field name="language" type="list"
+                    label="SPPAYPAL_LANGUAGE"
+                    description="SPPAYPAL_LANGUAGE_DESC"
+                    layout="joomla.form.field.list-fancy-select"
+                    default="">
+                        <option value="">SPPAYPAL_USE_VISITOR_BROWSER_LANGUAGE</option>
+                        <option value="auto">SPPAYPAL_USE_SITE_LANGUAGE</option>
+                        <option value="en_US">SPPAYPAL_LOCALE_EN_US</option>
+                        <option value="en_GB">SPPAYPAL_LOCALE_EN_GB</option>
+                        <option value="en_AU">SPPAYPAL_LOCALE_EN_AU</option>
+                        <option value="es_ES">SPPAYPAL_LOCALE_ES_ES</option>
+                        <option value="zh_CN">SPPAYPAL_LOCALE_ZH_CN</option>
+                        <option value="zh_HK">SPPAYPAL_LOCALE_ZH_HK</option>
+                        <option value="zh_TW">SPPAYPAL_LOCALE_ZH_TW</option>
+                        <option value="de_DE">SPPAYPAL_LOCALE_DE_DE</option>
+                        <option value="nl_NL">SPPAYPAL_LOCALE_NL_NL</option>
+                        <option value="fr_FR">SPPAYPAL_LOCALE_FR_FR</option>
+                        <option value="fr_CA">SPPAYPAL_LOCALE_FR_CA</option>
+                        <option value="pt_BR">SPPAYPAL_LOCALE_PT_BR</option>
+                        <option value="pt_PT">SPPAYPAL_LOCALE_PT_PT</option>
+                        <option value="cs_CZ">SPPAYPAL_LOCALE_CS_CZ</option>
+                        <option value="da_DK">SPPAYPAL_LOCALE_DA_DK</option>
+                        <option value="ru_RU">SPPAYPAL_LOCALE_RU_RU</option>
+                        <option value="fi_FI">SPPAYPAL_LOCALE_FI_FI</option>
+                        <option value="el_GR">SPPAYPAL_LOCALE_EL_GR</option>
+                        <option value="hu_HU">SPPAYPAL_LOCALE_HU_HU</option>
+                        <option value="en_IN">SPPAYPAL_LOCALE_EN_IN</option>
+                        <option value="id_ID">SPPAYPAL_LOCALE_ID_ID</option>
+                        <option value="he_IL">SPPAYPAL_LOCALE_HE_IL</option>
+                        <option value="it_IT">SPPAYPAL_LOCALE_IT_IT</option>
+                        <option value="ja_JP">SPPAYPAL_LOCALE_JA_JP</option>
+                        <option value="no_NO">SPPAYPAL_LOCALE_NO_NO</option>
+                        <option value="pl_PL">SPPAYPAL_LOCALE_PL_PL</option>
+                </field>
+                <field name="testmode" type="NRToggle"
+                    label="SPPAYPAL_TESTMODE"
+                    description="SPPAYPAL_TESTMODE_DESC"
+                />
+                
+                <field name="@include_payment_methods" type="nr_pro"
+                    label="SPPAYPAL_INCLUDE_PAYMENT_METHODS"
+                    description="SPPAYPAL_INCLUDE_PAYMENT_METHODS_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                <field name="@exclude_payment_methods" type="nr_pro"
+                    label="SPPAYPAL_EXCLUDE_PAYMENT_METHODS"
+                    description="SPPAYPAL_EXCLUDE_PAYMENT_METHODS_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+            </fieldset>
+		</fields>
+	</config>
+</extension>

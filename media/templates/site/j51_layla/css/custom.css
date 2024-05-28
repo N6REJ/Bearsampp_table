@@ -1,0 +1,524 @@
+/* BS5 compatility fixes */
+.label,
+.badge {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #fff;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #999;
+}
+.label {
+    border-radius: 3px;
+}
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 9px;
+}
+.label:empty,
+.badge:empty {
+    display: none;
+}
+a:hover,
+a.label:hover,
+a.label:focus,
+a.badge:hover,
+a.badge:focus {
+    color: #8aa0bf;
+    text-decoration: none;
+    cursor: pointer;
+}
+.label-important,
+.badge-important {
+    background-color: #b94a48;
+}
+.label-important[href],
+.badge-important[href] {
+    background-color: #953b39;
+}
+.label-warning,
+.badge-warning {
+    background-color: #f89406;
+}
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+.label-danger,
+.badge-danger {
+    background-color: #dc3545;
+}
+.label-danger[href],
+.badge-danger[href] {
+    background-color: #ff3a4b;
+}
+
+.label-success,
+.badge-success {
+    background-color: #468847;
+}
+.label-success[href],
+.badge-success[href] {
+    background-color: #356635;
+}
+.label-info,
+.badge-info {
+    background-color: #3a87ad;
+}
+.label-info[href],
+.badge-info[href] {
+    background-color: #2d6987;
+}
+.label-primary,
+.badge-primary {
+    background-color: #4078c0;
+}
+.label-primary[href],
+.badge-primary[href] {
+    background-color: #2d6987;
+}
+
+.label-inverse,
+.badge-inverse {
+    background-color: #333;
+}
+.label-inverse[href],
+.badge-inverse[href] {
+    background-color: #1a1a1a;
+}
+.btn .label,
+.btn .badge {
+    position: relative;
+    top: -1px;
+}
+.btn-mini .label,
+.btn-mini .badge {
+    top: 0;
+}
+
+.green,
+.success {
+    background: #218838 !important;
+    color: white;
+    border-color: darkgreen !important;
+}
+
+.blue {
+    background: #4078c0 !important;
+    color: white;
+    border-color: darkblue !important;
+}
+
+/* text light-green */
+.light-green {
+    color: lightgreen;
+}
+
+.btn-outline-dark {
+    color: #343a40 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #343a40 !important;
+}
+
+/* there's no such thing as "highlighter-rouge" so lets make it match bs5 "text-info" */
+code.highlighter-rouge {
+    color: #30638d;
+    font-weight: bolder;
+}
+
+/* set fixed size for legend icons */
+ul.list-unstyled > li > i.fa-lg {
+    min-width: 2rem;
+}
+
+/* get legend closer to table */
+.legend {
+    margin-bottom: -0.9rem;
+}
+/* ===== END BS COMPATABILITY FIXES ===== */
+
+/* Change base label & badge font size */
+
+.label-primary,
+.badge-primary {
+    background-color: #4078c0;
+}
+.label {
+    border-radius: 3px;
+}
+.label,
+.badge {
+    font-size: 1rem;
+}
+
+/* Missing from template */
+var {
+    color: var(--variable);
+    font-style: normal;
+    font-family: monospace;
+}
+
+/* custom class to apply bold fontweight */
+.bold {
+    font-weight: bold;
+}
+
+/* FA overrides */
+.fa-star,
+.fa-star-half-o {
+    color: gold;
+}
+
+.fa-github {
+    color: #4078c0;
+}
+
+.fa-lg {
+    padding: 5px;
+}
+
+i.fa.fa-shield-alt.fa-lg {
+    color: rgb(255, 69, 0);
+}
+
+i.far.fa-file-archive.fa-lg {
+    color: #1e90ff;
+}
+
+/* Fix broken pre layouts */
+pre,
+code {
+    white-space: pre !important;
+}
+
+/* logo sizing */
+img.logo-image {
+    height: 96px;
+}
+
+/* banner image for home page */
+.home.banner {
+    background-image: url("/images/Banners/code.svg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
+
+/* banner image for documentation page */
+.documentation.banner {
+    background-image: url("/images/Banners/Documentation-banner.svg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    text-shadow: 2px 2px 2px #474747, 1px 1px 2px rgba(206, 89, 55, 0);
+}
+
+/* blur banner images */
+.blur img {
+    height: 400px;
+    opacity: 0.6;
+    filter: blur(2px);
+}
+
+/* small hr */
+hr.banner {
+    /* height: 3px; */
+    margin: 8px auto 8px;
+    border: 1px solid white;
+}
+
+/* make logo image white */
+.home.banner img {
+    filter: brightness(10);
+    padding-top: 1em;
+}
+
+/* style the buttons */
+.home.banner > .buttons {
+    margin-top: 20px;
+}
+
+button.btn-lg {
+    margin: 20px;
+    padding: 16px;
+    display: inline-block;
+}
+
+/* move green button left */
+/* button.btn-lg.btn-success {
+    margin-left: -15px;
+}
+*/
+
+button a,
+.home .j51_icons a {
+    text-decoration: none;
+}
+
+/* donate buttons */
+.donate {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* add spacing below links in modules */
+.module-links {
+    margin-bottom: 20px;
+}
+
+/* lighten background-gray-lighter so it matches the info box background */
+.background-gray-lighter,
+.background-light {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* add some margin above footer so home page doesn't end right on top */
+footer#container_footer {
+    margin-top: 0.25rem;
+}
+
+/* footer menu colors */
+.footermenu ul li a,
+.footermenu ul li span {
+    color: #c8c8c8;
+}
+
+/* header for module articles */
+header.intro-header {
+    text-align: center;
+}
+
+/* remove space from under module name in sidebar */
+.mod-custom .card-header h3 {
+    margin-bottom: 0;
+}
+
+/* limit header image size on articles */
+header.intro-header img {
+    max-height: 160px;
+    text-align: center;
+    width: auto;
+}
+
+/* Articles sit much lower then sidebar */
+.maincontent {
+    padding-top: 0;
+}
+
+div#main {
+    padding-top: 1rem;
+}
+
+/* adjust margins on h3 tables*/
+h3#about,
+h3#releases,
+h3#compatibility-table,
+h3#installation,
+h3#additional-extensions,
+h3#pear,
+h3#imagemagick,
+h3#openssl,
+h3#modules,
+h3#typical-installation {
+    padding-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+/* because about is a ul installation sits too far down. */
+h3#installation {
+    padding-top: 0;
+}
+
+/* Hide articles on documentation page */
+body.documentation #container_main {
+    display: none;
+}
+
+/* put some padding above the icon cards on documentation page */
+body.documentation #bottom2_modules {
+    padding-top: 2rem;
+}
+
+/* hide underlines in links for documentation page */
+body.documentation .j51_icon a {
+    text-decoration: auto;
+}
+
+/* SCREENSHOTS PAGE */
+/* Add shadows to create the "card" effect */
+.screenshots .j51imghvr-item {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+
+/* Akeeba login web authentication icon */
+.plg_system_webauthn_login_button svg path {
+    fill: white;
+}
+
+/* Getting started article */
+.started-modules {
+    display: flex;
+    flex-flow: wrap;
+    text-align: left;
+}
+
+a.started-module {
+    min-width: 15%;
+    padding: 5px 0.6rem;
+}
+
+/* === blog pages === */
+/* remove extra padding below search */
+.lnep_blog form .pagination_wrapper {
+    padding-bottom: 0;
+}
+
+/* make main content wider so it fits menu */
+.maincontent {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* move page header over */
+.lnep_blog .page-header {
+    margin-left: 15px;
+}
+
+/* move searchbox over */
+.lnep_blog form .pagination_wrapper {
+    margin-left: 15px;
+}
+
+/* Apache Article styling */
+.apcontents {
+    h1 {
+        padding: 0.1em;
+        padding-left: 0.3em;
+        margin: 0;
+        border: 1px solid #405871;
+        background-color: #557697;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    h3 {
+        background-color: inherit;
+        color: #036;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 1.3em 0 0.4em 0;
+        padding: 0;
+    }
+    td.cve-header {
+        border: 1px solid #dddddd;
+        width: 1px;
+        white-space: nowrap;
+        padding: 1px 5px 1px 1px;
+    }
+    td.cve-value {
+        border: 1px solid #dddddd;
+        padding: 1px;
+    }
+    td {
+        empty-cells: show;
+    }
+    dd table {
+        width: 75%;
+        margin-left: 15px;
+    }
+    dd,
+    dt,
+    dl {
+        margin-right: 15px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        line-height: 14px;
+        font-weight: normal;
+        padding: 1px;
+    }
+    dd p {
+        width: 75%;
+        margin-left: 15px;
+    }
+    a:visited {
+        color: #5a88b5;
+        background-color: inherit;
+    }
+
+    h3 a,
+    h3 a:hover,
+    h3 a:active,
+    h4 a,
+    h4 a:hover,
+    h4 a:active {
+        color: inherit;
+        background-color: inherit;
+        text-decoration: none;
+    }
+    a {
+        color: #036;
+    }
+    p {
+        color: #22262a;
+    }
+}
+
+/* Accordion */
+.accordion-button:not(.collapsed) {
+    color: #0f244d;
+    background-color: #8AA0BF;
+}
+
+/* Banners */
+/* constrains images and container */
+.module.horz .bannergroup {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: no-wrap;
+  	width: 100%;
+	overflow: hidden;
+}
+.module.horz .banneritem {
+    padding: 5px;
+}
+.module.vert .bannergroup {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.module.vert .banneritem {
+        padding: 2px;
+}
+/* fix horizontal layout not working in FF */
+.mod-banners.bannergroup {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+/* ---- END BANNERS ---- */
+
+
+/* FAQ */
+.tf-faq-widget--item {
+    border: 1px solid lightgray;
+}

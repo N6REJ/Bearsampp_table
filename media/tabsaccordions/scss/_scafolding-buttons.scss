@@ -1,0 +1,115 @@
+&[data-rlta-type="accordions"],
+&[data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+    > [data-rlta-element="button"] {
+        align-items: center;
+        cursor:      pointer;
+        display:     flex;
+        text-align:  center;
+        z-index:     1;
+
+        &:focus {
+            outline: none;
+        }
+
+        &[data-rlta-focus="true"]:focus {
+            box-shadow: 0 0 1px 2px rl-color(blue, 600), inset 0 0 1px 0 $rl-white;
+        }
+
+        > [data-rlta-element="heading"] {
+            font-size:   1.125rem;
+            font-weight: 500;
+            margin:      0;
+            padding:     0;
+            width:       100%;
+        }
+    }
+}
+
+&[data-rlta-type="accordions"] {
+    > [data-rlta-element="button"] {
+        margin-bottom: .25em;
+        text-align:    left;
+
+        &:not([data-rlta-state="closed"]) {
+            margin-bottom: -1px;
+        }
+    }
+
+    &[data-rlta-icons="true"] {
+        > [data-rlta-element="button"] {
+            &:after {
+                content:     "+";
+                font-weight: bold;
+                float:       right;
+                margin-left: 1rem;
+            }
+
+            &:not([data-rlta-state="closed"]) {
+                &:after {
+                    content: "−";
+                }
+            }
+        }
+    }
+}
+
+&[data-rlta-type="tabs"] {
+    > [data-rlta-element="button-list"] {
+        display:         grid;
+        grid-auto-flow:  column;
+        grid-gap:        5px;
+        justify-content: normal;
+        min-height:      30px;
+
+        > [data-rlta-element="button"] {
+            &[data-rlta-focus="true"]:focus,
+            &[data-rlta-focus="true"]:focus:not([data-rlta-state="closed"]) {
+                box-shadow: inset 0 0 1px 2px rl-color(blue, 600), inset 0 0 1px 3px $rl-white;
+            }
+        }
+    }
+
+    &[data-rlta-orientation="horizontal"] {
+        &:not([data-rlta-wrap-buttons="true"]) {
+            > [data-rlta-element="button-list"] {
+                /* Hide scrollbar: IE and Edge */
+                overflow-x:         scroll;
+                /* Hide scrollbar: Firefox */
+                scrollbar-width:    none;
+                /* Hide scrollbar: Internet Explorer 10+ */
+                -ms-overflow-style: none;
+
+                &::-webkit-scrollbar {
+                    /*Hide scrollbar: Chrome, Safari and Opera */
+                    display: none;
+                }
+            }
+        }
+
+        &[data-rlta-wrap-buttons="true"] {
+            > [data-rlta-element="button-list"] {
+                display:       flex;
+                flex-flow:     row wrap;
+                margin-bottom: -5px;
+                margin-right:  -5px;
+
+                > [data-rlta-element="button"] {
+                    flex:          1;
+                    margin-bottom: 5px;
+                    margin-right:  5px;
+                }
+            }
+        }
+    }
+
+    &[data-rlta-dynamic-heights="true"] {
+        &[data-rlta-has-button-scroller="false"],
+        &[data-rlta-has-button-scroller="true"][data-rlta-button-scroller="ready"] {
+            > [data-rlta-element="button-list"] {
+                > [data-rlta-element="button"] {
+                    transition: padding 100ms, margin 100ms;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="image_modal" class="image-subform">
+		<field name="j51_type" type="radio" default="typefont" label="MOD_J51_TYPE"
+		checked="checked" 
+		class="btn-group">
+			<option value="typefont">Font</option>
+			<option value="typeimage">Image</option>
+		</field>
+		<field name="j51_icon" type="text" default="" label="MOD_J51_ICON" showon="j51_type:typefont"/>
+		<field name="j51_icon_image" type="media" default="" label="MOD_J51_ICON_IMAGE" directory="/" filter="" exclude="" stripext="" showon="j51_type:typeimage"/>
+		<field name="j51_iconurl" type="text" filter="raw" default="" label="MOD_J51_ICONURL"  />
+		<field name="j51_targeturl" type="radio" default="_self" label="MOD_J51_URLTARGET" 
+		checked="checked" 
+		class="btn-group"
+		showon="j51_iconurl!:"
+		layout="joomla.form.field.radio.switcher">
+			<option value="_self">JNO</option>
+			<option value="_blank">JYES</option>
+		</field>
+		<field name="j51_icon_title" type="text" size="60" default="" label="MOD_J51_ICONTITLE"  />
+		<field name="j51_icon_desc" type="textarea" filter="raw" size="60" default="" label="MOD_J51_ICONDESC" />
+		<field name="j51_animate_class" type="text" default="" label="MOD_J51_ANIMATE" />
+
+		<field name="j51_override_style" type="radio" label="Override Default Style" default="0" checked="checked" layout="joomla.form.field.radio.switcher">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="j51_icon_color" type="color" default="" label="Icon Color" showon="j51_override_style:1"/>
+		<field name="j51_icon_bg_color" type="color" default="" label="Icon Background Color" showon="j51_override_style:1"/>
+		<field name="j51_icon_border_color" type="color" default="" label="Border Color" showon="j51_override_style:1"/>
+		<field name="j51_icon_title_color" type="color" default="" label="Title Color" showon="j51_override_style:1"/>
+		<field name="j51_icon_desc_color" type="color" default="" label="Description Color" showon="j51_override_style:1"/>
+		<field name="j51_bg_color" type="color" default="" label="Background Color" showon="j51_override_style:1"/>
+	</fieldset>
+</form>

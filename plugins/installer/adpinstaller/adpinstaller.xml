@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="installer" method="upgrade">
+	<name>PLG_INSTALLER_ADPINSTALLER</name>
+	<author>Olivier Buisard</author>
+	<creationDate>08/06/2018</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>https://simplifyyourweb.com</authorUrl>
+	<version>6.3.0</version>
+	<description>PLG_INSTALLER_ADPINSTALLER_XML_DESCRIPTION</description>
+	
+	<scriptfile>installer.php</scriptfile>
+
+	<media folder="media" destination="plg_installer_adpinstaller">
+		<folder>images</folder>
+	</media>
+	
+	<files>
+		<filename plugin="adpinstaller">adpinstaller.php</filename>
+		<filename>license.txt</filename>
+	</files>
+
+	<languages>
+		<language tag="da-DK">language/da-DK/da-DK.plg_installer_adpinstaller.ini</language>
+		<language tag="da-DK">language/da-DK/da-DK.plg_installer_adpinstaller.sys.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_installer_adpinstaller.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_installer_adpinstaller.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_installer_adpinstaller.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_installer_adpinstaller.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_installer_adpinstaller.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_installer_adpinstaller.sys.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.plg_installer_adpinstaller.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.plg_installer_adpinstaller.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_installer_adpinstaller.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_installer_adpinstaller.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.plg_installer_adpinstaller.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.plg_installer_adpinstaller.sys.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.plg_installer_adpinstaller.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.plg_installer_adpinstaller.sys.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.plg_installer_adpinstaller.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.plg_installer_adpinstaller.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="SYW\Library\Field">
+			
+				<field type="extensionversion" extension="plg_installer_adpinstaller" />
+				<field type="extensionauthor" />
+				<field type="extensionconnect" />
+				
+				<field type="message" text="PLG_INSTALLER_ADPINSTALLER_MESSAGE_USEUPDATESERVERINSTEAD" style="warning" />
+
+				<field name="download_id" type="text" filter="string" size="30" default="" class="input-xxlarge" 
+					label="PLG_INSTALLER_ADPINSTALLER_FIELD_DOWNLOADID_LABEL" 
+					description="PLG_INSTALLER_ADPINSTALLER_FIELD_DOWNLOADID_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

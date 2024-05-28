@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams" addfieldpath="plugins/fields/acffaq/fields">
+		<fieldset name="fieldparams">
+			<!-- Template Selector -->
+			<field name="a" type="spacer" class="acf" label="ACF_FAQ_TEMPLATE_SELECTOR" />
+			<field name="template" type="NRImagesSelector"
+				images="/media/plg_fields_acffaq/img/templates"
+				class="acf-faq-template-selector no-padding"
+				width="900px"
+				columns="4"
+				default="1"
+				label="ACF_FAQ_TEMPLATE"
+				description="ACF_FAQ_TEMPLATE_DESC"
+				key_type="filename"
+			/>
+
+			<!-- FAQ -->
+			<field name="b" type="spacer" class="acf" label="ACF_FAQ_FAQ" />
+			<field name="initial_state" type="list"
+				label="ACF_FAQ_INITIAL_STATE"
+				description="ACF_FAQ_INITIAL_STATE_DESC"
+				default="first-open"
+				>
+				<option value="first-open">ACF_FAQ_INITIAL_STATE_FIRST_OPEN</option>
+				<option value="all-open">ACF_FAQ_INITIAL_STATE_ALL_OPEN</option>
+				<option value="all-closed">ACF_FAQ_INITIAL_STATE_ALL_CLOSED</option>
+			</field>
+			<field name="keep_one_question_open" type="NRToggle"
+				label="ACF_FAQ_KEEP_ONE_QUESTION_OPEN"
+				description="ACF_FAQ_KEEP_ONE_QUESTION_OPEN_DESC"
+				checked="true"
+			/>
+			<field name="columns" type="number"
+				label="ACF_FAQ_COLUMNS"
+				description="ACF_FAQ_COLUMNS_DESC"
+				class="input-small"
+				default="1"
+				hint="3"
+				min="1"
+				max="6"
+			/>
+			<field name="item_gap_control" type="NRResponsiveControl"
+				label="ACF_FAQ_ITEM_GAP"
+				description="ACF_FAQ_ITEM_GAP_DESC">
+                <subform>
+                    <field name="item_gap" type="nrnumber"
+						class="input-small"
+						default="20"
+						hint="10"
+						min="1"
+						addon="px" />
+                </subform>
+			</field>
+			<field name="column_gap_control" type="NRResponsiveControl"
+				label="ACF_FAQ_COLUMN_GAP"
+				description="ACF_FAQ_COLUMN_GAP_DESC"
+				showon="columns!:1">
+                <subform>
+                    <field name="column_gap" type="nrnumber"
+						class="input-small"
+						default="20"
+						hint="10"
+						min="1"
+						addon="px" />
+                </subform>
+			</field>
+			<field name="separator" type="NRToggle"
+				label="ACF_FAQ_SEPARATOR"
+				description="ACF_FAQ_SEPARATOR_DESC"
+				checked="true"
+			/>
+			<field name="separator_color" type="color"
+				label="ACF_FAQ_SEPARATOR_COLOR"
+				description="ACF_FAQ_SEPARATOR_COLOR_DESC"
+				keywords="transparent,none"
+				format="rgba"
+				position="bottom"
+				default="#dedede"
+				showon="separator:1"
+			/>
+
+			<!-- Item -->
+			<field name="c" type="spacer" class="acf" label="ACF_FAQ_ITEM" />
+			<field name="background_color" type="color"
+				label="ACF_FAQ_ITEM_BACKGROUND_COLOR"
+				description="ACF_FAQ_ITEM_BACKGROUND_COLOR_DESC"
+				keywords="transparent,none"
+				format="rgba"
+				position="bottom"
+			/>
+			<field name="border_radius_control" type="NRResponsiveControl"
+				label="NR_BORDER_RADIUS"
+				description="ACF_FAQ_ITEM_BORDER_RADIUS_DESC">
+                <subform>
+                    <field
+						name="item_border_radius"
+						type="TFBorderRadiusControl" />
+                </subform>
+			</field>
+			<field name="padding_control" type="NRResponsiveControl"
+				label="ACF_FAQ_ITEM_PADDING"
+				description="ACF_FAQ_ITEM_PADDING_DESC">
+                <subform>
+                    <field
+						name="item_padding"
+						type="TFDimensionControl" />
+                </subform>
+			</field>
+
+			<!-- Question -->
+			<field name="d" type="spacer" class="acf" label="ACF_FAQ_QUESTION" />
+			<field name="question_text_color" type="color"
+				label="ACF_FAQ_QUESTION_TEXT_COLOR"
+				description="ACF_FAQ_QUESTION_TEXT_COLOR_DESC"
+				keywords="transparent,none"
+				format="rgba"
+				position="bottom"
+			/>
+			<field name="question_font_size_control" type="NRResponsiveControl"
+				label="NR_FONT_SIZE"
+				default='{"desktop": {"question_font_size": 16}}'
+				description="ACF_FAQ_QUESTION_FONT_SIZE_DESC">
+                <subform>
+                    <field
+						name="question_font_size"
+						type="nrnumber"
+						hint="16"
+						class="input-small"
+						addon="px" />
+                </subform>
+			</field>
+
+			<!-- Answer -->
+			<field name="e" type="spacer" class="acf" label="ACF_FAQ_ANSWER" />
+			<field name="answer_text_color" type="color"
+				label="ACF_FAQ_ANSWER_TEXT_COLOR"
+				description="ACF_FAQ_ANSWER_TEXT_COLOR_DESC"
+				keywords="transparent,none"
+				format="rgba"
+				position="bottom"
+			/>
+			<field name="answer_font_size_control" type="NRResponsiveControl"
+				label="NR_FONT_SIZE"
+				default='{"desktop": {"answer_font_size": 16}}'
+				description="ACF_FAQ_ANSWER_FONT_SIZE_DESC">
+                <subform>
+                    <field
+						name="answer_font_size"
+						type="nrnumber"
+						hint="16"
+						class="input-small"
+						addon="px" />
+                </subform>
+			</field>
+
+			<!-- Icon -->
+			<field name="f" type="spacer" class="acf" label="ACF_FAQ_ICON" />
+			<field name="show_toggle_icon" type="NRToggle"
+				label="ACF_FAQ_SHOW_TOGGLE_ICON"
+				description="ACF_FAQ_SHOW_TOGGLE_ICON_DESC"
+				showon="template!:2"
+				checked="true"
+			/>
+			<field name="icon" type="NRImagesSelector"
+				images="/media/plg_fields_acffaq/img/icons"
+				class="acf-faq-icon-selector row-flex-direction-row"
+				columns="4"
+				default="arrow"
+				label="ACF_FAQ_ICON"
+				description="ACF_FAQ_ICON_DESC"
+				key_type="filename"
+				showon="show_toggle_icon:1"
+			/>
+			<field name="icon_position" type="radio"
+				label="ACF_FAQ_ICON_POSITION"
+				description="ACF_FAQ_ICON_POSITION_DESC"
+				class="btn-group btn-group-yesno"
+				showon="show_toggle_icon:1[AND]template!:2"
+				default="right">
+					<option value="left">NR_LEFT</option>
+					<option value="right">NR_RIGHT</option>
+			</field>
+
+			<!-- FAQ Structured Data -->
+			<field name="g" type="spacer" class="acf" label="ACF_FAQ_GENERATE_FAQ" />
+			<field name="generate_faq" type="FAQSchemaToggle"
+				label="ACF_FAQ_GENERATE_FAQ"
+				description="ACF_FAQ_GENERATE_FAQ_DESC"
+			/>
+		</fieldset>
+	</fields>
+</form>
+

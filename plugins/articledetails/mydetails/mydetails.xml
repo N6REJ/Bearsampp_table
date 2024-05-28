@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="articledetails" method="upgrade">
+	<name>plg_articledetails_mydetails</name>
+	<version>6.0.0</version>
+	<creationDate>05/30/2020</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>	
+	<author>Olivier Buisard</author>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>https://simplifyyourweb.com</authorUrl>
+	<description>PLG_ARTICLEDETAILS_MYDETAILS_XML_DESCRIPTION</description>
+	<scriptfile>installer.php</scriptfile>
+	<files>
+		<filename plugin="mydetails">mydetails.php</filename>
+		<filename>index.html</filename>
+		<filename>license.txt</filename>
+		<folder>layouts</folder>
+	</files>
+	<languages>	
+		<language tag="en-GB">language/en-GB/en-GB.plg_articledetails_mydetails.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_articledetails_mydetails.sys.ini</language>
+	</languages>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="SYW\Library\Field">
+			
+				<field type="extensionversion" version="6.0.0" />
+				<field type="extensionauthor" />
+				<field type="extensionconnect" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

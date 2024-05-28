@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams">
+		<fieldset name="fieldparams">
+			<field name="advanced_settings" type="nrtoggle"
+				label="ACF_COUNTDOWN_SHOW_ADVANCED_SETTINGS"
+				description="ACF_COUNTDOWN_SHOW_ADVANCED_SETTINGS_DESC"
+			/>
+			<!-- Timer -->
+			<field name="a" type="spacer" class="acf" label="ACF_COUNTDOWN_COUNTDOWN_TIMER" />
+			<field name="countdown_type" type="radio"
+				label="ACF_COUNTDOWN_TYPE"
+				description="ACF_COUNTDOWN_TYPE_DESC"
+				default="static"
+				class="btn-group btn-group-yesno"
+				required="true">
+					<option value="static">ACF_COUNTDOWN_TYPE_FIXED</option>
+					<option value="evergreen">ACF_COUNTDOWN_TYPE_EVERGREEN</option>
+			</field>
+			<field name="timezone" type="list"
+				label="ACF_COUNTDOWN_TIMEZONE"
+				description="ACF_COUNTDOWN_TIMEZONE_DESC"
+				default="server"
+				showon="countdown_type:static"
+				required="true">
+					<option value="server">ACF_COUNTDOWN_TIMEZONE_SERVER</option>
+					<option value="client">ACF_COUNTDOWN_TIMEZONE_CLIENT</option>
+			</field>
+		    <field name="action" type="list"
+		        label="ACF_COUNTDOWN_ACTION"
+				description="ACF_COUNTDOWN_ACTION_DESC"
+				class="tfHasChosen"
+				showon="countdown_type:static"
+		        default="keep">
+		            <option value="keep">ACF_COUNTDOWN_ACTION_NO_ACTION</option>
+		            <option value="hide">ACF_COUNTDOWN_ACTION_HIDE_TIMER</option>
+		            <option value="message">ACF_COUNTDOWN_SHOW_MESSAGE</option>
+		            <option value="redirect">ACF_COUNTDOWN_ACTION_REDIRECT</option>
+		    </field>
+			<field name="finish_text" type="textarea"
+				label="ACF_COUNTDOWN_SHOW_MESSAGE"
+				description="ACF_COUNTDOWN_SHOW_MESSAGE_DESC"
+				hint="ACF_COUNTDOWN_FINISH_TEXT_HINT"
+				rows="5"
+				filter="raw"
+				class="input-xxlarge"
+				showon="action:message[AND]countdown_type:static"
+			/>
+			<field name="redirect_url" type="text"
+				label="ACF_COUNTDOWN_REDIRECT_URL"
+				description="ACF_COUNTDOWN_REDIRECT_URL_DESC"
+				hint="ACF_COUNTDOWN_REDIRECT_URL_HINT"
+				showon="action:redirect[AND]countdown_type:static"
+			/>
+			<!-- Template Selector -->
+			<field name="b" type="spacer" class="acf" label="ACF_COUNTDOWN_TEMPLATE_SELECTOR" />
+		    <field name="preset_source" type="radio" 
+		        label="ACF_COUNTDOWN_TYPE"
+				description="ACF_COUNTDOWN_TEMPLATE_SELECTOR_DESC"
+				class="btn-group btn-group-yesno"
+		        default="preset">
+		            <option value="preset">ACF_COUNTDOWN_TEMPLATE</option>
+		            <option value="custom">NR_CUSTOM</option>
+		    </field>
+			<field name="preset" type="NRImagesSelector"
+				images="/media/plg_fields_acfcountdown/img"
+				class="acf-countdown-preset-selector"
+				width="800px"
+				height="110px"
+				columns="2"
+				required="true"
+				default="2"
+				label="ACF_COUNTDOWN_TEMPLATE"
+				key_type="filename"
+				description="ACF_COUNTDOWN_TEMPLATE_DESC"
+				showon="preset_source:preset"
+			/>
+			<field name="format" type="textarea"
+				label="ACF_COUNTDOWN_CUSTOM_FORMAT"
+				description="ACF_COUNTDOWN_CUSTOM_FORMAT_DESC"
+				default="{days} days, {hours} hours, {minutes} minutes and {seconds} seconds"
+				rows="5"
+				filter="raw"
+				hint="ACF_COUNTDOWN_CUSTOM_FORMAT_HINT"
+				showon="preset_source:custom"
+				class="input-xxlarge"
+			/>
+			<!-- Unit Display -->
+			<field name="c" type="spacer" class="acf" label="ACF_COUNTDOWN_UNIT_DISPLAY" />
+			<!-- Days -->
+			<field name="days" type="nrtoggle"
+				label="ACF_COUNTDOWN_DAYS"
+				description="ACF_COUNTDOWN_DAYS_DESC"
+				checked="true"
+				showon="preset_source:preset"
+			/>
+			<field name="days_label" type="text"
+				label="ACF_COUNTDOWN_DAYS_LABEL"
+				description="ACF_COUNTDOWN_DAYS_LABEL_DESC"
+				default="Days"
+				hint="ACF_COUNTDOWN_DAYS"
+				showon="preset_source:preset[AND]days:1"
+			/>
+			<!-- Hours -->
+			<field name="hours" type="nrtoggle"
+				label="ACF_COUNTDOWN_HOURS"
+				description="ACF_COUNTDOWN_HOURS_DESC"
+				checked="true"
+				showon="preset_source:preset"
+			/>
+			<field name="hours_label" type="text"
+				label="ACF_COUNTDOWN_HOURS_LABEL"
+				description="ACF_COUNTDOWN_HOURS_LABEL_DESC"
+				default="Hours"
+				hint="ACF_COUNTDOWN_HOURS"
+				showon="preset_source:preset[AND]hours:1"
+			/>
+			<!-- Minutes -->
+			<field name="minutes" type="nrtoggle"
+				label="ACF_COUNTDOWN_MINUTES"
+				description="ACF_COUNTDOWN_MINUTES_DESC"
+				checked="true"
+				showon="preset_source:preset"
+			/>
+			<field name="minutes_label" type="text"
+				label="ACF_COUNTDOWN_MINUTES_LABEL"
+				description="ACF_COUNTDOWN_MINUTES_LABEL_DESC"
+				default="Mins"
+				hint="ACF_COUNTDOWN_MINUTES"
+				showon="preset_source:preset[AND]minutes:1"
+			/>
+			<!-- Seconds -->
+			<field name="seconds" type="nrtoggle"
+				label="ACF_COUNTDOWN_SECONDS"
+				description="ACF_COUNTDOWN_SECONDS_DESC"
+				checked="true"
+				showon="preset_source:preset"
+			/>
+			<field name="seconds_label" type="text"
+				label="ACF_COUNTDOWN_SECONDS_LABEL"
+				description="ACF_COUNTDOWN_SECONDS_LABEL_DESC"
+				default="Secs"
+				hint="ACF_COUNTDOWN_SECONDS"
+				showon="preset_source:preset[AND]seconds:1"
+			/>
+			<field name="separator" type="nrtoggle"
+				checked="true"
+				label="ACF_COUNTDOWN_ENABLE_SEPARATOR"
+				description="ACF_COUNTDOWN_ENABLE_SEPARATOR_DESC"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]preset!:1"
+			/>
+			<field name="double_zeroes_format" type="nrtoggle"
+				checked="true"
+				label="ACF_COUNTDOWN_DOUBLE_ZEROES_FORMAT"
+				description="ACF_COUNTDOWN_DOUBLE_ZEROES_FORMAT_DESC"
+				showon="advanced_settings:1"
+			/>
+			<!-- Unit Item -->
+			<field name="d" type="spacer" class="acf" label="ACF_COUNTDOWN_UNIT_ITEM" showon="preset_source:preset[AND]preset!:1" />
+			<field name="item_size_responsive" type="NRResponsiveControl"
+				label="ACF_COUNTDOWN_ITEM_SIZE"
+				description="ACF_COUNTDOWN_ITEM_SIZE_DESC"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]preset!:1">
+                <subform>
+                    <field name="item_size" type="number"
+						class="input-small"
+						min="0"
+						hint="90"
+						max="999" />
+                </subform>
+			</field>
+			<field name="item_gap" type="NRResponsiveControl"
+				label="ACF_COUNTDOWN_GAP"
+				description="ACF_COUNTDOWN_GAP_DESC"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]preset!:1"
+				default='{"desktop": {"gap": 10}}'
+				>
+                <subform>
+                    <field name="gap" type="number"
+						class="input-small"
+						hint="20"
+						min="0"
+						max="999" />
+                </subform>
+			</field>
+			<field name="item_padding_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]preset!:1"
+				label="ACF_COUNTDOWN_ITEM_PADDING"
+				description="ACF_COUNTDOWN_ITEM_PADDING_DESC">
+                <subform>
+                    <field
+						name="item_padding"
+						type="TFDimensionControl" />
+                </subform>
+			</field>
+			<field name="item_background_color" type="color"
+				label="ACF_COUNTDOWN_BACKGROUND_COLOR"
+				description="ACF_COUNTDOWN_ITEM_BACKGROUND_COLOR_DESC"
+				keywords="transparent,none"
+				format="rgba"
+				position="bottom"
+				showon="preset_source:preset[AND]preset!:1"
+			/>
+			<field name="border" type="TFBorderControl"
+				label="NR_BORDER"
+				description="ACF_COUNTDOWN_UNIT_ITEM_BORDER_CONTROL_DESC"
+				inline="true"
+				hide_labels="true"
+				control_group_class="nr-hide-control-group-label"
+				default_width="1"
+				default_color="#333"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]preset!:1"
+            />
+			<field name="item_border_radius_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]preset!:1"
+				label="NR_BORDER_RADIUS"
+				description="ACF_COUNTDOWN_ITEM_BORDER_RADIUS_DESC">
+                <subform>
+                    <field
+						name="item_border_radius"
+						type="TFBorderRadiusControl" />
+                </subform>
+			</field>
+			<!-- Unit Digits Container -->
+			<field name="e" type="spacer" class="acf" label="ACF_COUNTDOWN_UNIT_DIGITS_CONTAINER" showon="preset_source:preset" />
+			<field name="digits_wrapper_padding_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="NR_PADDING"
+				description="ACF_COUNTDOWN_DIGITS_CONTAINER_PADDING_DESC">
+                <subform>
+                    <field
+						name="digits_wrapper_padding"
+						type="TFDimensionControl" />
+                </subform>
+			</field>
+			<field name="digits_wrapper_border_radius_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="NR_BORDER_RADIUS"
+				description="ACF_COUNTDOWN_DIGITS_CONTAINER_BORDER_RADIUS_DESC">
+                <subform>
+                    <field
+						name="digits_wrapper_border_radius"
+						type="TFBorderRadiusControl" />
+                </subform>
+			</field>
+			<field name="digits_wrapper_background_color" type="color"
+				showon="preset_source:preset"
+				label="ACF_COUNTDOWN_BACKGROUND_COLOR"
+				description="ACF_COUNTDOWN_DIGITS_CONTAINER_BACKGROUND_COLOR_DESC"
+				keywords="transparent,none"
+				format="rgba"
+				position="bottom"
+			/>
+			<field name="digits_container_custom_width_row_start"
+				label="ACF_COUNTDOWN_DIGITS_CONTAINER_CUSTOM_WIDTH"
+				description="ACF_COUNTDOWN_DIGITS_CONTAINER_CUSTOM_WIDTH_DESC"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				type="nr_inline" />
+			<field name="digits_wrapper_custom_width" type="NRToggle"
+				checked="true"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				hiddenLabel="true"
+			/>
+			<field name="digits_wrapper_min_width" type="nrnumber"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]digits_wrapper_custom_width:1"
+				default="50"
+				hint="50"
+				hiddenLabel="true"
+				class="input-small"
+				addon="px"
+			/>
+			<field name="digits_container_custom_width_row_end" type="nr_inline" end="1" showon="advanced_settings:1[AND]preset_source:preset" />
+			<!-- Unit Digit -->
+			<field name="f" type="spacer" class="acf" label="ACF_COUNTDOWN_UNIT_DIGIT" showon="preset_source:preset" />
+			<field name="digits_font_size_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="NR_FONT_SIZE"
+				default='{"desktop": {"digits_font_size": 30}}'
+				description="ACF_COUNTDOWN_DIGITS_FONT_SIZE_DESC">
+                <subform>
+                    <field
+						name="digits_font_size"
+						type="nrnumber"
+						hint="30"
+						class="input-small"
+						addon="px" />
+                </subform>
+			</field>
+			<field name="digits_font_weight" type="list"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="ACF_COUNTDOWN_DIGITS_FONT_WEIGHT"
+				description="ACF_COUNTDOWN_DIGITS_FONT_WEIGHT_DESC"
+				class="tfHasChosen"
+		        default="500">
+		            <option value="300">300</option>
+		            <option value="400">400</option>
+		            <option value="500">500</option>
+		            <option value="600">600</option>
+		            <option value="700">700</option>
+		    </field>
+			<field name="digits_padding_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="NR_PADDING"
+				description="ACF_COUNTDOWN_DIGITS_PADDING_DESC">
+                <subform>
+                    <field
+						name="digits_padding"
+						type="TFDimensionControl" />
+                </subform>
+			</field>
+			<field name="digits_border_radius_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="NR_BORDER_RADIUS"
+				description="ACF_COUNTDOWN_DIGITS_BORDER_RADIUS_DESC">
+                <subform>
+                    <field
+						name="digits_border_radius"
+						type="TFBorderRadiusControl" />
+                </subform>
+			</field>
+			<field name="digits_gap_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="ACF_COUNTDOWN_GAP"
+				description="ACF_COUNTDOWN_DIGITS_GAP_DESC">
+                <subform>
+                    <field
+						name="digits_gap"
+						hint="0"
+						type="nrnumber"
+						class="input-small"
+						addon="px" />
+                </subform>
+			</field>
+			<field name="digit_background_color" type="color"
+				showon="preset_source:preset"
+				label="ACF_COUNTDOWN_BACKGROUND_COLOR"
+				description="ACF_COUNTDOWN_DIGIT_BACKGROUND_COLOR_DESC"
+				keywords="transparent,none"
+				format="rgba"
+				position="bottom"
+			/>
+			<field name="digit_text_color" type="color"
+				showon="preset_source:preset"
+				label="ACF_COUNTDOWN_TEXT_COLOR"
+				description="ACF_COUNTDOWN_DIGIT_TEXT_COLOR_DESC"
+				keywords="transparent,none"
+				default="#41495b"
+				format="rgba"
+				position="bottom"
+			/>
+			<field name="digits_custom_width_row_start"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="ACF_COUNTDOWN_DIGITS_CUSTOM_WIDTH"
+				description="ACF_COUNTDOWN_DIGITS_CUSTOM_WIDTH_DESC"
+				type="nr_inline" />
+			<field name="digits_custom_width" type="NRToggle"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				hiddenLabel="true"
+			/>
+			<field name="digits_min_width" type="nrnumber"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]digits_custom_width:1"
+				hiddenLabel="true"
+				hint="20"
+				class="input-small"
+				addon="px"
+			/>
+			<field name="digits_custom_width_row_end" type="nr_inline" end="1" showon="advanced_settings:1[AND]preset_source:preset" />
+			<!-- Unit Label -->
+			<field name="g" type="spacer" class="acf" label="ACF_COUNTDOWN_UNIT_LABEL" showon="preset_source:preset" />
+			<field name="label_font_size_control" type="NRResponsiveControl"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="NR_FONT_SIZE"
+				default='{"desktop": {"label_font_size": 15}}'
+				description="ACF_COUNTDOWN_LABEL_FONT_SIZE_DESC">
+                <subform>
+                    <field
+						name="label_font_size"
+						type="nrnumber"
+						hint="15"
+						class="input-small"
+						addon="px" />
+                </subform>
+			</field>
+			<field name="label_font_weight" type="list"
+				showon="advanced_settings:1[AND]preset_source:preset"
+				label="ACF_COUNTDOWN_LABEL_FONT_WEIGHT"
+				description="ACF_COUNTDOWN_LABEL_FONT_WEIGHT_DESC"
+				class="tfHasChosen"
+		        default="400">
+		            <option value="300">300</option>
+		            <option value="400">400</option>
+		            <option value="500">500</option>
+		            <option value="600">600</option>
+		            <option value="700">700</option>
+		    </field>
+			<field name="unit_label_margin_top" type="nrnumber"
+				showon="advanced_settings:1[AND]preset_source:preset[AND]preset!:1"
+				label="ACF_COUNTDOWN_UNIT_LABEL_MARGIN_TOP"
+				description="ACF_COUNTDOWN_UNIT_LABEL_MARGIN_TOP_DESC"
+				class="input-small"
+				addon="px"
+				hint="9"
+				default="9"
+			/>
+			<field name="unit_label_text_color" type="color"
+				showon="preset_source:preset"
+				label="ACF_COUNTDOWN_TEXT_COLOR"
+				description="ACF_COUNTDOWN_UNIT_LABEL_COLOR_DESC"
+				keywords="transparent,none"
+				default="#41495b"
+				format="rgba"
+				position="bottom"
+			/>
+		</fieldset>
+	</fields>
+</form>
+

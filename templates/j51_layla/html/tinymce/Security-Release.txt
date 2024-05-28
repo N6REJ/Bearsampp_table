@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <h2 class="text-danger text-center">
+    <i class="fa fa-shield-alt fa-lg"></i>
+    <b>Security release!</b>
+    <i class="fa fa-shield-alt fa-lg padding-horiz-30"></i>
+  </h2>
+  <div class="accordion accordion-flush" id="accordion{field 15}">
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="flush-heading1{field 15}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1{field 15}" aria-expanded="false" aria-controls="flush-collapse1{field 15}">
+          <i class="text-danger fa fa-shield-alt me-2 opacity-70"></i>
+          <span class="text-center text-danger bold">Vulnerabilities</span>
+        </button>
+      </h3>
+      <div id="flush-collapse1{field 15}" class="accordion-collapse collapse" aria-labelledby="flush-heading1{field 15}" data-bs-parent="#accordion{field 15}">
+        <div class="apcontents accordion-body">{field 16}</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="flush-heading2{field 15}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2{field 15}" aria-expanded="false" aria-controls="flush-collapse2{field 15}">
+          <i class="text-warning fa fa-history me-2 opacity-70"></i>
+          <span class="text-warning text-center bold">Changelog</span>
+        </button>
+      </h3>
+      <div id="flush-collapse2{field 15}" class="accordion-collapse collapse" aria-labelledby="flush-heading2{field 15}" data-bs-parent="#accordion{field 15}">
+        <div class="accordion-body">{field 17}</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="flush-heading3{field 15}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3{field 15}" aria-expanded="false" aria-controls="flush-collapse3{field 15}">
+          <i class="text-success fa fa-file-code-o me-2 opacity-70"></i>
+          <span class="text-success text-center bold">Release Files</span>
+        </button>
+      </h3>
+      <div id="flush-collapse3{field 15}" class="accordion-collapse collapse" aria-labelledby="flush-heading3{field 15}" data-bs-parent="#accordion{field 15}">
+        <div class="accordion-body">{field 18}</div>
+      </div>
+    </div>
+  </div>
+</div>

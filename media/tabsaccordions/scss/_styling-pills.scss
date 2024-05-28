@@ -1,0 +1,98 @@
+@import "../../regularlabs/scss/_variables";
+@import "_mixins-pills";
+
+$color-tab-background:              rl-color(gray, 100);
+$color-tab-background-active:       $rl-blue;
+$color-tab-background-hover:        rl-color(gray, 200);
+$color-accordion-background:        rl-color(gray, 100);
+$color-accordion-background-active: $rl-blue;
+$color-accordion-background-hover:  rl-color(gray, 200);
+$color-panel-background:            transparent;
+$color-border:                      transparent;
+$color-border-active:               rl-color(gray, 300);
+$color-link:                        inherit;
+$color-link-active:                 $rl-white;
+
+&[data-rlta-type="tabs"] > [data-rlta-element="button-list"],
+&[data-rlta-type="accordions"] {
+    > [data-rlta-element="button"] {
+        background-color: $color-tab-background;
+        border:           1px solid $color-border;
+        border-radius:    5px;
+        padding:          .75rem 1.25rem;
+
+        > [data-rlta-element="heading"] {
+            color: $color-link;
+        }
+
+        &:not([data-rlta-state="closed"]) {
+            background-color: $color-tab-background-active;
+            border-color:     $color-border-active;
+
+            > [data-rlta-element="heading"] {
+                color: $color-link-active;
+            }
+
+            &:hover {
+                background-color: $color-tab-background-active;
+            }
+        }
+
+        &:hover {
+            background-color: $color-tab-background-hover;
+        }
+    }
+}
+
+&[data-rlta-type="accordions"],
+&[data-rlta-type="tabs"] > [data-rlta-element="panels"] {
+    > [data-rlta-element="panel"] {
+        background: $color-panel-background;
+
+        > [data-rlta-element="panel-content"] {
+            padding: 1.25em 0;
+        }
+    }
+}
+
+&[data-rlta-type="accordions"] {
+    > [data-rlta-element="button"] {
+        background-color: $color-accordion-background;
+
+        &:hover,
+        &:focus {
+            background-color: $color-accordion-background-hover;
+        }
+
+        &[data-rlta-state="open"],
+        &[data-rlta-state="opening"] {
+            background-color: $color-accordion-background-active;
+
+            &:hover,
+            &:focus {
+                background-color: $color-accordion-background-active;
+            }
+        }
+    }
+}
+
+&[data-rlta-dynamic-heights="true"] {
+    &[data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+        > [data-rlta-element="button"] {
+            padding-top:    .35rem;
+            padding-bottom: .35rem;
+            margin-top:     .4rem;
+            margin-bottom:  .4rem;
+
+            &:hover,
+            &:not([data-rlta-state="closed"]) {
+                padding-top:    .75rem;
+                padding-bottom: .75rem;
+                margin-top:     0;
+                margin-bottom:  0;
+            }
+        }
+    }
+}
+
+@include pills_positionStyles($color-border);

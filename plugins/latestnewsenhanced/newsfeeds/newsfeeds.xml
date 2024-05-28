@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="latestnewsenhanced" method="upgrade">
+	<name>plg_latestnewsenhanced_newsfeeds</name>
+	<version>7.0.0</version>
+	<creationDate>02/11/2016</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>	
+	<author>Olivier Buisard</author>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>https://simplifyyourweb.com</authorUrl>
+	<description>PLG_LATESTNEWSENHANCED_NEWSFEEDS_XML_DESCRIPTION</description>
+	<changelogurl>https://updates.simplifyyourweb.com/free/latestnewsenhancedpro-addons/newsfeeds/changelog.xml</changelogurl>
+
+	<scriptfile>installer.php</scriptfile>
+
+	<variant>free</variant>
+	
+	<media folder="media" destination="plg_latestnewsenhanced_newsfeeds">
+		<folder>images</folder>
+	</media>
+	
+	<files>
+		<filename plugin="newsfeeds">newsfeeds.php</filename>
+		<filename>license.txt</filename>
+		<folder>forms</folder>
+		<folder>layouts</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<languages>
+		<language tag="da-DK">language/da-DK/da-DK.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="da-DK">language/da-DK/da-DK.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="fi-FI">language/fi-FI/fi-FI.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="fi-FI">language/fi-FI/fi-FI.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="hu-HU">language/hu-HU/hu-HU.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="hu-HU">language/hu-HU/hu-HU.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="ja-JP">language/ja-JP/ja-JP.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="ja-JP">language/ja-JP/ja-JP.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_latestnewsenhanced_newsfeeds.sys.ini</language>		
+		<language tag="pt-PT">language/pt-PT/pt-PT.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="pt-PT">language/pt-PT/pt-PT.plg_latestnewsenhanced_newsfeeds.sys.ini</language>		
+		<language tag="ru-RU">language/ru-RU/ru-RU.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.plg_latestnewsenhanced_newsfeeds.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.plg_latestnewsenhanced_newsfeeds.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="SYW\Library\Field">
+				<field type="extensionversion" extension="plg_latestnewsenhanced_newsfeeds" />
+				<field type="extensionauthor" />
+				<field type="extensionconnect" />
+				<field type="extensiontranslators" translators="PLG_LATESTNEWSENHANCED_NEWSFEEDS_TRANSLATORS" />
+				
+				<field type="extensionlinks" 
+					translate="https://simplifyyourweb.com/translators" 
+					onlinedoc="https://simplifyyourweb.com/documentation/latest-news/data-sources/plugin-newsfeeds" />
+								
+				<field name="feed_cache" type="sywverbosetext" default="60" filter="integer" size="4" unit="mn" icon="SYWicon-timer" 
+					label="PLG_LATESTNEWSENHANCED_NEWSFEEDS_FEEDCACHE_LABEL"
+					description="PLG_LATESTNEWSENHANCED_NEWSFEEDS_FEEDCACHE_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Newsfeeds for Latest News Enhanced Pro auto updater">https://updates.simplifyyourweb.com/free/latestnewsenhancedpro-addons/newsfeeds/newsfeeds-update.xml</server>
+	</updateservers>
+</extension>

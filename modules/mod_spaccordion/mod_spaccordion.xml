@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+	<name>MOD_SPACCORDION</name>
+	<description>SPACCORDION_XML_DESCRIPTION</description>
+	<version>1.0.0</version>
+	<creationDate>March 2024</creationDate>
+	<author>Tassos Marinos</author>
+	<authorEmail>info@tassos.gr</authorEmail>
+	<authorUrl>http://www.tassos.gr</authorUrl>
+	<copyright>Copyright © 2024 Tassos Marinos All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <scriptfile>script.install.php</scriptfile>
+	<files>
+		<filename module="mod_spaccordion">mod_spaccordion.php</filename>
+        <folder>fields</folder>
+        <folder>language</folder>
+		<folder>tmpl</folder>
+        <filename>script.install.helper.php</filename>
+		<filename>mod_spaccordion.xml</filename>
+	</files>
+    <media folder="media" destination="mod_spaccordion">
+        <folder>img</folder>
+    </media>
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nrframework/fields">
+			<fieldset name="basic" addfieldpath="/modules/mod_spaccordion/fields">
+                <field name="density" type="list"
+                    label="SPACCORDION_DENSITY"
+                    description="SPACCORDION_DENSITY_DESC"
+                    default="default"
+                    >
+                    <option value="none">NR_NONE</option>
+                    <option value="default">JDEFAULT</option>
+                    <option value="comfortable">SPACCORDION_COMFORTABLE</option>
+                    <option value="compact">NR_COMPACT</option>
+                </field>
+                <field name="font_size" type="NRResponsiveControl"
+                    class="is-one-line"
+                    label="NR_FONT_SIZE"
+                    description="SPACCORDION_FONT_SIZE_DESC"
+                    default='{"desktop":{"value":"16","unit":"px"}}'
+                    subtype="TFUnitControl"
+                    subtype_hint="16"
+                    subtype_default="16"
+                    subtype_units="px,em,rem"
+                />
+                <field name="gap" type="list"
+                    label="SPACCORDION_GAP"
+                    description="SPACCORDION_GAP_DESC"
+                    default="none"
+                    >
+                    <option value="none">NR_NONE</option>
+                    <option value="small">NR_SMALL</option>
+                    <option value="large">NR_LARGE</option>
+                </field>
+                <field name="panel_background_color" type="color"
+                    label="SPACCORDION_PANEL_BACKGROUND_COLOR"
+                    description="SPACCORDION_PANEL_BACKGROUND_COLOR_DESC"
+                    keywords="transparent,none"
+                    format="rgba"
+                    position="bottom"
+                    default="#fff"
+                />
+                <field name="text_color" type="color"
+                    label="SPACCORDION_TEXT_COLOR"
+                    description="SPACCORDION_TEXT_COLOR_DESC"
+                    keywords="transparent,none"
+                    format="rgba"
+                    position="bottom"
+                    default="#333"
+                />
+                <field name="border_color" type="color"
+                    label="SPACCORDION_BORDER_COLOR"
+                    description="SPACCORDION_BORDER_COLOR_DESC"
+                    keywords="transparent,none"
+                    format="rgba"
+                    position="bottom"
+                    default="#ddd"
+                />
+                <field name="rounded_corners" type="list"
+                    label="SPACCORDION_ROUNDED_CORNERS"
+                    description="SPACCORDION_ROUNDED_CORNERS_DESC"
+                    default="small"
+                    >
+                    <option value="none">NR_NONE</option>
+                    <option value="small">NR_SMALL</option>
+                    <option value="large">NR_LARGE</option>
+                </field>
+
+                <field name="label_item_icon" type="spacer" class="smilepack-fields-separator" label="SPACCORDION_ITEM_ICON" />
+                <field name="show_icon" type="list"
+                    label="SPACCORDION_SHOW_ICON"
+                    description="SPACCORDION_SHOW_ICON_DESC"
+                    default="right"
+                    >
+                    <option value="none">SPACCORDION_NO</option>
+                    <option value="left">NR_LEFT</option>
+                    <option value="right">NR_RIGHT</option>
+                </field>
+                <field name="icon" type="NRImagesSelector"
+                    images="/media/mod_spaccordion/img/icons"
+                    class="row-flex-direction-row"
+                    columns="4"
+                    default="arrow"
+                    label="SPACCORDION_ICON"
+                    description="SPACCORDION_ICON_DESC"
+                    key_type="filename"
+                    width="500px"
+                    showon="show_icon!:none"
+                />
+
+                <!-- FAQ Structured Data -->
+                <field name="g" type="spacer" class="smilepack-fields-separator" label="SPACCORDION_BEHAVIOR" />
+                <field name="initial_state" type="list"
+                    label="SPACCORDION_INITIAL_STATE"
+                    description="SPACCORDION_INITIAL_STATE_DESC"
+                    default="collapsed"
+                    >
+                    <option value="collapsed">SPACCORDION_COLLAPSED</option>
+                    <option value="expanded">SPACCORDION_EXPANDED</option>
+                    <option value="expanded-first">SPACCORDION_EXPANDED_FIRST</option>
+                </field>
+                <field name="only_one_panel_expanded" type="NRToggle"
+                    label="SPACCORDION_ONLY_ONE_PANEL_EXPANDED"
+                    description="SPACCORDION_ONLY_ONE_PANEL_EXPANDED_DESC"
+                    checked="true"
+                />
+                
+                
+                <field name="@generate_faq" type="nr_pro"
+                    label="SPACCORDION_GENERATE_FAQ"
+                    description="SPACCORDION_GENERATE_FAQ_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+            </fieldset>
+            <fieldset name="content" class="sp-fieldset-reset">
+                <field name="value" type="subform"
+                    label="SPACCORDION_CONTENT"
+                    description="SPACCORDION_VALUE_DESC"
+                    layout="joomla.form.field.subform.repeatable-table"
+                    multiple="true"
+                    default='{"value":{}}'>
+                    <form>
+                        <field name="title" type="textarea"
+                            label="NR_TITLE"
+                            hint="SPACCORDION_TITLE_HINT"
+                            class="span12 full-width w-100"
+                            rows="7"
+                            filter="safehtml"
+                        />
+                        <field name="content" type="textarea"
+                            label="SPACCORDION_CONTENT"
+                            hint="SPACCORDION_CONTENT_HINT"
+                            class="span12 full-width w-100"
+                            rows="7"
+                            filter="safehtml"
+                        />
+                    </form>
+                </field>
+            </fieldset>
+		</fields>
+	</config>
+</extension>

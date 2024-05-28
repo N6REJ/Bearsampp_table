@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	
+	<fieldset name="integration" label="JGLOBAL_INTEGRATION_LABEL" description="COM_ARTICLEDETAILSPROFILES_CONFIG_INTEGRATION_DESC">
+	
+		<fieldset name="integration_info" label="COM_ARTICLEDETAILSPROFILES_INFO_ONLINEDOC">
+
+			<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/configuration-profiles/global-configuration-integration" />
+		</fieldset>
+			
+		<fieldset name="integration_customfields" label="COM_ARTICLEDETAILSPROFILES_CUSTOMFIELDS_FIELDSET_LABEL">
+		
+			<field type="message" text="COM_ARTICLEDETAILSPROFILES_WARNING_REQUIREMENTSFORSUPPORTCUSTOMFIELDS" style="warning" />
+			
+			<field name="additional_supported_fields" type="nonstandardcustomfieldtypes" multiple="true" size="5" 
+				layout="joomla.form.field.groupedlist-fancy-select"
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_SUPPORTCUSTOMFIELDS_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_SUPPORTCUSTOMFIELDS_DESC">
+			</field>
+		</fieldset>	
+	</fieldset>
+	
+	<fieldset name="shared" label="COM_ARTICLEDETAILSPROFILES_SHARED_LABEL" description="COM_ARTICLEDETAILSPROFILES_SHARED_DESC" addfieldprefix="SYW\Component\ArticleDetailsProfiles\Administrator\Field">
+
+		<fieldset name="shared_info" label="COM_ARTICLEDETAILSPROFILES_INFO_ONLINEDOC">
+
+			<field type="extensionlink" linktype="onlinedoc" link="https://simplifyyourweb.com/documentation/article-details/configuration-profiles/global-configuration-shared-options" />
+		</fieldset>
+		
+		<fieldset name="shared_position" label="COM_ARTICLEDETAILSPROFILES_SHARED_POSITION_LABEL" description="COM_ARTICLEDETAILSPROFILES_SHARED_POSITION_DESC">
+			
+			<field name="position" type="text" default="adprofile" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_MODULEPOSITION_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_MODULEPOSITION_DESC" />		
+		</fieldset>
+		
+		<fieldset name="shared_finetuning" label="COM_ARTICLEDETAILSPROFILES_FINETUNING_LABEL">
+		
+			<field name="site_mode" type="list" default="dev" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_SITEMODE_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_SITEMODE_DESC">
+				<option value="dev">COM_ARTICLEDETAILSPROFILES_VALUE_TESTMODE</option>
+				<option value="prod">COM_ARTICLEDETAILSPROFILES_VALUE_PRODUCTIONMODE</option>
+				<option value="adv">COM_ARTICLEDETAILSPROFILES_VALUE_ADVANCEDMODE</option>
+			</field>
+	
+			<field name="bootstrap_version" type="list" default="joomla" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_COMPATIBILITYBOOTSTRAP_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_COMPATIBILITYBOOTSTRAP_DESC">
+				<option value="0">JNONE</option>
+				<option value="joomla">Joomla</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</field>
+			
+			<field name="show_errors" type="radio" default="0" layout="joomla.form.field.radio.switcher" showon="site_mode:adv" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_SHOWERRORS_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_SHOWERRORS_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="load_icon_font" type="radio" default="1" layout="joomla.form.field.radio.switcher" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_LOADICONFONT_LABEL"
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_LOADICONFONT_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="load_fontawesome" type="radio" default="1" layout="joomla.form.field.radio.switcher" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_LOADFONTAWESOME_LABEL"
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_LOADFONTAWESOME_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+		</fieldset>
+
+		<fieldset name="shared_pictures" label="COM_ARTICLEDETAILSPROFILES_PICTURES_LABEL">
+							
+			<field type="message" text="COM_ARTICLEDETAILSPROFILES_INFO_CLEARCACHE" style="info" showon="site_mode:adv" />
+				
+			<field name="clear_cache" type="radio" default="1" layout="joomla.form.field.radio.switcher" showon="site_mode:adv" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_CLEARCACHE_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_CLEARCACHE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+							
+			<field name="thumb_path" type="list" default="images" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_THUMBPATH_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_THUMBPATH_DESC">
+				<option value="default">COM_ARTICLEDETAILSPROFILES_VALUE_TEMPFOLDER</option>
+				<option value="images">COM_ARTICLEDETAILSPROFILES_VALUE_IMAGESDIRECTORY</option>
+				<option value="cache">COM_ARTICLEDETAILSPROFILES_VALUE_CACHEDIRECTORY</option>
+			</field>
+		</fieldset>
+		
+		<fieldset name="shared_headers" label="COM_ARTICLEDETAILSPROFILES_HEADERFILES_LABEL">
+							
+			<field type="message" text="COM_ARTICLEDETAILSPROFILES_FIELD_LAZYLOADSTYLESHEETS_TXT" style="fieldneutral" badge="COM_ARTICLEDETAILSPROFILES_FIELD_LAZYLOADSTYLESHEETS_BADGE" badgetype="light"
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_LAZYLOADSTYLESHEETS_LABEL" />
+					
+			<field type="message" text="COM_ARTICLEDETAILSPROFILES_INFO_CLEARHEADERFILESCACHE" style="info" showon="site_mode:adv" />
+			
+			<field name="clear_header_files_cache" type="radio" default="1" layout="joomla.form.field.radio.switcher" showon="site_mode:adv" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_CLEARHEADERFILESCACHE_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_CLEARHEADERFILESCACHE_DESC">
+	            <option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+		</fieldset>
+		
+		<fieldset name="shared_mobile" label="COM_ARTICLEDETAILSPROFILES_MOBILE_LABEL">
+				
+			<field name="breakpoint" type="sywverbosetext" default="640" filter="integer" size="4" unit="px" icon="SYWicon-swap-horiz" 
+				label="COM_ARTICLEDETAILSPROFILES_FIELD_BREAKPOINT_LABEL" 
+				description="COM_ARTICLEDETAILSPROFILES_FIELD_BREAKPOINT_DESC" />
+		</fieldset>
+	</fieldset>
+
+    <fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL" addfieldprefix="SYW\Library\Field">
+        <field name="rules" type="rules" component="com_articledetailsprofiles" class="inputbox" filter="rules" validate="rules" label="JCONFIG_PERMISSIONS_LABEL" section="component" />
+	</fieldset>
+</config>

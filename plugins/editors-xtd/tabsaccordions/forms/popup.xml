@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldprefix="RegularLabs\Library\Form\Field">
+  <fieldset name="items" addfieldprefix="RegularLabs\Library\Form\Field">
+    <field name="type" type="Radio" default="tabs" class="btn-group rl-btn-group btn-group-md" label="RL_TYPE">
+      <option value="tabs" class="btn btn-outline-info">RLTA_TABS</option>
+      <option value="accordions" class="btn btn-outline-info">RLTA_ACCORDIONS</option>
+    </field>
+    <field name="items" type="Subform" formsource="plugins/editors-xtd/tabsaccordions/forms/items.xml" multiple="true" buttons="add,remove" class="rl-subform rl-hide-main-buttons" min="1"/>
+  </fieldset>
+  <fieldset name="styling">
+    <field name="theme" type="List" default="" class="w-auto" label="RL_THEME">
+      <option value="">JDEFAULT</option>
+      <option value="neutral">RLTA_THEME_NEUTRAL</option>
+      <option value="custom">RL_CUSTOM</option>
+      <option disabled="disabled" value="-">---</option>
+      <option disabled="disabled" value="-">RL_ONLY_AVAILABLE_IN_PRO_LIST_OPTION</option>
+      <option disabled="disabled" value="-">RLTA_THEME_ACCENT_LINES</option>
+      <option disabled="disabled" value="-">RLTA_THEME_COLORFUL</option>
+      <option disabled="disabled" value="-">RLTA_THEME_DARK</option>
+      <option disabled="disabled" value="-">RLTA_THEME_LIGHT</option>
+      <option disabled="disabled" value="-">RLTA_THEME_LINES</option>
+      <option disabled="disabled" value="-">RLTA_THEME_LINES_COLORFUL</option>
+      <option disabled="disabled" value="-">RLTA_THEME_MINIMAL</option>
+      <option disabled="disabled" value="-">RLTA_THEME_PILLS</option>
+      <option disabled="disabled" value="-">RLTA_THEME_PILLS_COLORFUL</option>
+      <option disabled="disabled" value="-">RLTA_THEME_PILLS_DARK</option>
+      <option disabled="disabled" value="-">RLTA_THEME_PILLS_LIGHT</option>
+      <option disabled="disabled" value="-">RLTA_THEME_PILLS_MINIMAL</option>
+    </field>
+    <field name="@note__dynamic_heights" type="OnlyPro" label="RLTA_DYNAMIC_HEIGHTS" description="RLTA_DYNAMIC_HEIGHTS_DESC"/>
+    <field name="class" type="Text" default="" label="RL_CLASSNAME" description="RLTA_CLASSNAME_DESC"/>
+    <field name="@showon__tab_handles__a" type="ShowOn" value="type:tabs"/>
+    <field name="@block__tab_handles__a" type="Block" start="1" label="RLTA_TAB_HANDLES"/>
+    <field name="dynamic_heights" type="Radio" class="btn-group rl-btn-group btn-group-md btn-group-yesno" default="" label="RLTA_DYNAMIC_HEIGHTS" description="%s&lt;br&gt;&lt;br&gt;&lt;em&gt;%s&lt;/em&gt;,RLTA_DYNAMIC_HEIGHTS_DESC,RLTA_NOT_ALL_THEMES">
+      <option value="">JDEFAULT</option>
+      <option value="false">JNO</option>
+      <option value="true">JYES</option>
+    </field>
+    <field name="@note__positioning" type="Radio" class="btn-group rl-btn-group btn-group-md" default="top" label="RL_POSITIONING" description="RLTA_POSITIONING_DESC">
+      <option value="top" class="btn btn-outline-info">%s %s,&lt;span class="icon-arrow-up-4"&gt;&lt;/span&gt;,RL_TOP</option>
+      <option value="" disabled="disabled">%s %s,&lt;span class="icon-arrow-down-4"&gt;&lt;/span&gt;,RL_BOTTOM</option>
+      <option value="" disabled="disabled">%s %s,&lt;span class="icon-arrow-left-4"&gt;&lt;/span&gt;,RL_LEFT</option>
+      <option value="" disabled="disabled">%s %s,&lt;span class="icon-arrow-right-4"&gt;&lt;/span&gt;,RL_RIGHT</option>
+    </field>
+    <field name="@note__positioning_2" label="---" type="OnlyPro"/>
+    <field name="alignment" type="Radio" class="btn-group rl-btn-group btn-group-md" default="" label="RL_ALIGNMENT" description="RLTA_ALIGNMENT_DESC" showon="positioning:[OR]positioning:top[OR]positioning:bottom">
+      <option value="">JDEFAULT</option>
+      <option value="left" class="btn btn-outline-info">%s %s,&lt;span class="icon-paragraph-left"&gt;&lt;/span&gt;,RL_LEFT</option>
+      <option value="center" class="btn btn-outline-info">%s %s,&lt;span class="icon-paragraph-center"&gt;&lt;/span&gt;,RL_CENTER</option>
+      <option value="right" class="btn btn-outline-info">%s %s,&lt;span class="icon-paragraph-right"&gt;&lt;/span&gt;,RL_RIGHT</option>
+      <option value="justify" class="btn btn-outline-info">%s %s,&lt;span class="icon-paragraph-justify"&gt;&lt;/span&gt;,RL_JUSTIFY</option>
+    </field>
+    <field name="@block__tab_handles__b" type="Block" end="1"/>
+    <field name="@showon__tab_handles__b" type="ShowOn"/>
+  </fieldset>
+  <fieldset name="slideshow">
+    <field name="@note__slideshow" type="OnlyPro" label="RLTA_SLIDESHOW" description="SLIDESHOW_DESC"/>
+  </fieldset>
+  <fieldset name="settings">
+    <field name="nested" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RLTA_NESTED_SET" description="RLTA_NESTED_SET_DESC">
+      <option value="">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="nested_id" type="Text" default="nested" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RLTA_NESTED_SET_ID" description="RLTA_NESTED_SET_ID_DESC" showon="nested:1"/>
+  </fieldset>
+</config>

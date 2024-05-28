@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="package" method="upgrade">
+	<name>PKG_LATESTNEWSENHANCEDPRO</name>
+	<author>Olivier Buisard</author>
+	<creationDate>09/09/2021</creationDate>
+	<packagename>latestnewsenhancedpro</packagename>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<url>https://simplifyyourweb.com</url>
+	<packager>Olivier Buisard</packager>
+ 	<packagerurl>https://simplifyyourweb.com</packagerurl>
+	<version>7.0.0</version>
+	<description>PKG_LATESTNEWSENHANCEDPRO_XML_DESCRIPTION</description>
+	<changelogurl>https://updates.simplifyyourweb.com/pro/latestnewsenhancedpro/changelog.xml</changelogurl>
+	<blockChildUninstall>true</blockChildUninstall>
+	<scriptfile>installer.php</scriptfile>
+	<variant>pro</variant>
+	<dlid prefix="dlidus=" suffix="" />
+	<languages>
+		<language tag="da-DK">language/da-DK/da-DK.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="fi-FI">language/fi-FI/fi-FI.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="hu-HU">language/hu-HU/hu-HU.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="ja-JP">language/ja-JP/ja-JP.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="pt-PT">language/pt-PT/pt-PT.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.pkg_latestnewsenhancedpro.sys.ini</language>
+		<language tag="tr-TR">language/tr-TR/tr-TR.pkg_latestnewsenhancedpro.sys.ini</language>
+	</languages>
+ 	<files folder="packages">
+ 		<file type="component" id="com_latestnewsenhancedpro">com_latestnewsenhancedpro.zip</file>
+		<file type="module" id="mod_latestnewsenhanced" client="site">mod_latestnewsenhanced.zip</file>
+		<file type="plugin" id="lnedatasources" group="content">plg_content_lnedatasources.zip</file>
+		<file type="plugin" id="relatednewsinarticle" group="content">plg_content_relatednewsinarticle.zip</file>
+		<file type="plugin" id="lnepinstaller" group="installer">plg_installer_lnepinstaller.zip</file>
+		<file type="plugin" id="latestnewsenhancedpro" group="quickicon">plg_quickicon_latestnewsenhancedpro.zip</file>
+		<file type="plugin" id="backtolneindex" group="system">plg_system_backtolneindex.zip</file>
+		<file type="plugin" id="lnepbreadcrumbs" group="system">plg_system_lnepbreadcrumbs.zip</file>
+	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="Latest News Enhanced Pro auto updater">https://simplifyyourweb.com/autoupdates/latestnewsenhancedpro/latestnewsenhancedpro-pkg-update-dlid.xml</server>
+	</updateservers>
+</extension>

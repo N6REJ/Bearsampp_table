@@ -1,0 +1,107 @@
+&[data-rlta-type="tabs"] {
+    > [data-rlta-element="button-scroller"] {
+        align-items:           center;
+        display:               grid;
+        grid-template-columns: 50% 50%;
+        left:                  0;
+        min-height:            30px;
+        pointer-events:        none;
+        position:              absolute;
+        top:                   0;
+        width:                 100%;
+        z-index:               1;
+
+        &:focus,
+        *:focus {
+            outline: none;
+        }
+
+        [data-rlta-element="button-scroller-left"],
+        [data-rlta-element="button-scroller-right"] {
+            align-items:    center;
+            display:        grid;
+            height:         100%;
+            pointer-events: none;
+
+            [data-rlta-element="button-scroller-hotspot"] {
+                align-items:    center;
+                background:     transparent;
+                cursor:         pointer;
+                height:         100%;
+                margin-bottom:  0;
+                display:        none;
+                opacity:        0;
+
+                padding:        0 10px;
+                pointer-events: all;
+                transition:     all 100ms;
+
+                &:not(.hidden) {
+                    display: grid;
+                    opacity: 1;
+                }
+
+                [data-rlta-element="button-scroller-button"] {
+                    background-color:        white;
+                    border:                  1px solid rl-color(gray, 300);
+                    border-radius:           5px;
+                    box-shadow:              0 0 5px rgba(0, 0, 0, .2);
+                    box-sizing:              content-box;
+                    font-family:             "Font Awesome 5 Free";
+                    font-size:               20px;
+                    -webkit-font-smoothing:  antialiased;
+                    font-weight:             400;
+
+                    height:                  20px;
+                    line-height:             20px;
+                    opacity:                 0;
+                    -moz-osx-font-smoothing: grayscale;
+                    padding:                 5px;
+                    text-indent:             0;
+
+                    transition:              all 250ms;
+                    width:                   20px;
+
+                    overflow:                hidden;
+
+                    &:before {
+                        content:           "";
+                        height:            24px;
+                        display:           block;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                &:hover > [data-rlta-element="button-scroller-button"] {
+                    opacity: 1;
+                }
+            }
+        }
+
+        [data-rlta-element="button-scroller-left"] {
+            justify-items: left;
+
+            [data-rlta-element="button-scroller-hotspot"] {
+                background:    linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+                justify-items: left;
+
+                [data-rlta-element="button-scroller-button"]:before {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' /%3E%3C/svg%3E%0A");
+                }
+            }
+        }
+
+        [data-rlta-element="button-scroller-right"] {
+            justify-items: right;
+
+            [data-rlta-element="button-scroller-hotspot"] {
+                background:    linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 100) 100%);
+                justify-items: right;
+
+                [data-rlta-element="button-scroller-button"]:before {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' /%3E%3C/svg%3E%0A");
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="RegularLabs\Library\Form\Field">
+  <fieldset>
+    <field name="title" type="Text" label="JGLOBAL_TITLE" required="1"/>
+    <field name="settings" type="IconToggle" default="0" icon1="cog" icon2="arrow-up"/>
+    <field name="@showon__settings__a" type="ShowOn" value="settings:1"/>
+    <field name="open" type="Radio" default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RLTA_OPENED_BY_DEFAULT" description="RLTA_OPENED_BY_DEFAULT_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="@block_content_a" type="Block" class="form-vertical" no_default_class="1"/>
+    <field name="content" type="Editor" label="RL_CONTENT"/>
+    <field name="@block_content_b" type="Block" end="1"/>
+    <field name="@access" type="OnlyPro" label="JFIELD_ACCESS_LABEL" description="JFIELD_ACCESS_DESC"/>
+    <field name="@usergroup" type="OnlyPro" label="RL_USER_GROUPS" description="RL_USER_GROUPS_DESC"/>
+    <field name="@showon__settings__b" type="ShowOn"/>
+  </fieldset>
+</form>

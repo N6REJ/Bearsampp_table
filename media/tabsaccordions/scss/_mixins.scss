@@ -1,0 +1,189 @@
+@import "_functions";
+
+@mixin colors(
+    $background_color_inactive: false,
+    $background_color_hover: false,
+    $background_color_active: false,
+    $border_color_inactive: false,
+    $border_color_hover: false,
+    $border_color_active: false,
+    $text_color_inactive: false,
+    $text_color_hover: false,
+    $text_color_active: false,
+    $overlap_border_as_background: false,
+    $color_panels: false,
+) {
+    $colors: "red", "orange", "yellow", "green", "teal", "blue", "purple", "pink", "grey";
+
+    @each $color in $colors {
+        @include color(
+                        $color,
+                        $background_color_inactive,
+                        $background_color_hover,
+                        $background_color_active,
+                        $border_color_inactive,
+                        $border_color_hover,
+                        $border_color_active,
+                        $text_color_inactive,
+                        $text_color_hover,
+                        $text_color_active,
+                        $overlap_border_as_background,
+                        $color_panels,
+        );
+    }
+}
+
+@mixin color(
+    $color_name,
+    $background_color_inactive: false,
+    $background_color_hover: false,
+    $background_color_active: false,
+    $border_color_inactive: false,
+    $border_color_hover: false,
+    $border_color_active: false,
+    $text_color_inactive: false,
+    $text_color_hover: false,
+    $text_color_active: false,
+    $overlap_border_as_background: false,
+    $color_panels: false,
+) {
+    $background_color_inactive: getColor($color_name, $background_color_inactive);
+    $background_color_hover:    getColor($color_name, $background_color_hover);
+    $background_color_active:   getColor($color_name, $background_color_active);
+    $border_color_inactive:     getColor($color_name, $border_color_inactive);
+    $border_color_hover:        getColor($color_name, $border_color_hover);
+    $border_color_active:       getColor($color_name, $border_color_active);
+    $text_color_inactive:       getColor($color_name, $text_color_inactive);
+    $text_color_hover:          getColor($color_name, $text_color_hover);
+    $text_color_active:         getColor($color_name, $text_color_active);
+
+    &[data-rlta-type="accordions"],
+    &[data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+        > [data-rlta-element="button"][data-rlta-color="#{$color_name}"] {
+            @if $background_color_inactive {
+                background-color: $background_color_inactive;
+            }
+            @if $border_color_inactive {
+                border-color: $border_color_inactive;
+            }
+            @if $text_color_inactive {
+                > [data-rlta-element="heading"] {
+                    color: $text_color_inactive;
+                }
+            }
+
+            &:not([data-rlta-state="closed"]),
+            &:not([data-rlta-state="closed"]):hover {
+                @if $background_color_active {
+                    background-color: $background_color_active;
+                }
+                @if $border_color_active {
+                    border-color: $border_color_active;
+                }
+                @if $text_color_active {
+                    > [data-rlta-element="heading"] {
+                        color: $text_color_active;
+                    }
+                }
+            }
+
+            &:hover {
+                @if $background_color_hover {
+                    background-color: $background_color_hover;
+                }
+                @if $border_color_hover {
+                    border-color: $border_color_hover;
+                }
+                @if $text_color_hover {
+                    > [data-rlta-element="heading"] {
+                        color: $text_color_hover;
+                    }
+                }
+            }
+        }
+    }
+
+    @if $overlap_border_as_background and $background_color_active {
+        &[data-rlta-positioning="top"][data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+            > [data-rlta-element="button"][data-rlta-color="#{$color_name}"] {
+                &:not([data-rlta-state="closed"]),
+                &:not([data-rlta-state="closed"]):hover {
+                    border-bottom-color: $background_color_active;
+                }
+            }
+        }
+        &[data-rlta-positioning="bottom"][data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+            > [data-rlta-element="button"][data-rlta-color="#{$color_name}"] {
+                &:not([data-rlta-state="closed"]),
+                &:not([data-rlta-state="closed"]):hover {
+                    border-top-color: $background_color_active;
+                }
+            }
+        }
+
+        &[data-rlta-positioning="left"][data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+            > [data-rlta-element="button"][data-rlta-color="#{$color_name}"] {
+                &:not([data-rlta-state="closed"]),
+                &:not([data-rlta-state="closed"]):hover {
+                    border-right-color: $background_color_active;
+                }
+            }
+        }
+        &[data-rlta-positioning="right"][data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+            > [data-rlta-element="button"][data-rlta-color="#{$color_name}"] {
+                &:not([data-rlta-state="closed"]),
+                &:not([data-rlta-state="closed"]):hover {
+                    border-left-color: $background_color_active;
+                }
+            }
+        }
+
+    }
+
+    @if $border_color_active {
+        &[data-rlta-type="accordions"],
+        &[data-rlta-type="tabs"] > [data-rlta-element="panels"] {
+            > [data-rlta-element="panel"][data-rlta-color="#{$color_name}"] {
+                border-color: $border_color_active;
+            }
+        }
+    }
+
+    @if $color_panels {
+        &[data-rlta-color-panels="true"] {
+            &[data-rlta-type="accordions"],
+            &[data-rlta-type="tabs"] > [data-rlta-element="panels"] {
+                > [data-rlta-element="panel"][data-rlta-color="#{$color_name}"] {
+                    @if $background_color_active {
+                        background-color: $background_color_active;
+                    }
+                    @if $text_color_active {
+                        color: $text_color_active;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin borderRadius(
+    $position,
+    $value
+) {
+    @if $position == "top" {
+        border-top-left-radius:  $value;
+        border-top-right-radius: $value;
+    }
+    @if $position == "bottom" {
+        border-bottom-left-radius:  $value;
+        border-bottom-right-radius: $value;
+    }
+    @if $position == "left" {
+        border-top-left-radius:    $value;
+        border-bottom-left-radius: $value;
+    }
+    @if $position == "right" {
+        border-top-right-radius:    $value;
+        border-bottom-right-radius: $value;
+    }
+}

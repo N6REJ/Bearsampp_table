@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" client="site" method="upgrade">
+	<name>J51_Numbers</name>
+	<author>Joomla51</author>
+	<creationDate>December 2018</creationDate>
+	<copyright>Copyright (C)2019 Joomla51</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@joomla51.com</authorEmail>
+	<authorUrl>http://www.joomla51.com</authorUrl>
+	<version>1.0.3</version>
+	<description>
+		<![CDATA[<link href="../modules/mod_j51numbers/css/admin.css" rel="stylesheet" type="text/css" media="all" />
+		<p>Numbers Module by Joomla51</p>
+		<p>If you find this module extension useful, we would much appreciate you sharing some kinds words in the form of a review.</p>
+		<p>
+		<a class="btn btn-primary" style="margin-right:10px;" target="_blank" href="http://www.joomla51.com/">Joomla51</a>
+		<a class="btn btn-primary" target="_blank" href="https://extensions.joomla.org/extension/j51-numbers/">Review this Module</a>
+		</p>
+	]]></description>
+
+	<files>
+		<filename module="mod_j51numbers">mod_j51numbers.php</filename>
+		<filename module="mod_j51numbers">mod_j51numbers.xml</filename>
+		<filename module="mod_j51numbers">helper.php</filename>
+		<filename module="mod_j51numbers">License.txt</filename>		
+		<filename module="mod_j51numbers">index.html</filename>
+		<folder>field</folder>
+		<folder>language</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<media destination="mod_j51numbers" folder="media">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_j51numbers.ini</language>
+	</languages>
+
+	<updateservers>
+        <server type="extension" name="J51 Numbers">https://www.joomla51.com/updates/mod_j51numbers.xml</server>
+    </updateservers>
+
+	<config>	
+		<fields name="params">
+			
+			<fieldset name="MOD_J51_GENERALSETTINGS">
+				<field name="j51_columns" type="list" default="33.3%" label="MOD_J51_NUMBERSCOL" description="MOD_J51_NUMBERSCOL_DESC">
+					<option value="100%">1 Column</option>
+					<option value="50%">2 Column</option>
+					<option value="33.3%">3 Column</option>
+					<option value="25%">4 Column</option>
+				</field>
+				<field name="j51_layout" type="list" default="center" label="MOD_J51_NUMBERSLAYOUT" description="MOD_J51_NUMBERSLAYOUT_DESC">
+					<option value="col-n-t">Column - Number | Text</option>
+					<option value="col-t-n">Column - Text | Number</option>
+					<option value="row-n-t">Row - Number | Text</option>
+					<option value="row-t-n">Row - Text | Number</option>
+				</field>
+				<field name="j51_align" type="list" default="center" label="MOD_J51_NUMBERSALIGN" description="MOD_J51_NUMBERSALIGN_DESC">
+					<option value="left">Left</option>
+					<option value="center">Center</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="j51_margin_x" type="textpx" default="20" label="MOD_J51_NUMBERS_MARGINX" description="MOD_J51_NUMBERS_MARGINX_DESC" />
+				<field name="j51_margin_y" type="textpx" default="25" label="MOD_J51_NUMBERS_MARGINY" description="MOD_J51_NUMBERS_MARGINY_DESC" />
+				<field name="j51_title_tag" type="list" default="h3" label="MOD_J51_NUMBERS_TITLE_TAG" description="MOD_J51_NUMBERS_TITLE_TAG_DESC">
+					<option value="h1">h1</option>
+					<option value="h2">h2</option>
+					<option value="h3">h3</option>
+					<option value="h4">h4</option>
+					<option value="h5">h5</option>
+					<option value="h6">h6</option>
+					<option value="p">p</option>
+				</field>
+				<field name="j51_number_color" type="color" default="" label="MOD_J51_NUMBERS_NUMBER_COLOR"/>
+				<field name="j51_title_color" type="color" default="" label="MOD_J51_NUMBERS_TITLE_COLOR"/>
+				<field name="j51_caption_color" type="color" default="" label="MOD_J51_NUMBERS_CAPTION_COLOR"/>
+				<field label="MOD_J51_NUMBERS_COLOR_INFO" type="spacer"/>
+			</fieldset>
+
+			<fieldset name="MOD_J51_ANIMATION_SETTINGS">
+                <field name="j51_animation_length" type="textsec" default="2" label="MOD_J51_NUMBERS_ANIMATION_LENGTH" description="MOD_J51_NUMBERS_ANIMATION_LENGTH_DESC" />
+                <field name="j51_interval_length" type="list" default="200" label="MOD_J51_NUMBERS_INTERVAL_LENGTH" description="MOD_J51_NUMBERS_INTERVAL_LENGTH_DESC">
+					<option value="0">0ms</option>
+					<option value="100">100ms</option>
+					<option value="200">200ms</option>
+					<option value="300">300ms</option>
+					<option value="400">400ms</option>
+					<option value="500">500ms</option>
+					<option value="600">600ms</option>
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="MOD_J51_NUMBERS">
+				<field name="j51_items" type="subform" formsource="modules/mod_j51numbers/field/item.xml" class="advancedSelect" min="1" max="50" multiple="true" layout="joomla.form.field.subform.repeatable" groupByFieldset="true" label="MOD_J51_NUMBERS" description="Add icons(s) to display" />
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="owncache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					default="1"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					default="900"
+					filter="integer"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

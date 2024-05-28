@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" client="site" method="upgrade">
+	<name>J51 - ImageHover Gallery</name>
+	<author>Joomla51</author>
+	<creationDate>July 2017</creationDate>
+	<copyright>Copyright (C) 2020 Joomla51</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@joomla51.com</authorEmail>
+	<authorUrl>http://www.joomla51.com</authorUrl>
+	<version>2.1.3</version>
+	<description>
+		<![CDATA[<link href="../modules/mod_j51imagehover/css/admin.css" rel="stylesheet" type="text/css" media="all" />
+		<p>ImageHover Module by Joomla51</p>
+		<p>If you find this free module extension useful, we would much appreciate you sharing some kinds words in the form of a review.</p>
+		<p><a class="btn btn-primary" style="margin-right:10px;" target="_blank" href="http://www.joomla51.com/">Joomla51</a><a class="btn btn-primary" target="_blank" href="https://extensions.joomla.org/extension/j51-imagehover-gallery/">Review this Module</a></p>
+	]]></description>
+
+	<files>
+		<filename module="mod_j51imagehover">mod_j51imagehover.php</filename>
+		<filename>mod_j51imagehover.xml</filename>
+		<filename>License.txt</filename>		
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>field</folder>
+		<folder>language</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+	</files>
+	
+	<media folder="media" destination="mod_j51imagehover">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_j51imagehover.ini</language>
+	</languages>
+
+	<updateservers>
+        <server type="extension" name="J51 ImageHover Gallery">https://www.joomla51.com/updates/mod_j51imagehover.xml</server>
+    </updateservers>
+
+	<config>	
+		<fields name="params">
+
+			<fieldset name="MOD_GENERALSETTINGS">
+				<field
+					name="j51_layout_type"
+					type="radio"
+					class="btn-group"
+					default="static"
+					label="Layout Type"
+				>
+                    <option value="static">Static</option>
+                    <option value="masonry">Masonry</option>
+                    <option value="carousel">Carousel</option>
+                </field>
+
+				<field name="j51_trans_speed" type="textms" default="1000" label="MOD_J51_NEWS_FIELD_TRAN_SPEED_LABEL" showon="j51_layout_type:carousel" />
+				<field
+					name="j51_autoplay"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="true"
+					label="MOD_J51_NEWS_FIELD_AUTOPLAY_LABEL"
+					showon="j51_layout_type:carousel"
+				>
+						<option value="false">JNO</option>
+						<option value="true">JYES</option>
+				</field> 
+				<field name="j51_autoplay_delay" type="textms" default="3000" label="MOD_J51_NEWS_FIELD_AUTOPLAY_DELAY_LABEL" showon="j51_layout_type:carousel[AND]j51_autoplay:true" />
+
+				<field name="j51_image_width" type="list" default="25%" label="MOD_IMAGE_WIDTH" description="MOD_IMAGE_WIDTH_DESC">
+					<option value="100%">1 Column</option>
+					<option value="50%">2 Column</option>
+					<option value="33.333%">3 Column</option>
+					<option value="25%">4 Column</option>
+					<option value="20%">5 Column</option>
+					<option value="16.666%">6 Column</option>
+					<option value="14.286%">7 Column</option>
+					<option value="12.5%">8 Column</option>
+					<option value="11.111%">9 Column</option>
+					<option value="10%">10 Column</option>
+				</field>
+				<field name="j51_image_margin_x" type="textpx" default="10" label="MOD_IMAGE_MARGINH" description="MOD_IMAGE_MARGINH_DESC"/>
+				<field name="j51_image_margin_y" type="textpx" default="10" label="MOD_IMAGE_MARGINV" description="MOD_IMAGE_MARGINV_DESC"/>
+				<field name="j51_text_align" type="list" default="center" label="MOD_IMAGETEXT_HORIZ_ALIGN">
+					<option value="left">Left</option>
+					<option value="center">Center</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="j51_text_vert_align" type="list" default="center" label="MOD_IMAGETEXT_VERT_ALIGN">
+					<option value="flex-start">Top</option>
+					<option value="center">Center</option>
+					<option value="flex-end">Bottom</option>
+				</field>
+				<field name="j51_image_padding_x" type="textpx" default="20" label="MOD_IMAGE_PADDINGH" description="MOD_IMAGE_PADDINGH_DESC" />
+				<field name="j51_image_padding_y" type="textpx" default="20" label="MOD_IMAGE_PADDINGV" description="MOD_IMAGE_PADDINGV_DESC" />
+				<field 
+				name="j51_target" 
+					type="radio"
+					layout="joomla.form.field.radio.switcher" 
+					default="_self" 
+					label="MOD_URLTARGET" 
+					description="MOD_URLTARGET_DESC"
+					checked="checked"
+					class="btn-group">
+					<option value="_self">JNO</option>
+					<option value="_blank">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="MOD_STYLE">
+				<field name="j51_imghvr" type="list" default="imghvr-fade-in-up" label="MOD_HOVER_EFFECT" description="MOD_HOVER_EFFECT_DESC">
+					<option value="imghvr-fade-in-up">Fade in up</option>
+					<option value="imghvr-fade-in-down">Fade in down</option>
+					<option value="imghvr-fade-in-left">Fade in left</option>
+					<option value="imghvr-fade-in-right">Fade in right</option>
+					<option value="imghvr-push-up">Push up</option>
+					<option value="imghvr-push-down">Push down</option>
+					<option value="imghvr-push-left">Push left</option>
+					<option value="imghvr-push-right">Push right</option>
+					<option value="imghvr-slide-up">Slide up</option>
+					<option value="imghvr-slide-down">Slide down</option>
+					<option value="imghvr-slide-left">Slide left</option>
+					<option value="imghvr-slide-right">Slide right</option>
+					<option value="imghvr-slide-top-left">Slide top left</option>
+					<option value="imghvr-slide-top-right">Slide top right</option>
+					<option value="imghvr-slide-bottom-left">Slide bottom left</option>
+					<option value="imghvr-slide-bottom-right">Slide bottom right</option>
+					<option value="imghvr-reveal-up">Reveal up</option>
+					<option value="imghvr-reveal-down">Reveal down</option>
+					<option value="imghvr-reveal-left">Reveal left</option>
+					<option value="imghvr-reveal-right">Reveal right</option>
+					<option value="imghvr-reveal-top-left">Reveal top left</option>
+					<option value="imghvr-reveal-top-right">Reveal top right</option>
+					<option value="imghvr-reveal-bottom-left">Reveal bottom left</option>
+					<option value="imghvr-reveal-bottom-right">Reveal bottom right</option>
+					<option value="imghvr-hinge-up">Hinge up</option>
+					<option value="imghvr-hinge-down">Hinge down</option>
+					<option value="imghvr-hinge-left">Hinge left</option>
+					<option value="imghvr-hinge-right">Hinge right</option>
+					<option value="imghvr-flip-horiz">Flip horiz</option>
+					<option value="imghvr-flip-vert">Flip vert</option>
+					<option value="imghvr-flip-diag-1">Flip diag-1</option>
+					<option value="imghvr-flip-diag-2">Flip diag-2</option>
+					<option value="imghvr-shutter-out-horiz">Shutter out horiz</option>
+					<option value="imghvr-shutter-out-vert">Shutter out vert</option>
+					<option value="imghvr-shutter-out-diag-1">Shutter out diag-1</option>
+					<option value="imghvr-shutter-out-diag-2">Shutter out diag-2</option>
+					<option value="imghvr-shutter-in-horiz">Shutter in horiz</option>
+					<option value="imghvr-shutter-in-vert">Shutter in vert</option>
+					<option value="imghvr-shutter-in-out-horiz">Shutter in out horiz</option>
+					<option value="imghvr-shutter-in-out-vert">Shutter in out vert</option>
+					<option value="imghvr-shutter-in-out-diag-1">Shutter in out diag-1</option>
+					<option value="imghvr-shutter-in-out-diag-2">Shutter in out diag-2</option>
+					<option value="imghvr-fold-up">Fold up</option>
+					<option value="imghvr-fold-down">Fold down</option>
+					<option value="imghvr-fold-left">Fold left</option>
+					<option value="imghvr-fold-right">Fold right</option>
+					<option value="imghvr-zoom-in">Zoom in</option>
+					<option value="imghvr-zoom-out">Zoom out</option>
+					<option value="imghvr-zoom-out-up">Zoom out up</option>
+					<option value="imghvr-zoom-out-down">Zoom out down</option>
+					<option value="imghvr-zoom-out-left">Zoom out left</option>
+					<option value="imghvr-zoom-out-right">Zoom out right</option>
+					<option value="imghvr-zoom-out-flip-horiz">Zoom out flip horiz</option>
+					<option value="imghvr-zoom-out-flip-vert">Zoom out flip vert</option>
+					<option value="imghvr-blur">Blur</option>
+				</field>
+				<field name="j51_overlay_color" type="color" default=""  format="rgba" label="MOD_OVERLAYCOLOR" description="MOD_OVERLAYCOLOR_DESC" />	
+				<field name="j51_title_color" type="color" default="#ffffff" label="MOD_TITLECOLOR" description="MOD_TITLECOLOR_DESC" />
+				<field name="j51_text_color" type="color" default="#ffffff" label="MOD_TEXTCOLOR" description="MOD_TEXTCOLOR_DESC" />
+
+				<field
+					name="svg_code"
+					type="textarea"
+					default=""
+					filter="raw"
+					rows="7"
+					cols="35"
+					label="MOD_ICON_SVG_OVERRIDE_LABEL"
+					description="MOD_ICON_SVG_OVERRIDE_DESC" /> 
+
+			</fieldset>
+
+			<fieldset name="IMAGES">
+				<field name="imagehover_images" type="subform" formsource="modules/mod_j51imagehover/field/item.xml" class="advancedSelect" min="1" multiple="true" layout="joomla.form.field.subform.repeatable" groupByFieldset="true" label="Image(s)" description="Add image(s) to display in gallery" />
+			</fieldset>
+
+			<fieldset name="RESPONSIVE">
+				<field name="j51_image_width_tabl" type="list" default="33.333%" label="MOD_IMAGE_WIDTH_TABL" description="MOD_IMAGE_WIDTH_TABL_DESC">
+					<option value="100%">1 Column</option>
+					<option value="50%">2 Column</option>
+					<option value="33.333%">3 Column</option>
+					<option value="25%">4 Column</option>
+					<option value="20%">5 Column</option>
+					<option value="16.666%">6 Column</option>
+					<option value="14.286%">7 Column</option>
+					<option value="12.5%">8 Column</option>
+					<option value="11.111%">9 Column</option>
+					<option value="10%">10 Column</option>
+				</field>
+				<field name="j51_image_width_tabp" type="list" default="33.333%" label="MOD_IMAGE_WIDTH_TABP" description="MOD_IMAGE_WIDTH_TABP_DESC">
+					<option value="100%">1 Column</option>
+					<option value="50%">2 Column</option>
+					<option value="33.333%">3 Column</option>
+					<option value="25%">4 Column</option>
+					<option value="20%">5 Column</option>
+					<option value="16.666%">6 Column</option>
+					<option value="14.286%">7 Column</option>
+					<option value="12.5%">8 Column</option>
+					<option value="11.111%">9 Column</option>
+					<option value="10%">10 Column</option>
+				</field>
+				<field name="j51_image_width_mobl" type="list" default="50%" label="MOD_IMAGE_WIDTH_MOBL" description="MOD_IMAGE_WIDTH_MOBL_DESC">
+					<option value="100%">1 Column</option>
+					<option value="50%">2 Column</option>
+					<option value="33.333%">3 Column</option>
+					<option value="25%">4 Column</option>
+					<option value="20%">5 Column</option>
+					<option value="16.666%">6 Column</option>
+					<option value="14.286%">7 Column</option>
+					<option value="12.5%">8 Column</option>
+					<option value="11.111%">9 Column</option>
+					<option value="10%">10 Column</option>
+				</field>
+				<field name="j51_image_width_mobp" type="list" default="100%" label="MOD_IMAGE_WIDTH_MOBP" description="MOD_IMAGE_WIDTH_MOBP_DESC">
+					<option value="100%">1 Column</option>
+					<option value="50%">2 Column</option>
+					<option value="33.333%">3 Column</option>
+					<option value="25%">4 Column</option>
+					<option value="20%">5 Column</option>
+					<option value="16.666%">6 Column</option>
+					<option value="14.286%">7 Column</option>
+					<option value="12.5%">8 Column</option>
+					<option value="11.111%">9 Column</option>
+					<option value="10%">10 Column</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="owncache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					default="1"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					default="900"
+					filter="integer"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

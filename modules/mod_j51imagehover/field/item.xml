@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="image_modal" class="image-subform">
+		<field name="j51_image" type="media" default="" label="MOD_IMAGEPATH" size="30" />
+		<field name="j51_title" type="text" size="60" default="" label="MOD_IMAGETITLE" />
+		<field name="j51_text" type="textarea" filter="raw" rows="4" cols="42" default="" label="MOD_IMAGETEXT" />
+		<field name="j51_link_type" type="radio" label="Link Type" default="lightbox" checked="checked" class="btn-group">
+			<option value="url">URL</option>
+			<option value="menuitem">Menu Item</option>
+			<option value="lightbox">Lightbox</option>
+			<option value="none">None</option>
+		</field>
+		<field name="j51_target_url" type="text" default="" label="MOD_MENUITEM" published="1" showon="j51_link_type:url"/>
+		<field name="j51_target_menuitem" type="menuitem" default="" label="MOD_MENUITEM" published="1" showon="j51_link_type:menuitem"/>
+		<field name="j51_override_style" type="radio" label="Override Style" default="0" checked="checked"  layout="joomla.form.field.radio.switcher">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="j51_imghvr" type="list" default="imghvr-fade-in-up" label="MOD_HOVER_EFFECT" showon="j51_override_style:1">
+			<option value="imghvr-none">None</option>
+			<option value="imghvr-fade-in">Fade in</option>
+			<option value="imghvr-fade-in-up">Fade up</option>
+			<option value="imghvr-fade-in-down">Fade down</option>
+			<option value="imghvr-fade-in-left">Fade left</option>
+			<option value="imghvr-fade-in-right">Fade right</option>
+			<option value="imghvr-push-up">Push up</option>
+			<option value="imghvr-push-down">Push down</option>
+			<option value="imghvr-push-left">Push left</option>
+			<option value="imghvr-push-right">Push right</option>
+			<option value="imghvr-slide-up">Slide up</option>
+			<option value="imghvr-slide-down">Slide down</option>
+			<option value="imghvr-slide-left">Slide left</option>
+			<option value="imghvr-slide-right">Slide right</option>
+			<option value="imghvr-slide-top-left">Slide top left</option>
+			<option value="imghvr-slide-top-right">Slide top right</option>
+			<option value="imghvr-slide-bottom-left">Slide bottom left</option>
+			<option value="imghvr-slide-bottom-right">Slide bottom right</option>
+			<option value="imghvr-reveal-up">Reveal up</option>
+			<option value="imghvr-reveal-down">Reveal down</option>
+			<option value="imghvr-reveal-left">Reveal left</option>
+			<option value="imghvr-reveal-right">Reveal right</option>
+			<option value="imghvr-reveal-top-left">Reveal top left</option>
+			<option value="imghvr-reveal-top-right">Reveal top right</option>
+			<option value="imghvr-reveal-bottom-left">Reveal bottom left</option>
+			<option value="imghvr-reveal-bottom-right">Reveal bottom right</option>
+			<option value="imghvr-hinge-up">Hinge up</option>
+			<option value="imghvr-hinge-down">Hinge down</option>
+			<option value="imghvr-hinge-left">Hinge left</option>
+			<option value="imghvr-hinge-right">Hinge right</option>
+			<option value="imghvr-flip-horiz">Flip horiz</option>
+			<option value="imghvr-flip-vert">Flip vert</option>
+			<option value="imghvr-flip-diag-1">Flip diag-1</option>
+			<option value="imghvr-flip-diag-2">Flip diag-2</option>
+			<option value="imghvr-shutter-out-horiz">Shutter out horiz</option>
+			<option value="imghvr-shutter-out-vert">Shutter out vert</option>
+			<option value="imghvr-shutter-out-diag-1">Shutter out diag-1</option>
+			<option value="imghvr-shutter-out-diag-2">Shutter out diag-2</option>
+			<option value="imghvr-shutter-in-horiz">Shutter in horiz</option>
+			<option value="imghvr-shutter-in-vert">Shutter in vert</option>
+			<option value="imghvr-shutter-in-out-horiz">Shutter in out horiz</option>
+			<option value="imghvr-shutter-in-out-vert">Shutter in out vert</option>
+			<option value="imghvr-shutter-in-out-diag-1">Shutter in out diag-1</option>
+			<option value="imghvr-shutter-in-out-diag-2">Shutter in out diag-2</option>
+			<option value="imghvr-fold-up">Fold up</option>
+			<option value="imghvr-fold-down">Fold down</option>
+			<option value="imghvr-fold-left">Fold left</option>
+			<option value="imghvr-fold-right">Fold right</option>
+			<option value="imghvr-zoom-in">Zoom in</option>
+			<option value="imghvr-zoom-out">Zoom out</option>
+			<option value="imghvr-zoom-out-up">Zoom out up</option>
+			<option value="imghvr-zoom-out-down">Zoom out down</option>
+			<option value="imghvr-zoom-out-left">Zoom out left</option>
+			<option value="imghvr-zoom-out-right">Zoom out right</option>
+			<option value="imghvr-zoom-out-flip-horiz">Zoom out flip horiz</option>
+			<option value="imghvr-zoom-out-flip-vert">Zoom out flip vert</option>
+			<option value="imghvr-blur">Blur</option>
+		</field>
+		<field name="j51_overlay_color" type="color" default=""  format="rgba" label="MOD_OVERLAYCOLOR" showon="j51_override_style:1" />	
+		<field name="j51_title_color" type="color" default="" label="MOD_TITLECOLOR" showon="j51_override_style:1" />
+		<field name="j51_text_color" type="color" default="" label="MOD_TEXTCOLOR" showon="j51_override_style:1" />
+	</fieldset>
+</form>

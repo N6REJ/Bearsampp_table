@@ -1,0 +1,38 @@
+@import "_functions";
+@import "_mixins";
+
+@mixin pills_positionStyles($borderColor) {
+    $positions: top, bottom, left, right;
+
+    @each $position in $positions {
+        @include pills_stylesByPosition($position);
+    }
+}
+
+@mixin pills_stylesByPosition($position) {
+    $opposite: getOppositePosition($position);
+
+    &[data-rlta-positioning="#{$position}"] {
+        @if ($position == "top" or $position == "bottom") {
+            > [data-rlta-element="panels"] > [data-rlta-element="panel"] {
+                > [data-rlta-element="panel-content"] {
+                    padding-#{$opposite}: 0;
+                }
+            }
+        }
+        @if ($position == "left" or $position == "right") {
+            > [data-rlta-element="panels"] > [data-rlta-element="panel"] {
+                > [data-rlta-element="panel-content"] {
+                    padding:              0;
+                    padding-#{$position}: 1.25em;
+                }
+            }
+
+            > [data-rlta-element="button-list"] {
+                > [data-rlta-element="button"] {
+                    text-align: #{$opposite};
+                }
+            }
+        }
+    }
+}

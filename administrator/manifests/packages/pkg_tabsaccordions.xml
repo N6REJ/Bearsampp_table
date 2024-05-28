@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="package" method="upgrade">
+  <packagename>tabsaccordions</packagename>
+  <name>PKG_TABSACCORDIONS</name>
+  <version>2.1.2</version>
+  <creationDate>March 2024</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2024 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <scriptfile>script.install.php</scriptfile>
+  <blockChildUninstall>true</blockChildUninstall>
+  <files folder="packages/j4">
+    
+    <file type="plugin" group="system" id="tabsaccordions">plg_system_tabsaccordions</file>
+    <file type="plugin" group="editors-xtd" id="tabsaccordions">plg_editors-xtd_tabsaccordions</file>
+  </files>
+  
+  
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.pkg_tabsaccordions.sys.ini</language>
+  </languages>
+  <updateservers>
+    <server type="extension" priority="1" name="Tabs &amp; Accordions">https://download.regularlabs.com/updates.xml?e=tabsaccordions&amp;type=.xml</server>
+  </updateservers>
+</extension>

@@ -1,0 +1,38 @@
+@import "../../regularlabs/scss/_variables";
+
+$color-button-background: rl-color(gray, 100);
+$color-border:            rl-color(gray, 300);
+
+> [data-rlta-element="button"] {
+    background-color: $color-button-background;
+    border:           1px solid $color-border;
+    border-radius:    5px 5px 0 0;
+    margin-bottom:    -1px;
+    padding:          .75rem 1.25rem;
+
+    > [data-rlta-element="heading"] {
+        font-size:   1.125rem;
+        font-weight: 500;
+        margin:      0;
+        padding:     0;
+        width:       100%;
+    }
+}
+
+> [data-rlta-element="panel"] {
+    border:        1px solid $color-border;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: .25em;
+
+    &[hidden] {
+        display: block;
+    }
+
+    > [data-rlta-element="panel-content"] {
+        padding: 1.25em;
+
+        > p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

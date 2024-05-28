@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~
+  ~  @package   AkeebaSocialLogin
+  ~  @copyright Copyright (c)2016-2024 Nicholas K. Dionysopoulos / Akeeba Ltd
+  ~  @license   GNU General Public License version 3, or later
+  -->
+
+<extension type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_SOCIALLOGIN</name>
+	<version>4.8.0</version>
+	<creationDate>2024-04-29</creationDate>
+
+	<author>Akeeba Ltd</author>
+	<authorEmail>no-reply@akeeba.com</authorEmail>
+	<authorUrl>https://www.akeeba.com</authorUrl>
+
+	<copyright>Copyright (c)2016-2024 Nicholas K. Dionysopoulos / Akeeba Ltd</copyright>
+	<license>GNU GPL v3 or later</license>
+
+	<description>PLG_SYSTEM_SOCIALLOGIN_DESCRIPTION</description>
+	<namespace path="src">Akeeba\Plugin\System\SocialLogin</namespace>
+
+	<files>
+		<folder>forms</folder>
+		<folder>language</folder>
+		<folder>layout</folder>
+		<folder>services</folder>
+		<folder plugin="sociallogin">src</folder>
+	</files>
+
+	<media folder="media" destination="plg_system_sociallogin">
+		<folder>js</folder>
+	</media>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/plg_system_sociallogin.ini</language>
+		<language tag="en-GB">en-GB/plg_system_sociallogin.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="linkunlinkbuttons"
+						type="radio"
+						layout="joomla.form.field.radio.switcher"
+						label="PLG_SYSTEM_SOCIALLOGIN_CONFIG_LINKUNLINKBUTTONS_LABEL"
+						description="PLG_SYSTEM_SOCIALLOGIN_CONFIG_LINKUNLINKBUTTONS_DESC"
+						default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+						name="show_dontremind"
+						type="radio"
+						layout="joomla.form.field.radio.switcher"
+						label="PLG_SYSTEM_SOCIALLOGIN_CONFIG_SHOW_DONTREMIND_LABEL"
+						description="PLG_SYSTEM_SOCIALLOGIN_CONFIG_SHOW_DONTREMIND_DESC"
+						default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="linkedAccountUserGroup" type="UserGroupList"
+					   checksuperusergroup="1"
+					   default=""
+					   label="PLG_SYSTEM_SOCIALLOGIN_LINKEDACCOUNTUSERGROUP_TITLE"
+					   description="PLG_SYSTEM_SOCIALLOGIN_LINKEDACCOUNTUSERGROUP_DESC"
+				>
+					<option value="0">PLG_SYSTEM_SOCIALLOGIN_LINKEDACCOUNTUSERGROUP_NOGROUP</option>
+				</field>
+
+				<field name="noLinkedAccountUserGroup" type="UserGroupList"
+					   checksuperusergroup="1"
+					   default=""
+					   label="PLG_SYSTEM_SOCIALLOGIN_NOLINKEDACCOUNTUSERGROUP_TITLE"
+					   description="PLG_SYSTEM_SOCIALLOGIN_NOLINKEDACCOUNTUSERGROUP_DESC"
+				>
+					<option value="0">PLG_SYSTEM_SOCIALLOGIN_LINKEDACCOUNTUSERGROUP_NOGROUP</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Installation script -->
+	<scriptfile>script.plg_system_sociallogin.php</scriptfile>
+</extension>

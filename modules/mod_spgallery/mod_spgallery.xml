@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+	<name>MOD_SPGALLERY</name>
+	<description>SPGALLERY_XML_DESCRIPTION</description>
+	<version>1.0.0</version>
+	<creationDate>March 2024</creationDate>
+	<author>Tassos Marinos</author>
+	<authorEmail>info@tassos.gr</authorEmail>
+	<authorUrl>http://www.tassos.gr</authorUrl>
+	<copyright>Copyright © 2024 Tassos Marinos All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <scriptfile>script.install.php</scriptfile>
+	<files>
+		<filename module="mod_spgallery">mod_spgallery.php</filename>
+        <folder>fields</folder>
+        <folder>language</folder>
+		<folder>tmpl</folder>
+        <filename>script.install.helper.php</filename>
+		<filename>mod_spgallery.xml</filename>
+	</files>
+    <media folder="media" destination="mod_spgallery">
+        <folder>img</folder>
+    </media>
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nrframework/fields">
+			<fieldset name="basic">
+                <field type="spacer" name="label2"
+                    label="NR_THEME"
+                    class="smilepack-fields-separator"
+                />
+                
+                <field name="provider" type="NRImagesSelector"
+                    images='[
+                        {
+                            "key": "grid",
+                            "label": "Grid",
+                            "url": "{{SITE_URL}}media/mod_spgallery/img/grid.svg"
+                        },
+                        {
+                            "key": "masonry",
+                            "label": "Masonry",
+                            "url": "{{SITE_URL}}media/mod_spgallery/img/masonry.svg"
+                        },
+                        {
+                            "key": "justified",
+                            "label": "Justified",
+                            "url": "{{SITE_URL}}media/mod_spgallery/img/justified.svg"
+                        },
+                        {
+                            "key": "slideshow",
+                            "label": "Slideshow",
+                            "url": "{{SITE_URL}}media/mod_spgallery/img/slideshow.svg"
+                        }
+                    ]'
+                    columns="4"
+                    item_gap="8px"
+                    width="600px"
+                    key_type="filename"
+                    label="SPGALLERY_STYLE"
+                    description="SPGALLERY_STYLE_DESC"
+                    default="grid"
+                    mode="links"
+                    pro_items="masonry.svg, justified.svg, slideshow.svg"
+                />
+                
+                
+                <field name="columns" type="NRResponsiveControl"
+                    class="is-one-line"
+                    label="SPGALLERY_COLUMNS"
+                    description="SPGALLERY_COLUMNS_DESC"
+                    default='{"desktop":{"value":"3"}}'
+                    subtype="NRNumber"
+                    subtype_min="1"
+                    subtype_max="6"
+                    subtype_hint="3"
+                    showon="provider:grid,masonry"
+                />
+                <field name="gap" type="NRResponsiveControl"
+                    class="is-one-line"
+                    label="SPGALLERY_GAP"
+                    description="SPGALLERY_GAP_DESC"
+                    default='{"desktop":{"value":"10","unit":"px"}}'
+                    subtype="TFUnitControl"
+                    subtype_hint="10"
+                    showon="provider!:slideshow"
+                />
+                <field name="justified_item_height" type="nrnumber"
+                    label="SPGALLERY_ROW_TARGET_HEIGHT"
+                    description="SPGALLERY_JUSTIFIED_ITEM_HEIGHT_DESC"
+                    addon="px"
+                    min="1"
+                    class="input-small"
+                    showon="provider:justified"
+                />
+                
+                
+                <field name="@ordering" type="nr_pro"
+                    label="SPGALLERY_ORDERING"
+                    description="SPGALLERY_ORDERING_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+                
+
+                <field type="spacer" name="label_original_image"
+                    label="SPGALLERY_ORIGINAL_IMAGE"
+                    class="smilepack-fields-separator"
+                />
+                
+                
+                <field name="@original_image_resize_width" type="nr_pro"
+                    label="SPGALLERY_ORIGINAL_IMAGE_WIDTH"
+                    description="SPGALLERY_ORIGINAL_IMAGE_WIDTH_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                <field name="@original_image_resize_height" type="nr_pro"
+                    label="SPGALLERY_ORIGINAL_IMAGE_HEIGHT"
+                    description="SPGALLERY_ORIGINAL_IMAGE_HEIGHT_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                <field name="@lightbox" type="nr_pro"
+                    label="SPGALLERY_LIGHTBOX"
+                    description="SPGALLERY_LIGHTBOX_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider!:slideshow"
+                />
+                <field name="@module" type="nr_pro"
+                    label="SPGALLERY_MODULE"
+                    description="SPGALLERY_MODULE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider!:slideshow"
+                />
+                
+
+                <field type="spacer" name="label_thumbnails"
+                    label="SPGALLERY_THUMBNAILS"
+                    class="smilepack-fields-separator"
+                    showon="provider:grid,masonry,slideshow"
+                />
+                
+                <field name="thumb_width" type="nrnumber"
+                    label="SPGALLERY_ITEM_WIDTH"
+                    description="SPGALLERY_THUMB_WIDTH_DESC"
+                    addon="px"
+                    min="1"
+                    hint="300"
+                    default="300"
+                    class="input-small"
+                    showon="provider:grid,masonry,slideshow"
+                />
+                <field name="thumb_height" type="nrnumber"
+                    label="SPGALLERY_ITEM_HEIGHT"
+                    description="SPGALLERY_THUMB_HEIGHT_DESC"
+                    addon="px"
+                    min="1"
+                    hint="300"
+                    default="300"
+                    class="input-small"
+                    showon="provider:grid,slideshow"
+                />
+                
+                
+                <field name="@show_thumbnails" type="nr_pro"
+                    label="JENABLED"
+                    description="SPGALLERY_SHOW_THUMBNAILS_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:slideshow"
+                />
+                <field name="@show_thumbnails_arrows" type="nr_pro"
+                    label="SPGALLERY_THUMBNAILS_ARROWS"
+                    description="SPGALLERY_THUMBNAILS_ARROWS_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:slideshow"
+                />
+                
+            </fieldset>
+            <fieldset name="gallery" addfieldpath="/modules/mod_spgallery/fields" class="sp-fieldset-reset">
+                <field name="value" type="SPGalleryEditor" />
+            </fieldset>
+            <fieldset name="watermark_images" class="sp-fieldset-reset">
+                
+                
+                <field name="@watermark_type" type="nr_pro"
+                    label="COM_MODULES_WATERMARK_IMAGES_FIELDSET_LABEL"
+                    description="SPGALLERY_WATERMARK_FREE_TYPE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+            </fieldset>
+            <fieldset name="filtering_tags" class="sp-fieldset-reset">
+                
+                
+                <field name="@filtering_tags" type="nr_pro"
+                    label="SPGALLERY_FILTERING_TAGS"
+                    description="SPGALLERY_TAGS_POSITION_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+            </fieldset>
+            <fieldset name="upload" class="sp-fieldset-reset">
+                
+                
+                <field name="limit_files" type="number"
+                    label="SPGALLERY_LIMIT_FILES"
+                    description="SPGALLERY_FREE_LIMIT_FILES_DESC"
+                    class="input-small"
+                    default="8"
+                    hint="8"
+                    min="1"
+                    max="8"
+                />
+                
+                
+                
+                <field name="@upload_folder_type" type="nr_pro"
+                    label="SPGALLERY_UPLOAD_FOLDER"
+                    description="SPGALLERY_FOLDER_TYPE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                <field name="@max_file_size" type="nr_pro"
+                    label="SPGALLERY_MAX_FILE_SIZE"
+                    description="SPGALLERY_MAX_FILE_SIZE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                />
+                
+            </fieldset>
+		</fields>
+	</config>
+</extension>

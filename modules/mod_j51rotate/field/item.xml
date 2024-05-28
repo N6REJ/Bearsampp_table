@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="rotate_items">
+		<field name="item" type="editor" default="" label="MOD_ITEM" filter="safehtml" />
+		<field name="link" type="text" default="" label="MOD_LINK" />
+		<field name="target" type="radio" default="_self" label="MOD_TARGET" 
+		checked="checked" 
+		class="btn-group"
+		showon="link!:">
+			<option value="_self">JNO</option>
+			<option value="_blank">JYES</option>
+		</field>
+	</fieldset>
+</form>

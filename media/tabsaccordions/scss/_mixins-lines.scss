@@ -1,0 +1,67 @@
+@import "_functions";
+@import "_mixins";
+
+@mixin lines_positionStyles($borderColor, $backgroundColor) {
+    $positions: top, bottom, left, right;
+
+    @each $position in $positions {
+        @include lines_stylesByPosition($position, $borderColor, $backgroundColor);
+    }
+}
+
+@mixin lines_stylesByPosition(
+    $position,
+    $borderColor,
+    $backgroundColor
+) {
+    $opposite: getOppositePosition($position);
+
+    &[data-rlta-positioning="#{$position}"] {
+        > [data-rlta-element="panels"] > [data-rlta-element="panel"] {
+            border-#{$position}: 1px solid #{$borderColor};
+        }
+
+        > [data-rlta-element="button-list"] {
+            margin-#{$opposite}: -1px;
+
+            > [data-rlta-element="button"] {
+                border-#{$opposite}: none;
+                @include borderRadius($opposite, 0);
+                margin-#{$opposite}: 1px;
+
+                &:not([data-rlta-state="closed"]) {
+                    background-color:          #{$backgroundColor};
+                    border-#{$opposite}-color: #{$borderColor};
+                    margin-#{$opposite}:       0;
+
+                    [data-rlta-element="heading"] {
+                        margin-#{$opposite}: 1px;
+                    }
+                }
+            }
+        }
+
+        @if ($position == "top" or $position == "bottom") {
+            > [data-rlta-element="panels"] > [data-rlta-element="panel"] {
+                > [data-rlta-element="panel-content"] {
+                    padding-#{$opposite}: 0;
+                }
+            }
+        }
+
+        @if ($position == "left" or $position == "right") {
+            > [data-rlta-element="panels"] > [data-rlta-element="panel"] {
+                > [data-rlta-element="panel-content"] {
+                    padding:              0.75em 0;
+                    padding-#{$position}: 1.25em;
+                }
+            }
+
+            > [data-rlta-element="button-list"] {
+                > [data-rlta-element="button"] {
+                    text-align: #{$opposite};
+                }
+            }
+        }
+    }
+}

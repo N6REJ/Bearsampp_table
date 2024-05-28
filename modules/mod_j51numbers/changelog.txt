@@ -1,0 +1,25 @@
+Changelog
+------------
+
+* -> Security Fix
+# -> Bug Fix
+$ -> Language fix or change
++ -> Addition
+^ -> Change
+- -> Removed
+! -> Note
+
+Version 1.0.3 - 1st Feb 2022
+# Ensure custom color gets applied (J4)
+
+Version 1.0.2 - 23rd Apr 2020
+^ Update countUp.js to 2.0
++ Add option to use grouping
++ Add option to set grouping separator
++ Add option to set decimal separator
+
+Version 1.0.1 - 10th Aug 2019
++ Escape data
+
+Version 1.0.0 - 12th Dec 2018
++ Initial release

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+    <name>COM_ARTICLEDETAILSPROFILES</name>
+    <creationDate>10/03/2018</creationDate>
+    <copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+    <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+    <author>Olivier Buisard</author>
+    <authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+    <authorUrl>https://simplifyyourweb.com</authorUrl>
+    <version>6.3.2</version>
+    <description>COM_ARTICLEDETAILSPROFILES_XML_DESCRIPTION</description>
+    <namespace path="src">SYW\Component\ArticleDetailsProfiles</namespace>
+    
+	<scriptfile>installer.php</scriptfile>
+	
+	<media folder="media" destination="com_articledetailsprofiles">
+		<folder>css</folder>
+		<folder>images</folder>
+	</media>
+
+    <files folder="site">
+		<folder>layouts</folder>
+    </files>
+
+    <administration>
+        <menu link="option=com_articledetailsprofiles" img="../media/com_articledetailsprofiles/images/adp.svg">COM_ARTICLEDETAILSPROFILES</menu>
+<!--         <submenu> -->
+<!--             <menu link="option=com_articledetailsprofiles&amp;view=info" view="info">COM_ARTICLEDETAILSPROFILES_SUBMENU_INFO</menu> -->
+<!--         </submenu> -->
+
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>license.txt</filename>            
+            <folder>services</folder>
+            <folder>src</folder>
+            <folder>tmpl</folder>
+        </files>
+        <languages folder="administrator/language">
+        	<language tag="de-DE">de-DE/de-DE.com_articledetailsprofiles.ini</language>
+            <language tag="de-DE">de-DE/de-DE.com_articledetailsprofiles.sys.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_articledetailsprofiles.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_articledetailsprofiles.sys.ini</language>			
+			<language tag="es-ES">es-ES/es-ES.com_articledetailsprofiles.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_articledetailsprofiles.sys.ini</language>
+			<language tag="fa-IR">fa-IR/fa-IR.com_articledetailsprofiles.ini</language>
+			<language tag="fa-IR">fa-IR/fa-IR.com_articledetailsprofiles.sys.ini</language>
+			<language tag="fi-FI">fi-FI/fi-FI.com_articledetailsprofiles.ini</language>
+			<language tag="fi-FI">fi-FI/fi-FI.com_articledetailsprofiles.sys.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_articledetailsprofiles.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_articledetailsprofiles.sys.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_articledetailsprofiles.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_articledetailsprofiles.sys.ini</language>
+			<language tag="nl-NL">nl-NL/nl-NL.com_articledetailsprofiles.ini</language>
+			<language tag="nl-NL">nl-NL/nl-NL.com_articledetailsprofiles.sys.ini</language>
+			<language tag="pt-BR">pt-BR/pt-BR.com_articledetailsprofiles.ini</language>
+			<language tag="pt-BR">pt-BR/pt-BR.com_articledetailsprofiles.sys.ini</language>
+			<language tag="ru-RU">ru-RU/ru-RU.com_articledetailsprofiles.ini</language>
+			<language tag="ru-RU">ru-RU/ru-RU.com_articledetailsprofiles.sys.ini</language>
+			<language tag="sl-SI">sl-SI/sl-SI.com_articledetailsprofiles.ini</language>
+			<language tag="sl-SI">sl-SI/sl-SI.com_articledetailsprofiles.sys.ini</language>
+			<language tag="tr-TR">tr-TR/tr-TR.com_articledetailsprofiles.ini</language>
+			<language tag="tr-TR">tr-TR/tr-TR.com_articledetailsprofiles.sys.ini</language>
+        </languages>
+    </administration>
+    
+</extension>

@@ -1,0 +1,150 @@
+/*-----------------------------------------------------------------------------------*/
+/* Icons */
+/*-----------------------------------------------------------------------------------*/
+
+/* Joomla Menus */
+
+.mod-list li [class^="fa-"]:before,
+.mod-list li [class*=" fa-"]:before {
+  display: inline-block;
+  margin-right: 5px;
+  color: inherit;
+  font-size: 18px;
+  top: 4px;
+  left: 0px;
+}
+
+.mod-list li a[class^="fa-"],
+.mod-list li a[class*=" fa-"] {
+  &:after {
+    display: none;
+  }
+}
+
+/* Top Menu Icons */
+.hornav > ul > li {
+
+  [class^="fa-"],
+  [class*=" fa-"] {
+    &:before {
+      opacity: .7;
+    }
+  }
+
+  &:hover {
+
+    [class^="fa-"],
+    [class*=" fa-"] {
+      &:before {
+        opacity: 1;
+        ;
+      }
+    }
+  }
+}
+
+/* Header-# Menu Icons */
+.header-1 .menu li [class^="fa-"]:before,
+.header-1 .menu li [class*=" fa-"]:before,
+.header-2 .menu li [class^="fa-"]:before,
+.header-2 .menu li [class*=" fa-"]:before {
+  color: rgba(0, 0, 0, 0.2);
+  top: 1px;
+}
+
+// Module Headers
+
+.module_header {
+
+  .fa,
+  .fab,
+  .fad,
+  .fal,
+  .far,
+  .fas {
+    font-family: inherit;
+    font-weight: 600;
+
+    &:before {
+      font-family: "Font Awesome 5 Free";
+    }
+  }
+
+  .fab {
+    &:before {
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
+
+  .fa,
+  .fas {
+    &:before {
+      font-weight: 900;
+    }
+  }
+
+  .far,
+  .fab {
+    &:before {
+      font-weight: 400;
+    }
+  }
+}
+
+/* Base Module */
+#container_base [class^="fa-"]:before,
+#container_base [class*=" fa-"]:before {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Menu Icons */
+#footermenu .menu li [class^="fa-"]:before,
+#footermenu.menu li [class*=" fa-"]:before {
+  color: rgba(255, 255, 255, 0.2);
+  top: 6px;
+}
+
+.row.fa-icon-list {
+  margin: 0 0 30px;
+}
+
+.fa-col5 {
+  float: left;
+  padding: 0 0 10px;
+  width: 20%;
+}
+
+
+.mod-list,
+.menu {
+
+  .far,
+  .fas,
+  .fab,
+  .fa {
+    font-family: inherit !important;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+
+  .fab {
+    &:before {
+      font-family: "Font Awesome 5 Brands" !important;
+      font-weight: 400;
+    }
+  }
+
+  .far,
+  .fas {
+    &:before {
+      font-family: "Font Awesome 5 Free" !important;
+    }
+  }
+
+  .fa,
+  .fas {
+    &:before {
+      font-weight: 900;
+    }
+  }
+}

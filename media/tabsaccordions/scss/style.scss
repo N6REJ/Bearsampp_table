@@ -1,0 +1,24 @@
+/**
+ * [Copyright Regular Labs]
+ */
+
+@import "../../regularlabs/scss/_variables";
+
+@import "_mixins";
+
+[data-rlta-element="container"] {
+    @import "_styling-init";
+
+    @media screen {
+        opacity:    0;
+        transition: opacity 1000ms;
+
+        &[data-rlta-state="initial"] {
+            @import "_styling-nojs";
+        }
+
+        &[data-rlta-state="ready"] {
+            @import "_scafolding";
+        }
+    }
+}

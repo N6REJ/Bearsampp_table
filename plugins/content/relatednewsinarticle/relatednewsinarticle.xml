@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_RELATEDNEWSINARTICLE</name>
+	<version>7.0.0</version>
+	<creationDate>10/14/2016</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>	
+	<author>Olivier Buisard</author>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>https://simplifyyourweb.com</authorUrl>
+	<description>PLG_CONTENT_RELATEDNEWSINARTICLE_XML_DESCRIPTION</description>
+	<namespace path="src">SYW\Plugin\Content\RelatedNewsInArticle</namespace>
+
+	<scriptfile>installer.php</scriptfile>
+
+	<media folder="media" destination="plg_content_relatednewsinarticle">
+		<folder>images</folder>
+	</media>
+	
+	<files>
+		<folder plugin="relatednewsinarticle">services</folder>
+		<folder>forms</folder>
+		<folder>src</folder>
+		<filename>license.txt</filename>
+	</files>
+	
+	<languages>
+	   <language tag="da-DK">language/da-DK/da-DK.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="de-DE">language/de-DE/de-DE.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="en-GB">language/en-GB/en-GB.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="es-ES">language/es-ES/es-ES.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="fi-FI">language/fi-FI/fi-FI.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="fr-FR">language/fr-FR/fr-FR.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="hu-HU">language/hu-HU/hu-HU.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="it-IT">language/it-IT/it-IT.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="ja-JP">language/ja-JP/ja-JP.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="nl-NL">language/nl-NL/nl-NL.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="pl-PL">language/pl-PL/pl-PL.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="pt-BR">language/pt-BR/pt-BR.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="pt-PT">language/pt-PT/pt-PT.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="ru-RU">language/ru-RU/ru-RU.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="sl-SI">language/sl-SI/sl-SI.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="sv-SE">language/sv-SE/sv-SE.plg_content_relatednewsinarticle.sys.ini</language>
+	   <language tag="tr-TR">language/tr-TR/tr-TR.plg_content_relatednewsinarticle.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="SYW\Library\Field">				
+				<field type="extensionversion" extension="plg_content_relatednewsinarticle" />
+				<field type="extensionauthor" />
+				<field type="extensionconnect" />
+				
+				<field type="extensionlinks" onlinedoc="https://simplifyyourweb.com/documentation/latest-news/plugin-related-news-in-article" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

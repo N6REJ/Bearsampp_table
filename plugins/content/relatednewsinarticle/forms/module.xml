@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="advanced_all" addfieldprefix="SYW\Library\Field">
+			<fieldset name="advanced_paragraph">			
+				<field name="location_inside" type="list" default="paragraph" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LOCATIONINSIDE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LOCATIONINSIDE_DESC">					
+					<option value="before">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_BEFORECONTENT</option>
+					<option value="paragraph">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AFTERPARAGRAPH</option>
+					<option value="after">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AFTERCONTENT</option>
+				</field>
+				
+				<field name="after_paragraph" type="sywverbosetext" default="1" filter="integer" size="4" showon="location_inside:paragraph" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AFTERPARAGRAPH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AFTERPARAGRAPH_DESC" />
+					
+				<field name="after_paragraph_fallback" type="radio" layout="joomla.form.field.radio.switcher" default="0" showon="location_inside:paragraph" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AFTERPARAGRAPHFALLBACK_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AFTERPARAGRAPHFALLBACK_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fieldset>
+	</fields>
+</form>

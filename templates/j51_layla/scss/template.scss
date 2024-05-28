@@ -1,0 +1,164 @@
+// Bootstrap functions
+@import "../../../media/vendor/bootstrap/scss/functions";
+
+// Variables, Functions and Mixins
+@import "tools/tools";
+
+// Bootstrap
+@import "../../../media/vendor/bootstrap/scss/variables";
+@import "../../../media/vendor/bootstrap/scss/bootstrap";
+
+// jQuery Minicolors
+@import "../../../media/system/scss/jquery-minicolors";
+
+// Blocks
+@import "blocks/global"; // Leave this first
+@import "blocks/alerts";
+@import "blocks/back-to-top";
+@import "blocks/banner";
+@import "blocks/footer";
+@import "blocks/form";
+@import "blocks/frontend-edit";
+@import "blocks/header";
+@import "blocks/icons";
+@import "blocks/iframe";
+@import "blocks/layout";
+@import "blocks/modals";
+@import "blocks/modifiers";
+@import "blocks/utilities";
+@import "blocks/toolbar";
+@import "blocks/legacy";
+@import "blocks/tags";
+@import "blocks/css-grid"; // Last to allow fallback
+
+// Vendor overrides
+@import "vendor/awesomplete";
+@import "vendor/bootstrap/buttons";
+@import "vendor/bootstrap/custom-forms";
+@import "vendor/bootstrap/collapse";
+@import "vendor/bootstrap/dropdown";
+@import "vendor/bootstrap/forms";
+@import "vendor/bootstrap/lists";
+@import "vendor/bootstrap/modal";
+@import "vendor/bootstrap/nav";
+@import "vendor/bootstrap/pagination";
+@import "vendor/bootstrap/table";
+@import "vendor/chosen";
+@import "vendor/dragula";
+@import "vendor/metismenu/metismenu";
+@import "vendor/minicolors";
+@import "vendor/tinymce";
+
+.chzn-container-single {
+  width: auto !important;
+}
+
+.chzn-container-multi {
+  width: 100% !important;
+  max-width: 240px;
+}
+
+a {
+  color: var(--content-link-color);
+  text-decoration: none;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+.btn {
+  border-color: var(--button-color);
+}
+
+joomla-tab button[aria-expanded="true"]::after {
+  background-color: var(--button-color);
+}
+
+button {
+  border: 0;
+}
+
+.choices__button_joomla {
+  padding: 2px 7px;
+  line-height: 1rem;
+  background: rgba(0,0,0,.3);
+  margin: 0 .15rem;
+  border-radius: 3px;
+}
+
+.module {
+  position: relative;
+}
+
+.hornav ul.menu a.btn.jmodedit,
+.hornav ul.menu a.btn.jmodedit:hover {
+  background-color: var(--button-color);
+  border-color: var(--button-color);
+  padding: 3px 10px;
+
+  span {
+    color: white;
+  }
+}
+
+.accordion-button {
+  line-height: 1rem;
+}
+
+.js-calendar {
+  .nav {
+    justify-content: center;
+  }
+
+  .buttons-wrapper {
+    .btn {
+      color: white;
+    }
+  }
+}
+
+.com-users-login {
+  &__form {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+
+    > fieldset {
+      max-width: 300px;
+    }
+  }
+} 
+
+.well.well {
+  background-color: transparent;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.hornav ul.menu ul li .btn a[class^='icon-'], 
+.hornav ul.menu ul li .btn span[class^='icon-'] {
+  color: white;
+}
+.hornav .list-unstyled .list-unstyled {
+  padding-left: 0;
+
+  li {
+    padding-left: 1rem;
+  }
+}
+
+.readmore {
+  margin-top: 1rem;
+}
+.logo a {
+  text-decoration: none;
+}
+
+div div [class^="icon-"]::before, 
+div div [class*=" icon-"]::before {
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+}

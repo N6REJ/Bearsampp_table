@@ -1,0 +1,117 @@
+@import "_functions";
+@import "_mixins";
+
+@mixin accentLines_stylesByPosition(
+    $position,
+    $color_name,
+    $border_color_inactive: false,
+    $border_color_hover: false,
+    $border_color_active: false,
+) {
+    &[data-rlta-positioning="#{$position}"] {
+        &[data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+            > [data-rlta-element="button"][data-rlta-color="#{$color_name}"] {
+                border-#{$position}-width: 5px;
+
+                @if $border_color_inactive {
+                    border-#{$position}-color: $border_color_inactive;
+                }
+
+                &:not([data-rlta-state="closed"]),
+                &:not([data-rlta-state="closed"]):hover {
+                    @if $border_color_active {
+                        border-#{$position}-color: $border_color_active;
+                    }
+                }
+
+                &:hover {
+                    @if $border_color_hover {
+                        border-#{$position}-color: $border_color_hover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin accentLines_borderWidthByPosition($position) {
+
+    &[data-rlta-positioning="#{$position}"] {
+        &[data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+            > [data-rlta-element="button"] {
+                border-#{$position}-width: 5px;
+            }
+        }
+    }
+}
+
+@mixin accentLines_borderWidth() {
+    &[data-rlta-type="accordions"] {
+        > [data-rlta-element="button"] {
+            border-top-width: 5px;
+        }
+    }
+
+    $positions: top, bottom, left, right;
+
+    @each $position in $positions {
+        @include accentLines_borderWidthByPosition($position);
+    }
+}
+
+@mixin accentLines_colors(
+    $border_color_inactive: false,
+    $border_color_hover: false,
+    $border_color_active: false,
+) {
+    $colors: "red", "orange", "yellow", "green", "teal", "blue", "purple", "pink", "grey";
+
+    @each $color in $colors {
+        @include accentLines_color(
+                        $color,
+                        $border_color_inactive,
+                        $border_color_hover,
+                        $border_color_active,
+        );
+    }
+}
+
+@mixin accentLines_color(
+    $color_name: "",
+    $border_color_inactive: false,
+    $border_color_hover: false,
+    $border_color_active: false,
+) {
+    $border_color_inactive: getColor($color_name, $border_color_inactive);
+    $border_color_hover:    getColor($color_name, $border_color_hover);
+    $border_color_active:   getColor($color_name, $border_color_active);
+
+    &[data-rlta-type="accordions"] {
+        > [data-rlta-element="button"][data-rlta-color="#{$color_name}"] {
+            border-top-width: 5px;
+
+            @if $border_color_inactive {
+                border-top-color: $border_color_inactive;
+            }
+
+            &:not([data-rlta-state="closed"]),
+            &:not([data-rlta-state="closed"]):hover {
+                @if $border_color_active {
+                    border-top-color: $border_color_active;
+                }
+            }
+
+            &:hover {
+                @if $border_color_hover {
+                    border-top-color: $border_color_hover;
+                }
+            }
+        }
+    }
+
+    $positions:             top, bottom, left, right;
+
+    @each $position in $positions {
+        @include accentLines_stylesByPosition($position, $color_name, $border_color_inactive, $border_color_hover, $border_color_active);
+    }
+}

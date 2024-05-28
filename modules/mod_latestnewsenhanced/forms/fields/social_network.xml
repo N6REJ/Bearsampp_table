@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>				
+	<field name="social_network" type="list" default="0" 
+		label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SOCIALNETWORK_LABEL" 
+		description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SOCIALNETWORK_DESC">
+		<option value="none">JNONE</option>
+		<option value="email">JGLOBAL_EMAIL</option>
+		<option value="facebook">Facebook</option>
+		<option value="linkedin">LinkedIn</option>
+		<option value="mix">Mix</option>
+		<option value="pinterest">Pinterest</option>
+		<option value="telegram">Telegram</option>
+		<option value="twitter">X-Twitter</option>
+		<option value="whatsapp">WhatsApp</option>
+		<option value="other">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_CUSTOM</option>	
+	</field>
+		
+	<field name="other_network" type="text" default="" showon="social_network:other"
+		label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_OTHERNETWORK_LABEL" 
+		description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_OTHERNETWORK_DESC" />
+		
+	<field name="network_color" type="sywcolorpicker" default="" transparency="true" icon="fill" showon="social_network!:none" 
+		label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NETWORKCOLOR_LABEL" 
+		description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NETWORKCOLOR_DESC" />
+</form>

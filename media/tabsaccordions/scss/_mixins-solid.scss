@@ -1,0 +1,79 @@
+@import "_functions";
+@import "_mixins";
+
+@mixin solid_positionStyles($backgroundColor) {
+    $positions: top, bottom, left, right;
+
+    @each $position in $positions {
+        @include solid_stylesByPosition($position, $backgroundColor);
+    }
+}
+
+@mixin solid_stylesByPosition(
+    $position,
+    $backgroundColor
+) {
+    $opposite: getOppositePosition($position);
+
+    &[data-rlta-positioning="#{$position}"] {
+        &[data-rlta-type="accordions"],
+        &[data-rlta-type="tabs"] > [data-rlta-element="panels"] {
+            > [data-rlta-element="panel"] {
+                @include borderRadius($position, 0);
+            }
+        }
+
+        > [data-rlta-element="button-list"] {
+            margin-#{$opposite}: -1px;
+
+            > [data-rlta-element="button"] {
+                border-#{$opposite}: none;
+                @include borderRadius($opposite, 0);
+                margin-#{$opposite}: 1px;
+
+                &:not([data-rlta-state="closed"]) {
+                    border-#{$opposite}-color: #{$backgroundColor};
+                    margin-#{$opposite}:       0;
+
+                    [data-rlta-element="heading"] {
+                        margin-#{$opposite}: 1px;
+                    }
+                }
+            }
+        }
+
+        &[data-rlta-state="initial"][data-rlta-type="accordions"] {
+            > [data-rlta-element="button"] {
+                @include borderRadius($opposite, 0);
+            }
+        }
+
+        @if ($position == "top" or $position == "bottom") {
+            &[data-rlta-dynamic-heights="true"] {
+                &[data-rlta-type="tabs"] > [data-rlta-element="button-list"] {
+                    > [data-rlta-element="button"] {
+                        padding-top:         .35rem;
+                        padding-bottom:      .35rem;
+                        margin-#{$position}: .8rem;
+
+                        &:hover,
+                        &:not([data-rlta-state="closed"]) {
+                            padding-top:         .75rem;
+                            padding-bottom:      .75rem;
+                            margin-#{$position}: 0;
+                        }
+                    }
+                }
+            }
+
+            > [data-rlta-element="button-scroller"] {
+                [data-rlta-element="button-scroller-left"],
+                [data-rlta-element="button-scroller-right"] {
+                    [data-rlta-element="button-scroller-hotspot"] {
+                        margin-#{$opposite}: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="quickicon" method="upgrade">
+	<name>PLG_QUICKICON_ARTICLEDETAILSPROFILES</name>	
+	<author>Olivier Buisard</author>
+	<creationDate>07/09/2021</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>https://simplifyyourweb.com</authorUrl>
+	<version>6.3.2</version>
+	<description>PLG_QUICKICON_ARTICLEDETAILSPROFILES_XML_DESCRIPTION</description>
+	
+	<namespace path="src">SYW\Plugin\Quickicon\ArticleDetailsProfiles</namespace>
+	
+	<scriptfile>installer.php</scriptfile>
+
+	<media folder="media" destination="plg_quickicon_articledetailsprofiles">
+		<folder>images</folder>
+		<folder>js</folder>
+	</media>
+	
+	<files>
+		<filename>license.txt</filename>
+		<folder plugin="articledetailsprofiles">services</folder>
+		<folder>src</folder>
+	</files>
+	
+	<languages>
+	   <language tag="de-DE">language/de-DE/de-DE.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="de-DE">language/de-DE/de-DE.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="en-GB">language/en-GB/en-GB.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="en-GB">language/en-GB/en-GB.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="es-ES">language/es-ES/es-ES.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="es-ES">language/es-ES/es-ES.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="fa-IR">language/fa-IR/fa-IR.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="fa-IR">language/fa-IR/fa-IR.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="fi-FI">language/fi-FI/fi-FI.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="fi-FI">language/fi-FI/fi-FI.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="fr-FR">language/fr-FR/fr-FR.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="fr-FR">language/fr-FR/fr-FR.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="it-IT">language/it-IT/it-IT.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="it-IT">language/it-IT/it-IT.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="nl-NL">language/nl-NL/nl-NL.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="nl-NL">language/nl-NL/nl-NL.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="pt-BR">language/pt-BR/pt-BR.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="pt-BR">language/pt-BR/pt-BR.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="ru-RU">language/ru-RU/ru-RU.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="ru-RU">language/ru-RU/ru-RU.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="sl-SI">language/sl-SI/sl-SI.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="sl-SI">language/sl-SI/sl-SI.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	   <language tag="tr-TR">language/tr-TR/tr-TR.plg_quickicon_articledetailsprofiles.ini</language>
+	   <language tag="tr-TR">language/tr-TR/tr-TR.plg_quickicon_articledetailsprofiles.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="SYW\Library\Field">
+				
+				<field type="extensionversion" extension="plg_quickicon_articledetailsprofiles" />
+				<field type="extensionauthor" />
+				<field type="extensionconnect" />
+								
+				<field name="context" type="text" default="mod_quickicon"
+					label="PLG_QUICKICON_ARTICLEDETAILSPROFILES_GROUP_LABEL"
+					description="PLG_QUICKICON_ARTICLEDETAILSPROFILES_GROUP_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

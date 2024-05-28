@@ -1,0 +1,241 @@
+// IcoMoon
+@font-face {
+  font-family: 'IcoMoon';
+  src: url('../fonts/IcoMoon.eot');
+  src: url('../fonts/IcoMoon.eot?#iefix') format('embedded-opentype'), url('../fonts/IcoMoon.woff') format('woff'), url('../fonts/IcoMoon.ttf') format('truetype'), url('../fonts/IcoMoon.svg#IcoMoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+// Global Classes
+.label-pos-bottom > label,
+.label-pos-right > label {
+  order: 1;
+}
+
+.label-pos-left,
+.label-pos-right {
+  align-items: center;
+}
+
+.label-pos-left > label {
+  margin-right: 1rem;
+}
+
+.label-pos-right > label {
+  margin-right: 1rem;
+}
+
+// Pagination
+.pagination ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination ul > li > a,
+.pagination ul > li > span,
+.pagination ul > span > li,
+.pagination ul > li > strong {
+  background-color: #FFFFFF;
+  border-color: #DDDDDD;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px 1px 1px 0;
+  float: left;
+  line-height: 20px;
+  padding: 4px 12px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.pagination ul > li:first-child > a,
+.pagination ul > li:first-child > span,
+.pagination ul > span:first-child > li,
+.pagination ul > li:first-child > strong {
+  border-left-width: 1px;
+}
+
+.pagination ul > li:first-child > a,
+.pagination ul > li:first-child > span {
+  border-radius: 5px 0 0 5px;
+}
+
+.pagination ul > li:last-child > a,
+.pagination ul > li:last-child > span {
+  border-radius: 0 5px 5px 0;
+}
+
+// Component - Search / Finder
+.search-results {
+  dt.result-title {
+    font-size: 140%;
+    font-weight: normal;
+    padding: 3px 0 10px 0;
+    text-transform: none;
+  }
+
+  dd {
+    &.result-category {
+      color: #888888;
+      font-size: 13px;
+      font-style: italic;
+      margin: 0 0 5px;
+    }
+
+    &.result-created {
+      border-bottom: 1px solid #EEEEEE;
+      color: #888888;
+      font-size: 10px;
+      margin-bottom: 10px;
+      padding: 0 0 6px;
+      text-align: right;
+    }
+  }
+}
+
+.com-finder {}
+
+.advanced-search-tip p {
+  margin-bottom: .5rem;
+}
+
+.filter-branch {
+  margin-top: 1rem;
+}
+
+.finder-selects {
+  padding-right: 10px;
+}
+
+// Module - Finder
+.mod-finder-form {
+  > div {
+    display: flex;
+  }
+}
+
+.mod-finder-advanced {
+  margin-top: 1rem;
+}
+
+
+// Module - Search
+.mod-search {
+
+  .btn-right,
+  .btn-left {
+    input.search-query {
+      padding-right: 0;
+    }
+  }
+
+  .btn-top {
+    flex-direction: column;
+  }
+
+  .btn-bottom {
+    flex-direction: column-reverse;
+  }
+
+}
+
+// Compontent - Content
+.article-info {
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(0,0,0,.05);
+  font-size: .8em;
+
+  > *:not(.article-info-term) {
+    margin: 0 7px;
+  }
+}
+
+.img-fulltext-left {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.img-intro-left {
+  float: left;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.img-fulltext-right {
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.img-intro-right {
+  float: right;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.img-intro-none {
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.img-fulltext-none {
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.items-leading {
+  overflow: hidden;
+
+  .item-image {
+    width: auto;
+  }
+}
+
+.item-image {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: @j51-border-radius;
+}
+
+.pull-left.item-image {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.pull-right.item-image {
+  float: right;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+:not(.blog-masonry .item) .pull-none.item-image {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .pull-right.item-image,
+  .pull-left.item-image {
+    float: none;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}

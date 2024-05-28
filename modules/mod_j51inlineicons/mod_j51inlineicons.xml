@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>J51_InlineIcons</name>
+	<author>Joomla51</author>
+	<creationDate>June 2016</creationDate>
+	<copyright>Copyright (C)2015 Joomla51</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@joomla51.com</authorEmail>
+	<authorUrl>http://www.joomla51.com</authorUrl>
+	<version>1.0</version>
+	<description><![CDATA[<link href="../modules/mod_j51inlineicons/css/admin.css" rel="stylesheet" type="text/css" media="all" />
+	<!--
+                  #wrap1 {padding:0px 0px 4px 0px;}
+                  h1 {clear:both;font-family: Arial Narrow,sans-serif;font-size:18px;margin:0px 0px 12px 0px;padding:0px 0px 1px 10px;color:#C64934; a:}
+                  .wrap2 {background:#fff;border:1px solid #8F8F8F;padding:10px; color:#403d6a;}
+                  -->
+                  </style><div class="templateinfo">
+	<p>Inline Icons Module by Joomla51</p>
+	
+  	</div>
+  	]]>
+	</description>
+
+	<files>
+		<filename module="mod_j51inlineicons">mod_j51inlineicons.php</filename>
+		<filename module="mod_j51inlineicons">mod_j51inlineicons.xml</filename>
+		<filename module="mod_j51inlineicons">helper.php</filename>
+		<filename module="mod_j51inlineicons">License.txt</filename>		
+		<filename module="mod_j51inlineicons">index.html</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<folder>elements</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_j51inlineicons.ini</language>
+	</languages>
+	<config>	
+		<fields name="params" addfieldpath="/modules/mod_j51inlineicons/elements">
+			
+			<fieldset name="MOD_J51_GENERALSETTINGS">
+				<field name="j51_iconalign" type="list" default="left" label="Icon Alignment" description="Set your Icon Alignment">
+					<option value="left">Left</option>
+					<option value="center">Center</option>
+					<option value="Right">Right</option>
+				</field>
+				<field name="j51_iconsize" type="textpx" default="28" label="Icon Size" description="Set your icons size" />
+				<field name="j51_iconhovercolor" type="color" default="" label="Icon Hover Color" description="Set your icon hover color" />
+				<field name="j51_icon_margin_x" type="textpx" default="8" label="Horizontal Margin" description="Set your icons horizontal spacing" />
+				<field name="j51_icon_margin_y" type="textpx" default="0" label="Vertical Margin" description="Set your icons vertical spacing" />
+			</fieldset>
+
+			<fieldset name="MOD_J51_ICONS">
+				<field name="j51_inlineicons" type="subform" formsource="modules/mod_j51inlineicons/elements/subform.xml" class="advancedSelect" min="1" max="20" multiple="true" layout="joomla.form.field.subform.repeatable" groupByFieldset="true" label="Icon(s)" description="Icon(s)" />	
+			</fieldset>
+			
+			<fieldset name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="owncache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					default="1"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					default="900"
+					filter="integer"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

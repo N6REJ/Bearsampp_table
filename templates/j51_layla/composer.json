@@ -1,0 +1,16 @@
+{
+	"config" : {
+		"platform": {
+			"php": "5.5.9"
+		}
+	},
+	"require" : {
+		"ciar4n/j51_framework": "dev-unstable"
+	},
+	"repositories": [
+		{
+			"url": "https://github.com/ciar4n/j51_framework",
+			"type": "vcs"
+		}
+	]
+}

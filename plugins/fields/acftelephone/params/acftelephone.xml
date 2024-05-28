@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams">
+		<fieldset name="fieldparams">
+			
+			<field name="enable_country_selector" type="nrtoggle"
+				label="ACF_TELEPHONE_DISPLAY_COUNTRY_CODE_SELECTOR"
+				description="ACF_TELEPHONE_DISPLAY_COUNTRY_CODE_SELECTOR_DESC"
+			/>
+			<field name="default_country_option" type="list"
+				label="ACF_TELEPHONE_DEFAULT_COUNTRY_CODE"
+				description="ACF_TELEPHONE_DEFAULT_COUNTRY_CODE_DESC"
+				showon="enable_country_selector:1"
+				default="detect">
+				<option value="detect">ACF_TELEPHONE_FIELD_COUNTRY_DETECT</option>
+				<option value="select">ACF_TELEPHONE_SELECT_COUNTRY</option>
+				<option value="custom">ACF_TELEPHONE_SET_COUNTRY_CODE</option>
+			</field>
+			<field name="default_country" type="NR_Geo"
+				label="ACF_TELEPHONE_SELECT_COUNTRY"
+				description="ACF_TELEPHONE_SELECT_COUNTRY_DESC"
+				showon="enable_country_selector:1[AND]default_country_option:select"
+			/>
+			<field name="default_country_custom" type="text"
+				label="ACF_TELEPHONE_COUNTRY_CODE"
+				description="ACF_TELEPHONE_COUNTRY_CODE_DESC"
+				hint="GR"
+				showon="enable_country_selector:1[AND]default_country_option:custom"
+			/>
+			
+			
+			<field name="tel_mask" type="text"
+				label="ACF_TELEPHONE_MASK"
+				description="ACF_TELEPHONE_MASK_DESC"
+				hint="(999) 999-9999"
+			/>
+			<field name="click_to_call" type="nrtoggle" 
+		        label="ACF_TELEPHONE_CLICK_TO_CALL"
+				description="ACF_TELEPHONE_CLICK_TO_CALL_DESC"
+		        checked="true"
+			/>
+		</fieldset>
+	</fields>
+</form>
+

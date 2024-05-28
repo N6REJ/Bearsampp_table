@@ -1,0 +1,143 @@
+/*-----------------------------------------------------------------------------------*/
+/* Social Icons */
+/*-----------------------------------------------------------------------------------*/
+
+#socialmedia {
+  @size: 25px;
+  display: flex;
+  transition: all 0.2s ease;
+  // width: @size;
+  z-index: 1;
+  padding: 0 @j51-grid-column-gap;
+
+  a {
+    margin: 2px 0 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+
+    li {
+      background-position: 50% 50%;
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      a {
+        position: relative;
+        display: block;
+        width: @size;
+        height: @size;
+        opacity: 1;
+        font-size: calc(@size * .65);
+        text-align: center;
+        line-height: @size;
+        margin-left: 1px;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        [class^="fa-"]::before,
+        [class*=" fa-"]::before {
+          position: relative;
+          padding-right: 0;
+          color: #fff;
+        }
+      }
+
+      span {
+        position: absolute;
+        line-height: 0;
+        font-size: 0;
+        color: transparent;
+      }
+    }
+
+  }
+}
+
+[class^="social-"],
+[class*=" social-"] {
+  transition: all 0.4s;
+}
+
+.social-facebook:hover {
+  background-color: darken(#3b5998, 5%);
+}
+
+.social-twitter:hover {
+  background-color: darken(#48c4d2, 5%);
+}
+
+.social-youtube:hover {
+  background-color: darken(#f45750, 5%);
+}
+
+.social-pinterest:hover {
+  background-color: darken(#cb2027, 5%);
+}
+
+.social-instagram:hover {
+  background-color: darken(#2A5B83, 5%);
+}
+
+.social-dribbble:hover {
+  background-color: darken(#ef5b92, 5%);
+}
+
+.social-flickr:hover {
+  background-color: darken(#f1628b, 5%);
+}
+
+.social-skype:hover {
+  background-color: darken(#18b7f1, 5%);
+}
+
+.social-digg:hover {
+  background-color: darken(#2882c6, 5%);
+}
+
+.social-linkedin:hover {
+  background-color: darken(#71b2d0, 5%);
+}
+
+.social-vimeo:hover {
+  background-color: darken(#62a0ad, 5%);
+}
+
+.social-yahoo:hover {
+  background-color: darken(#ab64bc, 5%);
+}
+
+.social-tumblr:hover {
+  background-color: darken(#3a5976, 5%);
+}
+
+.social-rss:hover {
+  background-color: darken(#fe9900, 5%)
+}
+
+[class^="social-"],
+[class*=" social-"] {
+  margin-right: 0 !important;
+  color: #fff;
+}
+
+.header-2 + #socialmedia {
+  margin-left: 0;
+}
+
+#socialmedia ul li a:hover [class^="fa-"]::before,
+#socialmedia ul li a:hover [class*=" fa-"]::before {
+  color: rgba(255, 255, 255, 1);
+}
+
+#socialmedia ul li:hover,
+#socialmedia ul li:hover {
+  border-color: rgba(100, 100, 100, .7);
+}

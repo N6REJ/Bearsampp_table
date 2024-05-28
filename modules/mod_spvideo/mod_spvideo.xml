@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+	<name>MOD_SPVIDEO</name>
+	<description>SPVIDEO_XML_DESCRIPTION</description>
+	<version>1.0.0</version>
+	<creationDate>March 2024</creationDate>
+	<author>Tassos Marinos</author>
+	<authorEmail>info@tassos.gr</authorEmail>
+	<authorUrl>http://www.tassos.gr</authorUrl>
+	<copyright>Copyright © 2024 Tassos Marinos All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <scriptfile>script.install.php</scriptfile>
+	<files>
+		<filename module="mod_spvideo">mod_spvideo.php</filename>
+        <folder>language</folder>
+		<folder>tmpl</folder>
+        <filename>script.install.helper.php</filename>
+		<filename>mod_spvideo.xml</filename>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nrframework/fields">
+			<fieldset name="basic">
+                <field name="provider" type="NRImagesSelector"
+                    images='[
+                        {
+                            "key": "YouTube",
+                            "label": "YouTube",
+                            "url": "https://www.tassos.gr/images/apps/youtube.png"
+                        },
+                        {
+                            "key": "Vimeo",
+                            "label": "Vimeo",
+                            "url": "https://www.tassos.gr/images/apps/vimeo.png"
+                        },
+                        {
+                            "key": "FacebookVideo",
+                            "label": "Facebook",
+                            "url": "https://www.tassos.gr/images/apps/facebook.png"
+                        },
+                        {
+                            "key": "Dailymotion",
+                            "label": "Dailymotion",
+                            "url": "https://www.tassos.gr/images/apps/dailymotion.png"
+                        },
+                        {
+                            "key": "SelfHostedVideo",
+                            "label": "SPVIDEO_SELF_HOSTED_VIDEO",
+                            "url": "https://www.tassos.gr/images/icons/Video.svg"
+                        }
+                    ]'
+                    columns="5"
+                    width="850px"
+                    image_width="90px"
+                    key_type="filename"
+                    label="SPVIDEO_PROVIDER"
+                    description="SPVIDEO_PROVIDER_DESC"
+                    default="YouTube"
+                    mode="links"
+                />
+                <field name="youtube_value" type="TFVideoInput"
+                    label="SPVIDEO_YOUTUBE_URL"
+                    description="SPVIDEO_YOUTUBE_URL_DESC"
+                    provider="YouTube"
+                    showon="provider:YouTube"
+                />
+                <field name="vimeo_value" type="TFVideoInput"
+                    label="SPVIDEO_VIMEO_URL"
+                    description="SPVIDEO_VIMEO_URL_DESC"
+                    provider="Vimeo"
+                    showon="provider:Vimeo"
+                />
+                <field name="facebook_value" type="TFVideoInput"
+                    label="SPVIDEO_FACEBOOK_VIDEO_URL"
+                    description="SPVIDEO_FACEBOOK_VIDEO_URL_DESC"
+                    provider="Facebook"
+                    showon="provider:FacebookVideo"
+                />
+                <field name="dailymotion_value" type="TFVideoInput"
+                    label="SPVIDEO_DAILYMOTION_URL"
+                    description="SPVIDEO_DAILYMOTION_URL_DESC"
+                    provider="Dailymotion"
+                    showon="provider:Dailymotion"
+                />
+                <field name="selfhostedvideo_value" type="TFVideoInput"
+                    label="SPVIDEO_SELF_HOSTED_VIDEO_URL"
+                    description="SPVIDEO_SELF_HOSTED_VIDEO_URL_DESC"
+                    provider="SelfHostedVideo"
+                    showon="provider:SelfHostedVideo"
+                />
+                <field name="width" type="NRResponsiveControl"
+                    class="is-one-line"
+                    label="NR_WIDTH"
+                    description="SPVIDEO_WIDTH_DESC"
+                    default='{"desktop":{"value":"480","unit":"px"}}'
+                    subtype="TFUnitControl"
+                    subtype_hint="480"
+                />
+                <field name="height" type="NRResponsiveControl"
+                    class="is-one-line"
+                    label="NR_HEIGHT"
+                    description="SPVIDEO_HEIGHT_DESC"
+                    default='{"desktop":{"value":"270", "unit":"px"}}'
+                    subtype="TFUnitControl"
+                    subtype_hint="270"
+                    subtype_units="px,%,auto"
+                    showon="provider!:FacebookVideo"
+                />
+            </fieldset>
+			<fieldset name="video_config" label="SPVIDEO_CONFIGURATION">
+                
+                <field name="selfhostedvideo_autoplay" type="nrtoggle"
+                    label="SPVIDEO_AUTOPLAY"
+                    description="SPVIDEO_AUTOPLAY_DESC"
+                    showon="provider:SelfHostedVideo"
+                />
+                <field name="selfhostedvideo_controls" type="nrtoggle"
+                    label="SPVIDEO_CONTROLS"
+                    description="SPVIDEO_CONTROLS_DESC"
+                    checked="true"
+                    showon="provider:SelfHostedVideo"
+                />
+                <field name="selfhostedvideo_loop" type="nrtoggle"
+                    label="SPVIDEO_LOOP"
+                    description="SPVIDEO_LOOP_DESC"
+                    showon="provider:SelfHostedVideo"
+                />
+                <field name="selfhostedvideo_mute" type="nrtoggle"
+                    label="SPVIDEO_MUTE"
+                    description="SPVIDEO_MUTE_DESC"
+                    showon="provider:SelfHostedVideo"
+                />
+                
+                <field name="@autoplay" type="nr_pro"
+                    label="SPVIDEO_AUTOPLAY"
+                    description="SPVIDEO_AUTOPLAY_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube,Vimeo,FacebookVideo"
+                />
+                <field name="@autopause" type="nr_pro"
+                    label="SPVIDEO_AUTOPAUSE"
+                    description="SPVIDEO_AUTOPAUSE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube,Vimeo,FacebookVideo,Dailymotion,SelfHostedVideo"
+                />
+                <field name="@fs" type="nr_pro"
+                    label="SPVIDEO_FULLSCREEN"
+                    description="SPVIDEO_FULLSCREEN_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube,FacebookVideo"
+                />
+                <field name="@controls" type="nr_pro"
+                    label="SPVIDEO_CONTROLS"
+                    description="SPVIDEO_CONTROLS_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube,Vimeo"
+                />
+                <field name="@loop" type="nr_pro"
+                    label="SPVIDEO_LOOP"
+                    description="SPVIDEO_LOOP_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider!:Dailymotion,FacebookVideo,SelfHostedVideo"
+                />
+                <field name="@mute" type="nr_pro"
+                    label="SPVIDEO_MUTE"
+                    description="SPVIDEO_MUTE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider!:FacebookVideo,SelfHostedVideo"
+                />
+                <field name="@disablekb" type="nr_pro"
+                    label="SPVIDEO_DISABLE_KEYBOARD"
+                    description="SPVIDEO_DISABLE_KEYBOARD_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube,Vimeo"
+                />
+                <field name="@start" type="nr_pro"
+                    label="SPVIDEO_START"
+                    description="SPVIDEO_START_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube,Vimeo,Dailymotion"
+                />
+                <field name="@end" type="nr_pro"
+                    label="SPVIDEO_END"
+                    description="SPVIDEO_END_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube,Vimeo,Dailymotion"
+                />
+                
+
+                <!-- Providers Labels -->
+                <field type="spacer" name="yt_label"
+                    label="SPVIDEO_YOUTUBE"
+                    class="smilepack-fields-separator"
+                    showon="provider:YouTube"
+                />
+
+                <field type="spacer" name="vimeo_label"
+                    label="SPVIDEO_VIMEO"
+                    class="smilepack-fields-separator"
+                    showon="provider:Vimeo"
+                />
+                <field type="spacer" name="fb_label"
+                    label="SPVIDEO_FACEBOOK"
+                    class="smilepack-fields-separator"
+                    showon="provider:FacebookVideo"
+                />
+                <field type="spacer" name="selfhosted_label"
+                    label="SPVIDEO_SELF_HOSTED_VIDEO"
+                    class="smilepack-fields-separator"
+                    showon="provider:SelfHostedVideo"
+                />
+
+                <!-- YouTube Specific Params -->
+                
+                <field name="privacyMode" type="nrtoggle"
+                    label="SPVIDEO_PRIVACY_MODE"
+                    description="SPVIDEO_PRIVACY_MODE_DESC"
+                    showon="provider:YouTube,Vimeo"
+                />
+
+                <!-- Vimeo Specific Params -->
+                
+
+                <!-- Facebook Specific Params -->
+                
+
+                
+                <!-- YouTube -->
+                <field name="@cc_load_policy" type="nr_pro"
+                    label="SPVIDEO_CLOSED_CAPTIONS"
+                    description="SPVIDEO_CLOSED_CAPTIONS_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube"
+                />
+                <field name="@rel" type="nr_pro"
+                    label="SPVIDEO_REL"
+                    description="SPVIDEO_REL_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube"
+                />
+                <field name="@youtube_color" type="nr_pro"
+                    label="SPVIDEO_COLOR"
+                    description="SPVIDEO_COLOR_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube"
+                />
+
+                <!-- Vimeo -->
+                <field name="@title" type="nr_pro"
+                    label="SPVIDEO_TITLE"
+                    description="SPVIDEO_TITLE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:Vimeo"
+                />
+                <field name="@byline" type="nr_pro"
+                    label="SPVIDEO_BYLINE"
+                    description="SPVIDEO_BYLINE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:Vimeo"
+                />
+                <field name="@portrait" type="nr_pro"
+                    label="SPVIDEO_PORTRAIT"
+                    description="SPVIDEO_PORTRAIT_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:Vimeo"
+                />
+                <field name="@pip" type="nr_pro"
+                    label="SPVIDEO_PIP"
+                    description="SPVIDEO_PIP_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:Vimeo"
+                />
+                <field name="@vimeo_color" type="nr_pro"
+                    label="SPVIDEO_VIMEO_COLOR"
+                    description="SPVIDEO_VIMEO_COLOR_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:Vimeo"
+                />
+
+                <!-- Facebook Video -->
+                <field name="@show_text" type="nr_pro"
+                    label="SPVIDEO_FACEBOOKVIDEO_INCLUDEPOST"
+                    description="SPVIDEO_FACEBOOKVIDEO_INCLUDEPOST_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:FacebookVideo"
+                />
+                <field name="@show_captions" type="nr_pro"
+                    label="SPVIDEO_FACEBOOKVIDEO_SHOWCAPTIONS"
+                    description="SPVIDEO_FACEBOOKVIDEO_SHOWCAPTIONS_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:FacebookVideo"
+                />
+                
+
+                <!-- Self Hosted Video -->
+                <field name="preload" type="list" 
+                    label="ACF_PRELOAD"
+                    description="ACF_PRELOAD_DESC"
+                    default="auto"
+                    showon="provider:SelfHostedVideo">
+                        <option value="metadata">ACF_METADATA</option>
+                        <option value="auto">NR_AUTO</option>
+                        <option value="none">JNONE</option>
+                </field>
+
+                <!-- Cover Image -->
+                <field type="spacer" name="cover_image_label"
+                    label="SPVIDEO_COVER_IMAGE"
+                    showon="provider:YouTube,Vimeo,Dailymotion"
+                    class="smilepack-fields-separator"
+                />
+                
+                
+                <field name="@coverImageType" type="nr_pro"
+                    label="SPVIDEO_COVER_IMAGE_TYPE"
+                    description="SPVIDEO_COVER_IMAGE_TYPE_DESC"
+                    url="http://www.tassos.gr/joomla-extensions/smile-pack"
+                    showon="provider:YouTube,Vimeo,Dailymotion"
+                />
+                
+            </fieldset>
+		</fields>
+	</config>
+</extension>
