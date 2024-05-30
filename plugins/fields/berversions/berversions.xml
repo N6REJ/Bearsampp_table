@@ -9,13 +9,13 @@
 <extension version="4.0" type="plugin" group="fields" method="upgrade">
   <name>BERVERSIONS</name>
   <author>Bearsampp</author>
-  <version>2024.5.30a</version>
+  <version>2024.5.30b</version>
   <creationDate>May 2024</creationDate>
   <copyright>Copyright (C) 2024 Troy T. Hall. All rights reserved.</copyright>
   <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
   <authorEmail>admin@bearsampp.com</authorEmail>
   <authorUrl>bearsampp.com</authorUrl>
-  <description>BER_VERSIONS_DESC</description>
+  <description>BERVERSIONS_DESC</description>
   <files>
     <filename plugin="berversions">berversions.php</filename>
     <filename>index.html</filename>
