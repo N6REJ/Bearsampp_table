@@ -10,8 +10,8 @@
   <fields name="params">
     <fieldset name="berversions_params" label="Bears Versions Parameters">
       <field name="berversions" type="subform"
-             label="Bears Versions"
-             description="Add your data here"
+             label="BERVERSIONS_SUBFORM"
+             description="BERVERSIONS_SUBFORM_DESC"
              multiple="true"
              layout="joomla.form.field.subform.repeatable-table">
         <form>

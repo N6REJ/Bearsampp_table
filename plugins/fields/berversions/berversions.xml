@@ -9,7 +9,7 @@
 <extension version="4.0" type="plugin" group="fields" method="upgrade">
   <name>BERVERSIONS</name>
   <author>Bearsampp</author>
-  <version>2024.5.30e</version>
+  <version>2024.5.30f</version>
   <creationDate>May 2024</creationDate>
   <copyright>Copyright (C) 2024 Troy T. Hall. All rights reserved.</copyright>
   <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
