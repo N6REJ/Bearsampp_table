@@ -9,7 +9,7 @@
 <extension version="4.0" type="plugin" group="fields" method="upgrade">
   <name>BERVERSIONS</name>
   <author>Bearsampp</author>
-  <version>2024.5.30c</version>
+  <version>2024.5.30e</version>
   <creationDate>May 2024</creationDate>
   <copyright>Copyright (C) 2024 Troy T. Hall. All rights reserved.</copyright>
   <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
@@ -28,29 +28,4 @@
     <language tag="en-GB">en-GB/en-GB.plg_fields_berversions.ini</language>
     <language tag="en_GB">en-GB/en-GB.plg_fields_berversions.sys.ini</language>
   </languages>
-  <config>
-    <fields name="params">
-      <fieldset name="basic">
-        <field
-          name="url"
-          type="url"
-          label="PLG_FIELDS_BERVERSIONS_URL"
-          description="PLG_FIELDS_BERVERSIONS_URL_DESC"
-          default="" size="60"
-        />
-
-        <field
-          name="icon"
-          type="checkboxes"
-          default=""
-          description="PLG_FIELDS_BERVERSIONS_STATE_DESC"
-          label="PLG_FIELDS_BERVERSIONS_STATE">
-          <option value="Full">Full Star</option>
-          <option value="Beta">Half Star</option>
-          <option value="Archive">Archive</option>
-          <option value="Security">Shield</option>
-        </field>
-      </fieldset>
-    </fields>
-  </config>
 </extension>

@@ -1,3 +1,11 @@
+<!--
+  ~ Copyright (c) 2021-2024 Bearsampp
+  ~ License:  GNU General Public License version 3 or later; see LICENSE.txt
+  ~ Author: bear
+  ~ Website: https://bearsampp.com
+  ~ Github: https://github.com/Bearsampp
+  -->
+
 <form>
   <fields name="params">
     <fieldset name="berversions_params" label="Bears Versions Parameters">
@@ -10,8 +18,8 @@
           <field
             name="url"
             type="url"
-            label="PLG_FIELDS_BERVERSIONS_URL"
-            description="PLG_FIELDS_BERVERSIONS_URL_DESC"
+            label="BERVERSIONS_URL"
+            description="BERVERSIONS_URL_DESC"
             default="" size="60"
           />
 
@@ -19,8 +27,8 @@
             name="icon"
             type="checkboxes"
             default=""
-            description="PLG_FIELDS_BERVERSIONS_STATE_DESC"
-            label="PLG_FIELDS_BERVERSIONS_STATE">
+            description="BERVERSIONS_STATE_DESC"
+            label="BERVERSIONS_STATE">
               <option value="Full">Full Star</option>
               <option value="Beta">Half Star</option>
               <option value="Archive">Archive</option>
