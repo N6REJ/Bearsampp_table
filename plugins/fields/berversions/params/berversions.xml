@@ -7,16 +7,12 @@
              multiple="true"
              layout="joomla.form.field.subform.repeatable-table">
         <form>
-          <field name="url" type="url" label="Release URL" description="Enter the release URL" default="" size="60" />
-          <field name="icon" type="radio" default="none" label="Icon">
+          <field name="url" type="url" label="Extension Release URL" description="Enter the release URL" default="" size="60" />
+          <field name="icon" type="checkboxes" default="" label="Icons">
             <option value="full">Full Star</option>
             <option value="half">Half Star</option>
             <option value="archive">Archive</option>
-            <option value="none">No Icon</option>
-          </field>
-          <field name="shield" type="radio" default="0" label="Security Release?" class="btn-group btn-group-yesno">
-            <option value="1">On</option>
-            <option value="0">Off</option>
+            <option value="shield">Shield</option>
           </field>
         </form>
       </field>
