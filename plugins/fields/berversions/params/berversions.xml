@@ -7,12 +7,24 @@
              multiple="true"
              layout="joomla.form.field.subform.repeatable-table">
         <form>
-          <field name="url" type="url" label="Extension Release URL" description="Enter the release URL" default="" size="60" />
-          <field name="icon" type="checkboxes" default="" label="Icons">
-            <option value="full">Full Star</option>
-            <option value="half">Half Star</option>
-            <option value="archive">Archive</option>
-            <option value="shield">Shield</option>
+          <field
+            name="url"
+            type="url"
+            label="PLG_FIELDS_BERVERSIONS_URL"
+            description="PLG_FIELDS_BERVERSIONS_URL_DESC"
+            default="" size="60"
+          />
+
+          <field
+            name="icon"
+            type="checkboxes"
+            default=""
+            description="PLG_FIELDS_BERVERSIONS_STATE_DESC"
+            label="PLG_FIELDS_BERVERSIONS_STATE">
+              <option value="Full">Full Star</option>
+              <option value="Beta">Half Star</option>
+              <option value="Archive">Archive</option>
+              <option value="Security">Shield</option>
           </field>
         </form>
       </field>

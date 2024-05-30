@@ -1,4 +1,4 @@
-<extension version="3.10" type="plugin" group="fields" method="upgrade">
+<extension version="4.0" type="plugin" group="fields" method="upgrade">
   <name>BER_VERSIONS</name>
   <author>Bearsampp</author>
   <version>1.0.0</version>
@@ -13,5 +13,36 @@
     <filename>index.html</filename>
     <folder>params</folder>
     <folder>language</folder>
+    <folder>fields</folder>
+    <folder>tmpl</folder>
   </files>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.plg_fields_berversions.ini</language>
+    <language tag="en_GB">en-GB/en-GB.plg_fields_berversions.sys.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field
+          name="url"
+          type="url"
+          label="PLG_FIELDS_BERVERSIONS_URL"
+          description="PLG_FIELDS_BERVERSIONS_URL_DESC"
+          default="" size="60"
+        />
+
+        <field
+          name="icon"
+          type="checkboxes"
+          default=""
+          description="PLG_FIELDS_BERVERSIONS_STATE_DESC"
+          label="PLG_FIELDS_BERVERSIONS_STATE">
+          <option value="Full">Full Star</option>
+          <option value="Beta">Half Star</option>
+          <option value="Archive">Archive</option>
+          <option value="Security">Shield</option>
+        </field>
+      </fieldset>
+    </fields>
+  </config>
 </extension>
