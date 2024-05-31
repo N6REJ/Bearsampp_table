@@ -24,7 +24,6 @@
             default="" size="60"
             filter="Safe HTML"
           />
-
           <field
             name="icon"
             type="checkboxes"

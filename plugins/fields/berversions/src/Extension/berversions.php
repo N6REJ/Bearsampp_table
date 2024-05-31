@@ -7,12 +7,18 @@
  * Github: https://github.com/Bearsampp
  */
 
+namespace Joomla\Plugin\Fields\Subform\Extension;
+
+use SimpleXMLElement;
+
+use Joomla\CMS\Form\Form;
+use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
+use Joomla\Component\Fields\Administrator\Plugin\FieldsPlugin;
+
 // No direct access to this file
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Form\Field\SubformField;
-
-class JFormFieldFAQ extends SubformField
+class JFormFieldBerversions extends SubformField
 {
   /**
    * Method to attach a JForm object to the field.
@@ -42,7 +48,7 @@ class JFormFieldFAQ extends SubformField
         multiple="true"
         layout="joomla.form.field.subform.repeatable-table"
         formsource="/plugins/fields/berversions/fields/fields.xml"
-		    default=''
+        default=""
     />
 </form>
 XML;
