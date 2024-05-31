@@ -11,7 +11,7 @@
   <fields name="fieldparams" addfieldpath="plugins/fields/berversions/fields">
     <fieldset name="fieldparams">
       <field name="berversions" type="subform"
-             label="BERVERSIONS_SUBFORM"
+             label="BERVERSIONS_SUBFORM_LABEL"
              description="BERVERSIONS_SUBFORM_DESC"
              multiple="true"
              layout="joomla.form.field.subform.repeatable-table">
@@ -19,7 +19,7 @@
           <field
             name="url"
             type="url"
-            label="BERVERSIONS_URL"
+            label="BERVERSIONS_URL_LABEL"
             description="BERVERSIONS_URL_DESC"
             default="" size="60"
             filter="Safe HTML"
@@ -29,7 +29,7 @@
             type="checkboxes"
             default=""
             description="BERVERSIONS_STATE_DESC"
-            label="BERVERSIONS_STATE">
+            label="BERVERSIONS_STATE_LABEL">
             <option value="Full">Latest</option>
             <option value="Beta">Beta</option>
             <option value="Archive">Archive</option>
