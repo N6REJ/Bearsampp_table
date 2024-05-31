@@ -41,7 +41,7 @@ class JFormFieldFAQ extends SubformField
         hiddenLabel="true"
         multiple="true"
         layout="joomla.form.field.subform.repeatable-table"
-        formsource="/plugins/fields/berversions/fields/berversions.xml"
+        formsource="/plugins/fields/berversions/fields/fields.xml"
 		    default=''
     />
 </form>
