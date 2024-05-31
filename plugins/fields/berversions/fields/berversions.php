@@ -7,23 +7,52 @@
  * Github: https://github.com/Bearsampp
  */
 
+// No direct access to this file
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Form\FormField;
-use Joomla\CMS\Form\FormHelper;
+use Joomla\CMS\Form\Field\SubformField;
 
-FormHelper::loadFieldClass('subform');
-
-class JFormFieldBerversions extends JFormFieldSubform
+class JFormFieldFAQ extends SubformField
 {
-  protected $type = 'Berversions';
-
-  protected function getInput()
+  /**
+   * Method to attach a JForm object to the field.
+   *
+   * @param   SimpleXMLElement  $element  The SimpleXMLElement object representing the <field /> tag for the form field object.
+   * @param   mixed             $value    The form field value to validate.
+   * @param   string            $group    The field name group control value.
+   *
+   * @return  boolean  True on success.
+   *
+   * @since   3.6
+   */
+  public function setup(SimpleXMLElement $element, $value, $group = null)
   {
-    // Load the subform XML file
-    $this->form->loadFile(__DIR__ . '/../params/berversions.xml', false);
+    if (!parent::setup($element, $value, $group))
+    {
+      return false;
+    }
 
-    // Render the subform
-    return parent::getInput();
+    $xml = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <field
+        name="value"
+        type="subform"
+        hiddenLabel="true"
+        multiple="true"
+        layout="joomla.form.field.subform.repeatable-table"
+        formsource="/plugins/fields/berversions/fields/berversions.xml"
+		    default=''
+    />
+</form>
+XML;
+    $this->formsource = $xml;
+
+    return true;
+  }
+
+  public function getInput()
+  {
+    return '<div class="tf-subform-hide-label">' . parent::getInput() . '</div>';
   }
 }

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Copyright (c) 2021-2024 Bearsampp
   ~ License:  GNU General Public License version 3 or later; see LICENSE.txt
@@ -7,8 +8,8 @@
   -->
 
 <form>
-  <fields name="params">
-    <fieldset name="berversions_params" label="Bears Versions Parameters">
+  <fields name="fieldparams" addfieldpath="plugins/fields/berversions/fields">
+    <fieldset name="fieldparams">
       <field name="berversions" type="subform"
              label="BERVERSIONS_SUBFORM"
              description="BERVERSIONS_SUBFORM_DESC"
@@ -21,6 +22,7 @@
             label="BERVERSIONS_URL"
             description="BERVERSIONS_URL_DESC"
             default="" size="60"
+            filter="Safe HTML"
           />
 
           <field
@@ -29,10 +31,10 @@
             default=""
             description="BERVERSIONS_STATE_DESC"
             label="BERVERSIONS_STATE">
-              <option value="Full">Full Star</option>
-              <option value="Beta">Half Star</option>
-              <option value="Archive">Archive</option>
-              <option value="Security">Shield</option>
+            <option value="Full">Latest</option>
+            <option value="Beta">Beta</option>
+            <option value="Archive">Archive</option>
+            <option value="Security">Security</option>
           </field>
         </form>
       </field>

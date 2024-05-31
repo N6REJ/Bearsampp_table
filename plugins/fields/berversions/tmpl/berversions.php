@@ -9,6 +9,9 @@
 
 defined('_JEXEC') or die;
 
+if (!isset($rows) || !is_array($rows)) {
+  $rows = [];
+}
 usort($rows, function ($a, $b) {
   return version_compare($b['version'], $a['version']);
 });
