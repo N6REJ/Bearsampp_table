@@ -10,9 +10,6 @@
 namespace Joomla\Plugin\Fields\Subform\Extension;
 
 use JFormHelper;
-use Joomla\CMS\Form\Form;
-use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
-use Joomla\Component\Fields\Administrator\Plugin\FieldsPlugin;
 use Joomla\CMS\Form\Field\SubformField;
 
 // No direct access to this file
@@ -21,9 +18,8 @@ defined('_JEXEC') or die;
 JFormHelper::loadFieldClass('subform');
 use SimpleXMLElement;
 
-class JFormFieldBerversions extends SubformField
+class JFormFieldRow extends SubformField
 {
-  public $type = 'Berversions';
 
   /**
    * Method to attach a JForm object to the field.
