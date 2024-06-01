@@ -9,17 +9,22 @@
 
 namespace Joomla\Plugin\Fields\Subform\Extension;
 
-use SimpleXMLElement;
-
+use JFormHelper;
 use Joomla\CMS\Form\Form;
 use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 use Joomla\Component\Fields\Administrator\Plugin\FieldsPlugin;
+use Joomla\CMS\Form\Field\SubformField;
 
 // No direct access to this file
 defined('_JEXEC') or die;
 
+JFormHelper::loadFieldClass('subform');
+use SimpleXMLElement;
+
 class JFormFieldBerversions extends SubformField
 {
+  public $type = 'Berversions';
+
   /**
    * Method to attach a JForm object to the field.
    *
@@ -47,7 +52,7 @@ class JFormFieldBerversions extends SubformField
         hiddenLabel="true"
         multiple="true"
         layout="joomla.form.field.subform.repeatable-table"
-        formsource="/plugins/fields/berversions/fields/fields.xml"
+        formsource="/plugins/fields/berversions/fields/row.xml"
         default=""
     />
 </form>

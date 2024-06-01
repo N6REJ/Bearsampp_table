@@ -16,7 +16,6 @@
       default="" size="60"
       filter="raw"
     />
-
     <field
       name="icon"
       type="checkboxes"

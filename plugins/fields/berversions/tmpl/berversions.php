@@ -12,6 +12,8 @@ defined('_JEXEC') or die;
 if (!isset($rows) || !is_array($rows)) {
   $rows = [];
 }
+
+// Sort rows by version in descending order (highest version at the top)
 usort($rows, function ($a, $b) {
   return version_compare($b['version'], $a['version']);
 });
